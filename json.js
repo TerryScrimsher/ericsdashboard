@@ -478,7 +478,6 @@ for (j = 0; j < obj.length; j++) {
     
   }
   
-
 }
 
 google.charts.load('current', {'packages':['corechart']});
@@ -492,9 +491,6 @@ google.charts.load('current', {'packages':['corechart']});
         for (i = 0; i < obj[0].Office.length; i++) {
           test.push([obj[0].Office[i].Name, {v: obj[0].Office[i].TotalSales, f: '$' + parseFloat(obj[0].Office[i].TotalSales).toFixed(2)}]);
         }
-        
-        document.getElementById("demo4").innerHTML = test;
-        console.log(test);
         
         var data = google.visualization.arrayToDataTable(test);
 
