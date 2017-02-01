@@ -468,37 +468,17 @@ text = localStorage.getItem("testJSON");
 
 obj = JSON.parse(text);
 
-for (j = 0; j < obj.length; j++) {
-  
-  document.getElementById("demo").innerHTML += "<strong>" + obj[j].SectionId + "</strong><br>";
-  
-  for (i = 0; i < obj[0].Office.length; i++) {
+/* Displaying JSON data for testing */
+//for (var j = 0; j < obj.length; j++) {
+//  
+//  document.getElementById("demo").innerHTML += "<strong>" + obj[j].SectionId + "</strong><br>";
+//  
+//  for (var i = 0; i < obj[0].Office.length; i++) {
+//
+//    document.getElementById("demo").innerHTML += "Location: " + obj[j].Office[i].Name + "<br>Total Sales: $" + parseFloat(obj[j].Office[i].TotalSales).toFixed(2) + "<br><br>";
+//    
+//  }
+//  
+//}
 
-    document.getElementById("demo").innerHTML += "Location: " + obj[j].Office[i].Name + "<br>Total Sales: $" + parseFloat(obj[j].Office[i].TotalSales).toFixed(2) + "<br><br>";
-    
-  }
-  
-}
 
-google.charts.load('current', {'packages':['corechart']});
-      google.charts.setOnLoadCallback(drawChart);
-      function drawChart() {
-        
-        var test = [
-          ['Location', 'Revenue']
-        ];
-          
-        for (i = 0; i < obj[0].Office.length; i++) {
-          test.push([obj[0].Office[i].Name, {v: obj[0].Office[i].TotalSales, f: '$' + parseFloat(obj[0].Office[i].TotalSales).toFixed(2)}]);
-        }
-        
-        var data = google.visualization.arrayToDataTable(test);
-
-        var options = {
-          title: 'LP Sales Chart'
-        };
-
-        var chart = new google.visualization.PieChart(document.getElementById('piechart'));
-
-        chart.draw(data, {colors: ['#147832', '#144678', '#5a1478', '#78141e', '#6e7814'], is3D: false});
-}
