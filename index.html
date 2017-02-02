@@ -19,8 +19,6 @@
   
     <!-- Javascript -->
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-    <script type="text/javascript" src="json.js"></script>
-    <script type="text/javascript" src="metrics.js"></script>
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -69,6 +67,104 @@
   
     <!-- Page Content -->
     <div class="container">
+      
+        <!-- Projects Row -->
+        <div class="row">
+            <div class="col-md-4 portfolio-item" style="margin-bottom: 0px;">
+              <h1>Current Sales Cycle</h1>
+            </div>
+          
+            <div class="col-md-4 portfolio-item" style="margin-bottom: 0px;">
+              <h1><span id="currentMonth"></span></h1>
+            </div>
+          
+            <div class="col-md-4 portfolio-item" style="margin-bottom: 0px;">
+              <h1><span id="currentYear"></span> Totals</h1>
+            </div>
+          
+        </div>
+        <!-- /.row -->
+      
+        <!-- Projects Row -->
+        <div class="row">
+            <div class="col-md-4 portfolio-item" >
+              <div class="graybox">
+                <div style="color: #ffffff; font-size: 16px; padding: 20px">
+                  <table id="currentManagersTable">
+                    <thead>
+                      <tr>
+                        <th style="min-width: 100px;">Rank</th>
+                        <th style="min-width: 160px;">Name</th>
+                        <th style="min-width: 100px;">Sales</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                  </table>
+                </div>
+              </div>  
+            </div>
+            <div class="col-md-4 portfolio-item">
+              <div class="graybox">
+                <div id="Beth_chart_div"></div>
+              </div> 
+            </div>
+          
+            <div class="col-md-4 portfolio-item">
+              <div class="graybox">
+                <div style="color: #ffffff; font-size: 16px; padding: 20px">
+                  <table id="currentManagersTable3">
+                    <thead>
+                      <tr>
+                        <th style="min-width: 100px;">Rank</th>
+                        <th style="min-width: 160px;">Name</th>
+                        <th style="min-width: 100px;">Sales</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                  </table>
+                </div>
+              </div> 
+            </div>
+          
+        </div>
+        <!-- /.row -->
+
+        <!-- Projects Row -->
+        <div class="row">
+            <div class="col-md-4 portfolio-item" >
+              <div class="graybox">
+                 <div id="currentCycleBarChart"></div> 
+              </div>  
+            </div>
+          
+            <div class="col-md-4 portfolio-item">
+              <div class="graybox">
+                <div style="color: #ffffff; font-size: 16px; padding: 20px">
+                  <table id="currentManagersTable2">
+                    <thead>
+                      <tr>
+                        <th style="min-width: 100px;">Rank</th>
+                        <th style="min-width: 160px;">Name</th>
+                        <th style="min-width: 100px;">Sales</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                  </table>
+                </div>
+              </div> 
+            </div>
+          
+            <div class="col-md-4 portfolio-item">
+              <div class="graybox">
+                <div id="currentYearBarChart"></div>
+              </div> 
+            </div>
+          
+        </div>
+        <!-- /.row -->
 
         <!-- Projects Row -->
         <div class="row">
@@ -80,69 +176,13 @@
           
             <div class="col-md-4 portfolio-item">
               <div class="graybox">
-                <div id="Beth_chart_div"></div>
-              </div> 
-            </div>
-          
-            <div class="col-md-4 portfolio-item">
-                <!-- Projects Row -->
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="graybox">
-                          <button onclick="drawBethChart2()">Load Chart</button>
-                        </div> 
-                    </div>
-                    <div class="col-md-6">
-                        <div class="graybox">
-              
-                        </div> 
-                    </div>
-                </div>
-            </div>
-          
-        </div>
-        <!-- /.row -->
-
-        <!-- Projects Row -->
-        <div class="row">
-            <div class="col-md-4 portfolio-item" >
-              <div class="graybox">
-
-              </div>  
-            </div>
-          
-            <div class="col-md-4 portfolio-item">
-              <div class="graybox">
-                
+                <div id="currentMonthBarChart"></div>
               </div> 
             </div>
           
             <div class="col-md-4 portfolio-item">
               <div class="graybox">
                 
-              </div> 
-            </div>
-          
-        </div>
-        <!-- /.row -->
-
-        <!-- Projects Row -->
-        <div class="row">
-            <div class="col-md-4 portfolio-item" >
-              <div class="graybox">
-              
-              </div>  
-            </div>
-          
-            <div class="col-md-4 portfolio-item">
-              <div class="graybox">
-              
-              </div> 
-            </div>
-          
-            <div class="col-md-4 portfolio-item">
-              <div class="graybox">
-              
               </div> 
             </div>
           
@@ -150,14 +190,16 @@
         <!-- /.row -->
 
         <!-- Footer -->
+<!--
         <footer>
             <div class="row">
                 <div class="col-lg-12">
                     <p>Copyright &copy; Logical Position 2017</p>
                 </div>
             </div>
-            <!-- /.row -->
+             /.row 
         </footer>
+-->
 
     </div>
     <!-- /.container -->
@@ -167,6 +209,9 @@
 
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
+  
+    <script type="text/javascript" src="js/json.js"></script>
+    <script type="text/javascript" src="js/metrics.js"></script>
 
 </body>
 
