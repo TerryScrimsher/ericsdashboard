@@ -18,7 +18,8 @@
     <link href="css/3-col-portfolio.css" rel="stylesheet">
   
     <!-- Javascript -->
-    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.14/angular.min.js"></script>
+    <script src="https://www.gstatic.com/charts/loader.js"></script>
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -187,6 +188,35 @@
             </div>
           
         </div>
+      
+        <div ng-app="myApp" ng-controller="customersCtrl"> 
+        <h1>#0</h1>
+        <ul>
+          <li ng-repeat="x in names | orderBy:'Team'">
+            {{ x.SectionId }}
+            {{ x.TopSalesReps }}  
+          </li>
+        </ul>
+        <h1>#1</h1>
+        <ul>
+          <li ng-repeat="x in names1 | orderBy:-'TotalSales'">
+            {{ $index+1 + " - " + x.Name + ": $" + x.TotalSales }}  
+          </li>
+        </ul>
+        <h1>#2</h1>
+        <ul>
+          <li ng-repeat="x in names2 | orderBy:-'TotalSales'">
+            {{ $index+1 + " - " + x.Name + ": $" + x.TotalSales }}  
+          </li>
+        </ul>
+        <h1>#3</h1>
+        <ul>
+          <li ng-repeat="x in names3 | orderBy:-'TotalSales' | limitTo:10">
+            {{ $index+1 + " - " + x.Name + ": $" + x.TotalSales }}  
+          </li>
+        </ul>
+    </div>
+      
         <!-- /.row -->
 
         <!-- Footer -->

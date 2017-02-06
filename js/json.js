@@ -1,26 +1,37 @@
-function loadJSON(file, callback) {   
+var app = angular.module('myApp', []);
+        app.controller('customersCtrl', function($scope, $http) {
+          $http.get("js/jsonresponse.json")
+          .success(function (response) {$scope.names = response, 
+                                        $scope.names1 = response[0].TopSalesReps, 
+                                        $scope.names2 = response[1].TopSalesReps, 
+                                        $scope.names3 = response[2].TopSalesReps
+                                       });   
+});
 
-    var xobj = new XMLHttpRequest();
-    xobj.overrideMimeType("application/json");
-    xobj.open('GET', file, true); // Replace 'my_data' with the path to your file
-    xobj.onreadystatechange = function () {
-          if (xobj.readyState == 4 && xobj.status == "200") {
-            // Required use of an anonymous callback as .open will NOT return a value but simply returns undefined in asynchronous mode
-            callback(xobj.responseText);
-          }
-    };
-    xobj.send(null);  
-}
 
-var obj = [];
-function load() {
-    loadJSON("js/jsonresponse.json", function(response) {
-        var actual_JSON = JSON.parse(response);
-        obj = actual_JSON;
-    });  
-}
-
-load();
+//function loadJSON(file, callback) {   
+//
+//    var xobj = new XMLHttpRequest();
+//    xobj.overrideMimeType("application/json");
+//    xobj.open('GET', file, true); // Replace 'my_data' with the path to your file
+//    xobj.onreadystatechange = function () {
+//          if (xobj.readyState == 4 && xobj.status == "200") {
+//            // Required use of an anonymous callback as .open will NOT return a value but simply returns undefined in asynchronous mode
+//            callback(xobj.responseText);
+//          }
+//    };
+//    xobj.send(null);  
+//}
+//
+//var obj = [];
+//function load() {
+//    loadJSON("js/jsonresponse.json", function(response) {
+//        var actual_JSON = JSON.parse(response);
+//        obj = actual_JSON;
+//    });  
+//}
+//
+//load();
 
 
 
