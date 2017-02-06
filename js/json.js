@@ -1,3 +1,31 @@
+function loadJSON(file, callback) {   
+
+    var xobj = new XMLHttpRequest();
+    xobj.overrideMimeType("application/json");
+    xobj.open('GET', file, true); // Replace 'my_data' with the path to your file
+    xobj.onreadystatechange = function () {
+          if (xobj.readyState == 4 && xobj.status == "200") {
+            // Required use of an anonymous callback as .open will NOT return a value but simply returns undefined in asynchronous mode
+            callback(xobj.responseText);
+          }
+    };
+    xobj.send(null);  
+}
+
+var obj = [];
+function load() {
+    loadJSON("js/jsonresponse.json", function(response) {
+        var actual_JSON = JSON.parse(response);
+        obj = actual_JSON;
+    });  
+}
+
+load();
+
+
+
+
+
 arrayOfObjects = [{
   "SectionId": "CurrentPayCycle",
   "TopSalesReps": [{
@@ -459,26 +487,11 @@ arrayOfObjects = [{
   }]
 }]
 
-
-
 myJSON = JSON.stringify(arrayOfObjects);
 
 localStorage.setItem("testJSON", myJSON);
 text = localStorage.getItem("testJSON");
 
 obj = JSON.parse(text);
-
-/* Displaying JSON data for testing */
-//for (var j = 0; j < obj.length; j++) {
-//  
-//  document.getElementById("demo").innerHTML += "<strong>" + obj[j].SectionId + "</strong><br>";
-//  
-//  for (var i = 0; i < obj[0].Office.length; i++) {
-//
-//    document.getElementById("demo").innerHTML += "Location: " + obj[j].Office[i].Name + "<br>Total Sales: $" + parseFloat(obj[j].Office[i].TotalSales).toFixed(2) + "<br><br>";
-//    
-//  }
-//  
-//}
 
 

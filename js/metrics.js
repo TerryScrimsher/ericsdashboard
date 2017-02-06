@@ -1,15 +1,21 @@
 // Load Charts and the corechart package.
       google.charts.load('current', {'packages':['corechart']});
 
-      // Draw the pie chart for Sarah's pizza when Charts is loaded.
+      // Draw the pie charts when Charts is loaded.
+      currentCycleTopReps();
       google.charts.setOnLoadCallback(currentCyclePieChart);
-      google.charts.setOnLoadCallback(currentMonthPieChart);
-      
       google.charts.setOnLoadCallback(currentCycleBarChart);
+
+      google.charts.setOnLoadCallback(currentMonthPieChart);
       google.charts.setOnLoadCallback(currentMonthBarChart);
+
       google.charts.setOnLoadCallback(currentYearBarChart);
 
-      // Callback that draws the pie chart for Sarah's pizza.
+      
+
+
+
+      // Callback that draws the pie chart.
       function currentCyclePieChart() {
 
         var test = [
@@ -23,7 +29,7 @@
         // Create the data table for Sarah's pizza.
         var data = new google.visualization.arrayToDataTable(test);
 
-        // Set options for Sarah's pie chart.
+        // Set options for the pie chart.
         var options = {
 //                       title: 'My Daily Activities',
                        height:250,
@@ -36,7 +42,7 @@
                        pieSliceBorderColor : "transparent" 
                       };
 
-        // Instantiate and draw the chart for Sarah's pizza.
+        // Instantiate and draw the chart.
         var chart = new google.visualization.PieChart(document.getElementById('Sarah_chart_div'));
         chart.draw(data, options);
       }
@@ -51,11 +57,11 @@
           test.push([obj[1].Office[i].Name, {v: obj[1].Office[i].TotalSales, f: '$' + parseFloat(obj[1].Office[i].TotalSales).toFixed(2)}]);
         }
         
-        // Create the data table for Sarah's pizza.
+        // Create the data table.
         var data = new google.visualization.arrayToDataTable(test);
 
 
-        // Set options for Anthony's pie chart.
+        // Set options for the pie chart.
         var options = {
                        height:250,
                        backgroundColor: { fill:'transparent', strokeWidth: 0 },
@@ -67,7 +73,7 @@
                        pieSliceBorderColor : "transparent" 
                       };
 
-        // Instantiate and draw the chart for Anthony's pizza.
+        // Instantiate and draw the chart.
         var chart = new google.visualization.PieChart(document.getElementById('Beth_chart_div'));
         chart.draw(data, options);
         
@@ -99,7 +105,7 @@
                        pieSliceBorderColor : "transparent" 
                       };
 
-        // Instantiate and draw the chart for Anthony's pizza.
+        // Instantiate and draw the chart.
         var chart = new google.visualization.PieChart(document.getElementById('Beth_chart_div'));
         chart.draw(data, options);
       }
@@ -140,7 +146,7 @@
           },
         };
         
-        // Instantiate and draw the chart for Sarah's pizza.
+        // Instantiate and draw the chart.
         var chart = new google.visualization.BarChart(document.getElementById('currentCycleBarChart'));
         chart.draw(data, options);
       }
@@ -228,21 +234,22 @@
       }
 
         
-      
-      for (var i = 0; i < obj[0].TopSalesReps.length; i++) {
-        
-        var table = document.getElementById("currentManagersTable");
-        var row = table.insertRow(-1);
-        var cell1 = row.insertCell(0);
-        var cell2 = row.insertCell(1);
-        var cell3 = row.insertCell(2);
-        cell1.innerHTML = i + 1;
-        cell2.innerHTML = obj[0].TopSalesReps[i].Name;
-        cell3.innerHTML = parseFloat(obj[0].TopSalesReps[i].TotalSales).toFixed(2);
-        
+      function currentCycleTopReps () {
+        for (var i = 0; i < obj[0].TopSalesReps.length; i++) {
+
+          var table = document.getElementById("currentManagersTable");
+          var row = table.insertRow(-1);
+          var cell1 = row.insertCell(0);
+          var cell2 = row.insertCell(1);
+          var cell3 = row.insertCell(2);
+          cell1.innerHTML = i + 1;
+          cell2.innerHTML = obj[0].TopSalesReps[i].Name;
+          cell3.innerHTML = parseFloat(obj[0].TopSalesReps[i].TotalSales).toFixed(2);
+
+        }
       }
 
-      for (var i = 0; i < obj[0].TopSalesReps.length; i++) {
+      for (var i = 0; i < obj[1].TopSalesReps.length; i++) {
         
         var table = document.getElementById("currentManagersTable2");
         var row = table.insertRow(-1);
@@ -255,7 +262,7 @@
         
       }
 
-      for (var i = 0; i < obj[0].TopSalesReps.length; i++) {
+      for (var i = 0; i < obj[2].TopSalesReps.length; i++) {
         
         var table = document.getElementById("currentManagersTable3");
         var row = table.insertRow(-1);
