@@ -9,13 +9,13 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>3 Col Portfolio - Start Bootstrap Template</title>
+    <title>Logical Position Sales Dashboard</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom CSS -->
-    <link href="css/3-col-portfolio.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
   
     <!-- Javascript -->
     <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.14/angular.min.js"></script>
@@ -36,32 +36,9 @@
     <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
         <div class="container">
             <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="#">Logical Position</a>
-            </div>
-            <!-- Collect the nav links, forms, and other content for toggling -->
-<!--
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav">
-                    <li>
-                        <a href="#">About</a>
-                    </li>
-                    <li>
-                        <a href="#">Services</a>
-                    </li>
-                    <li>
-                        <a href="#">Contact</a>
-                    </li>
-                </ul>
-            </div>
--->
-            <!-- /.navbar-collapse -->
+
+                <div style="padding-top: 7px; width: 156px"><img src="img/logo-white.png"></div>
+
         </div>
         <!-- /.container -->
     </nav>
@@ -72,24 +49,10 @@
         <!-- Projects Row -->
         <div class="row">
             <div class="col-md-4 portfolio-item" style="margin-bottom: 0px;">
-              <h1>Current Sales Cycle</h1>
-            </div>
           
-            <div class="col-md-4 portfolio-item" style="margin-bottom: 0px;">
-              <h1><span id="currentMonth"></span></h1>
-            </div>
-          
-            <div class="col-md-4 portfolio-item" style="margin-bottom: 0px;">
-              <h1><span id="currentYear"></span> Totals</h1>
-            </div>
-          
-        </div>
-        <!-- /.row -->
-      
-        <!-- Projects Row -->
-        <div class="row">
-            <div class="col-md-4 portfolio-item" >
               <div class="graybox">
+                <div style="width: 100%; height: 22px;"><h2>Top Sales Rep Rankings</h2></div>
+                <div style="background-color: #282828; width: 100%; height: 22px;"><h3>Current Sales Cycle: (XX/XX/20XX)</h3></div>
                 <div style="color: #ffffff; font-size: 16px; padding: 20px">
                   <table id="currentManagersTable">
                     <thead>
@@ -104,44 +67,32 @@
                   </table>
                 </div>
               </div>  
-            </div>
-            <div class="col-md-4 portfolio-item">
-              <div class="graybox">
-                <div id="Beth_chart_div"></div>
-              </div> 
-            </div>
-          
-            <div class="col-md-4 portfolio-item">
-              <div class="graybox">
-                <div style="color: #ffffff; font-size: 16px; padding: 20px">
-                  <table id="currentManagersTable3">
-                    <thead>
-                      <tr>
-                        <th style="min-width: 100px;">Rank</th>
-                        <th style="min-width: 160px;">Name</th>
-                        <th style="min-width: 100px;">Sales</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                    </tbody>
-                  </table>
-                </div>
-              </div> 
-            </div>
-          
-        </div>
-        <!-- /.row -->
 
-        <!-- Projects Row -->
-        <div class="row">
-            <div class="col-md-4 portfolio-item" >
               <div class="graybox">
+                 <div style="width: 100%; height: 22px;"><h2>Managers Total Sales</h2></div>
+                 <div style="background-color: #282828; width: 100%; height: 22px;"><h3>Current Sales Cycle: (XX/XX/20XX)</h3></div>  
                  <div id="currentCycleBarChart"></div> 
               </div>  
+
+              <div class="graybox">
+                <div style="width: 100%; height: 22px;"><h2>Total Sales by Office</h2></div>
+                <div style="background-color: #282828; width: 100%; height: 22px;"><h3>Current Sales Cycle: (XX/XX/20XX)</h3></div>
+                <div id="Sarah_chart_div"></div>
+              </div>  
+              
             </div>
           
-            <div class="col-md-4 portfolio-item">
+            <div class="col-md-4 portfolio-item" style="margin-bottom: 0px;">
+
               <div class="graybox">
+                <div style="width: 100%; height: 22px;"><h2><span id="currentMonth"></span></h2></div>
+                <div style="background-color: #282828; width: 100%; height: 22px;"><h3>Lorem Ipsum</h3></div>
+                <div id="Beth_chart_div"></div>
+              </div> 
+
+              <div class="graybox">
+                <div style="width: 100%; height: 22px;"><h2>Lorem Ipsum</h2></div>
+                <div style="background-color: #282828; width: 100%; height: 22px;"><h3>Lorem Ipsum</h3></div>
                 <div style="color: #ffffff; font-size: 16px; padding: 20px">
                   <table id="currentManagersTable2">
                     <thead>
@@ -156,38 +107,50 @@
                   </table>
                 </div>
               </div> 
+
+              <div class="graybox">
+                <div style="width: 100%; height: 22px;"><h2>Lorem Ipsum</h2></div>
+                <div style="background-color: #282828; width: 100%; height: 22px;"><h3>Lorem Ipsum</h3></div>
+                <div id="currentMonthBarChart"></div>
+              </div> 
+      
             </div>
           
-            <div class="col-md-4 portfolio-item">
+            <div class="col-md-4 portfolio-item" style="margin-bottom: 0px;">
+        
               <div class="graybox">
+                <div style="width: 100%; height: 22px;"><h2><span id="currentYear"></span> Totals</h2></div>
+                <div style="background-color: #282828; width: 100%; height: 22px;"><h3>Lorem Ipsum</h3></div>
+                <div style="color: #ffffff; font-size: 16px; padding: 20px">
+                  <table id="currentManagersTable3">
+                    <thead>
+                      <tr>
+                        <th style="min-width: 100px;">Rank</th>
+                        <th style="min-width: 160px;">Name</th>
+                        <th style="min-width: 100px;">Sales</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                  </table>
+                </div>
+              </div> 
+
+              <div class="graybox">
+                <div style="width: 100%; height: 22px;"><h2>Lorem Ipsum</h2></div>
+                <div style="background-color: #282828; width: 100%; height: 22px;"><h3>Lorem Ipsum</h3></div>
                 <div id="currentYearBarChart"></div>
               </div> 
+              
+              <div class="graybox">
+                <div style="width: 100%; height: 22px;"><h2>Lorem Ipsum</h2></div>
+                <div style="background-color: #282828; width: 100%; height: 22px;"><h3>Lorem Ipsum</h3></div>
+              </div> 
+              
             </div>
           
         </div>
         <!-- /.row -->
-
-        <!-- Projects Row -->
-        <div class="row">
-            <div class="col-md-4 portfolio-item" >
-              <div class="graybox">
-                <div id="Sarah_chart_div"></div>
-              </div>  
-            </div>
-          
-            <div class="col-md-4 portfolio-item">
-              <div class="graybox">
-                <div id="currentMonthBarChart"></div>
-              </div> 
-            </div>
-          
-            <div class="col-md-4 portfolio-item">
-              <div class="graybox">
-                
-              </div> 
-            </div>
-          
-        </div>
       
         <div ng-app="myApp" ng-controller="customersCtrl"> 
         <h1>#0</h1>

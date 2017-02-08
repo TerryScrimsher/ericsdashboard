@@ -5,11 +5,13 @@
  */
 
 body {
-    padding-top: 74px; /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
+    padding-top: 58px; /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
     background-color : #000000;
 }
 
 h1 {color: #dedede;}
+h2 {font-size: 32px; padding: 4px 4px 4px 14px; color: #ffffff;}
+h3 { font-size: 16px; padding: 2px 8px 2px 4px; text-align: right; color: #ffffff;}
 
 .portfolio-item {
     margin-bottom: 25px;
@@ -22,6 +24,7 @@ footer {
 .graybox {
     background-color: #212121; 
     min-height: 250px;
+    margin-bottom: 30px;
 }
 
 @media (min-width: 1200px) {

@@ -11,8 +11,6 @@
 
       google.charts.setOnLoadCallback(currentYearBarChart);
 
-      
-
 
 
       // Callback that draws the pie chart.
@@ -244,7 +242,7 @@
           var cell3 = row.insertCell(2);
           cell1.innerHTML = i + 1;
           cell2.innerHTML = obj[0].TopSalesReps[i].Name;
-          cell3.innerHTML = parseFloat(obj[0].TopSalesReps[i].TotalSales).toFixed(2);
+          cell3.innerHTML = "$" + parseFloat(obj[0].TopSalesReps[i].TotalSales).toFixed(2);
 
         }
       }
@@ -258,7 +256,7 @@
         var cell3 = row.insertCell(2);
         cell1.innerHTML = i + 1;
         cell2.innerHTML = obj[1].TopSalesReps[i].Name;
-        cell3.innerHTML = parseFloat(obj[1].TopSalesReps[i].TotalSales).toFixed(2);
+        cell3.innerHTML = "$" + parseFloat(obj[1].TopSalesReps[i].TotalSales).toFixed(2);
         
       }
 
@@ -271,7 +269,7 @@
         var cell3 = row.insertCell(2);
         cell1.innerHTML = i + 1;
         cell2.innerHTML = obj[2].TopSalesReps[i].Name;
-        cell3.innerHTML = parseFloat(obj[2].TopSalesReps[i].TotalSales).toFixed(2);
+        cell3.innerHTML = "$" + parseFloat(obj[2].TopSalesReps[i].TotalSales).toFixed(2);
         
       }
       
@@ -312,32 +310,4 @@
 
       var autoUpdate = setInterval(function(){
         redrawChart2();
-      }, 3000);
-
-
-      /* Sorting */
-//      var currentSalesCycle = [];
-//      for (var i = 0; i < obj[0].TopSalesReps.length; i++) {
-//        var valueToPush = new Array();
-//        valueToPush = [{name: obj[0].TopSalesReps[i].Name}, {value: parseFloat(obj[0].TopSalesReps[i].TotalSales).toFixed(2)}];
-//                                                             
-//        currentSalesCycle.push(valueToPush);
-//      }
-//
-//      currentSalesCycle.sort(function (a,b) {
-//          if (a[0] < b[0]) return  1;
-//          if (a[0] > b[0]) return -1;
-//          if (a[2] > b[2]) return  1;
-//          if (a[2] < b[2]) return -1;
-//          return 0;
-//      });
-//      
-//      for (var i = 0, len = currentSalesCycle.length; i < len; i++) {
-//        console.log(currentSalesCycle[i][0]);
-//        console.log(currentSalesCycle[i][1]);
-//      }
-      
-
-
-
-     
+      }, 3000);     
