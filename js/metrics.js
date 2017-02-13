@@ -2,14 +2,13 @@
       google.charts.load('current', {'packages':['corechart']});
 
       // Draw the pie charts when Charts is loaded.
-      currentCycleTopReps();
-      google.charts.setOnLoadCallback(currentCyclePieChart);
-      google.charts.setOnLoadCallback(currentCycleBarChart);
-
-      google.charts.setOnLoadCallback(currentMonthPieChart);
-      google.charts.setOnLoadCallback(currentMonthBarChart);
-
-      google.charts.setOnLoadCallback(currentYearBarChart);
+//      google.charts.setOnLoadCallback(currentCyclePieChart);
+//      google.charts.setOnLoadCallback(currentCycleBarChart);
+//
+//      google.charts.setOnLoadCallback(currentMonthPieChart);
+//      google.charts.setOnLoadCallback(currentMonthBarChart);
+//
+//      google.charts.setOnLoadCallback(currentYearBarChart);
 
 
 
@@ -108,46 +107,46 @@
         chart.draw(data, options);
       }
 
-      function currentCycleBarChart() {
-
-        var test = [
-          ['Location', 'Revenue', { role: 'style' }]
-        ];
-          
-        for (i = 0; i < 5; i++) {
-          test.push([obj[0].Managers[i].Name, {v: obj[0].Managers[i].TotalSales, f: '$' + parseFloat(obj[0].Managers[i].TotalSales).toFixed(2)}, '#1dbfe3']);
-        }
-        
-        //Create the data table
-        var data = new google.visualization.arrayToDataTable(test);
-        
-        var options = {
-          title: 'Management Total Sales',
-          titleTextStyle: { color: '#FFF'},
-          backgroundColor: { fill:'transparent', strokeWidth: 0 },
-          height:250,
-          chartArea: {'width': '60%'},
-          legendTextStyle: { color: '#FFF' },
-          'legend':'none',
-          hAxis: {
-            title: 'Total Sales',
-            minValue: 0,
-            textStyle: {
-              color: '#FFF'
-            }
-          },
-          vAxis: {
-            title: 'Manager',
-            textStyle: {
-              color: '#FFF'
-            }
-          },
-        };
-        
-        // Instantiate and draw the chart.
-        var chart = new google.visualization.BarChart(document.getElementById('currentCycleBarChart'));
-        chart.draw(data, options);
-      }
+//      function currentCycleBarChart() {
+//
+//        var test = [
+//          ['Location', 'Revenue', { role: 'style' }]
+//        ];
+//          
+//        for (i = 0; i < 5; i++) {
+//          test.push([obj[0].Managers[i].Name, {v: obj[0].Managers[i].TotalSales, f: '$' + parseFloat(obj[0].Managers[i].TotalSales).toFixed(2)}, '#1dbfe3']);
+//        }
+//        
+//        //Create the data table
+//        var data = new google.visualization.arrayToDataTable(test);
+//        
+//        var options = {
+//          title: 'Management Total Sales',
+//          titleTextStyle: { color: '#FFF'},
+//          backgroundColor: { fill:'transparent', strokeWidth: 0 },
+//          height:250,
+//          chartArea: {'width': '60%'},
+//          legendTextStyle: { color: '#FFF' },
+//          'legend':'none',
+//          hAxis: {
+//            title: 'Total Sales',
+//            minValue: 0,
+//            textStyle: {
+//              color: '#FFF'
+//            }
+//          },
+//          vAxis: {
+//            title: 'Manager',
+//            textStyle: {
+//              color: '#FFF'
+//            }
+//          },
+//        };
+//        
+//        // Instantiate and draw the chart.
+//        var chart = new google.visualization.BarChart(document.getElementById('currentCycleBarChart'));
+//        chart.draw(data, options);
+//      }
       
       function currentMonthBarChart() {
 
@@ -230,48 +229,6 @@
         var chart = new google.visualization.BarChart(document.getElementById('currentYearBarChart'));
         chart.draw(data, options);
       }
-
-        
-      function currentCycleTopReps () {
-        for (var i = 0; i < obj[0].TopSalesReps.length; i++) {
-
-          var table = document.getElementById("currentManagersTable");
-          var row = table.insertRow(-1);
-          var cell1 = row.insertCell(0);
-          var cell2 = row.insertCell(1);
-          var cell3 = row.insertCell(2);
-          cell1.innerHTML = i + 1;
-          cell2.innerHTML = obj[0].TopSalesReps[i].Name;
-          cell3.innerHTML = "$" + parseFloat(obj[0].TopSalesReps[i].TotalSales).toFixed(2);
-
-        }
-      }
-
-      for (var i = 0; i < obj[1].TopSalesReps.length; i++) {
-        
-        var table = document.getElementById("currentManagersTable2");
-        var row = table.insertRow(-1);
-        var cell1 = row.insertCell(0);
-        var cell2 = row.insertCell(1);
-        var cell3 = row.insertCell(2);
-        cell1.innerHTML = i + 1;
-        cell2.innerHTML = obj[1].TopSalesReps[i].Name;
-        cell3.innerHTML = "$" + parseFloat(obj[1].TopSalesReps[i].TotalSales).toFixed(2);
-        
-      }
-
-      for (var i = 0; i < obj[2].TopSalesReps.length; i++) {
-        
-        var table = document.getElementById("currentManagersTable3");
-        var row = table.insertRow(-1);
-        var cell1 = row.insertCell(0);
-        var cell2 = row.insertCell(1);
-        var cell3 = row.insertCell(2);
-        cell1.innerHTML = i + 1;
-        cell2.innerHTML = obj[2].TopSalesReps[i].Name;
-        cell3.innerHTML = "$" + parseFloat(obj[2].TopSalesReps[i].TotalSales).toFixed(2);
-        
-      }
       
       //Random Number Function
       function getRandomInt(min, max) {
@@ -296,18 +253,18 @@
 
         var d = new Date();
         var n = month[d.getMonth()];
-        document.getElementById("currentMonth").innerHTML = n;
+        $( ".currentMonth" ).text( n );
       }
 
       function getCurrentYear() {
         var d = new Date();
         var n = d.getFullYear();
-        document.getElementById("currentYear").innerHTML = n;
+        $( ".currentYear" ).text( n );
       }
 
       getCurrentMonth();
       getCurrentYear();
 
-      var autoUpdate = setInterval(function(){
-        redrawChart2();
-      }, 3000);     
+//      var autoUpdate = setInterval(function(){
+//        redrawChart2();
+//      }, 3000);     
