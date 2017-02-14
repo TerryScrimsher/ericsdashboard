@@ -48,6 +48,9 @@
       
         <!-- Projects Row -->
         <div class="row">
+          
+            <!--CURRENT CYCLE-->
+          
             <div class="col-md-4 portfolio-item" style="margin-bottom: 0px;">
           
               <div class="graybox">
@@ -56,7 +59,7 @@
                 <div style="color: #ffffff; font-size: 16px; padding: 20px">
                   <table>
                     <tbody>
-                      <tr ng-repeat="x in names1 | orderBy:-'TotalSales' | limitTo:10">
+                      <tr ng-repeat="x in currentTopPro | orderBy:-'TotalSales' | limitTo:10">
                         <td>{{ x.Name }}</td>
                         <td>{{ "$"+x.TotalSales }}</td>
                       </tr>
@@ -68,9 +71,9 @@
               <div class="graybox">
                  <div style="width: 100%; height: 12px;"><h2>Current cycle top managers</h2></div>
                  <div style="background-color: #282828; width: 100%; height: 22px;"><h3>Current Sales Cycle: (XX/XX/20XX)</h3></div>  
-                 <div id="currentCycleBarChart2"></div> 
+                 <div style="height:100%; width: 100%;" id="currentTopMgrBarChart"></div> 
               </div>  
-
+              
               <div class="graybox">
                 <div style="width: 100%; height: 12px;"><h2>Current cycle office breakdown</h2></div>
                 <div style="background-color: #282828; width: 100%; height: 22px;"><h3>Current Sales Cycle: (XX/XX/20XX)</h3></div>
@@ -79,35 +82,29 @@
               
             </div>
           
+            <!--CURRENT MONTH-->
+          
             <div class="col-md-4 portfolio-item" style="margin-bottom: 0px;">
 
               <div class="graybox">
                 <div style="width: 100%; height: 12px;"><h2><span class="currentMonth"></span> top producers</h2></div>
                 <div style="background-color: #282828; width: 100%; height: 22px;"><h3>Lorem Ipsum</h3></div>
-                <div id="Beth_chart_div"></div>
-              </div> 
-
-              <div class="graybox">
-                <div style="width: 100%; height: 12px;"><h2><span class="currentMonth"></span> top managers</h2></div>
-                <div style="background-color: #282828; width: 100%; height: 22px;"><h3>Lorem Ipsum</h3></div>
                 <div style="color: #ffffff; font-size: 16px; padding: 20px">
                   <table>
-                    <thead>
-                      <tr>
-                        <th>#</th>
-                        <th>Name</th> 
-                        <th>Sales</th>
-                      </tr>
-                    </thead>
                     <tbody>
-                      <tr ng-repeat="x in names2 | orderBy:-'TotalSales'">
-                        <td>{{ $index+1 }}</td>
+                      <tr ng-repeat="x in monthTopPro | orderBy:-'TotalSales' | limitTo:5">
                         <td>{{ x.Name }}</td>
                         <td>{{ "$"+x.TotalSales }}</td>
                       </tr>
                     </tbody>
                   </table>  
                 </div>
+              </div> 
+
+              <div class="graybox">
+                <div style="width: 100%; height: 12px;"><h2><span class="currentMonth"></span> top managers</h2></div>
+                <div style="background-color: #282828; width: 100%; height: 22px;"><h3>Lorem Ipsum</h3></div>
+                <div style="height:100%; width: 100%;" id="monthTopMgrBarChart"></div> 
               </div> 
 
               <div class="graybox">
@@ -118,6 +115,8 @@
       
             </div>
           
+            <!--CURRENT YEAR-->
+          
             <div class="col-md-4 portfolio-item" style="margin-bottom: 0px;">
         
               <div class="graybox">
@@ -127,16 +126,18 @@
                   <table>
                     <thead>
                       <tr>
-                        <th>#</th>
-                        <th>Name</th> 
-                        <th>Sales</th>
+                        <td style="font-size:12px; font-weight: 700;">Name</td>
+                        <td style="font-size:12px; font-weight: 700;">Sales</td>
+                        <td style="font-size:12px; font-weight: 700;">Call:Link Ratio</td>
+                        <td style="font-size:12px; font-weight: 700;">Close %</td>
                       </tr>
                     </thead>
                     <tbody>
-                      <tr ng-repeat="x in names3 | orderBy:-'TotalSales'">
-                        <td>{{ $index+1 }}</td>
+                      <tr ng-repeat="x in yearTopPro | orderBy:-'TotalSales' | limitTo:10">
                         <td>{{ x.Name }}</td>
-                        <td>{{ "$"+x.TotalSales }}</td>
+                        <td>${{ x.TotalSales }}</td>
+                        <td>{{ x.CallsToLinks | number:1 }}</td>
+                        <td>{{ x.CloseRate*100 | number:0 }}%</td>
                       </tr>
                     </tbody>
                   </table>  
@@ -146,7 +147,28 @@
               <div class="graybox">
                 <div style="width: 100%; height: 12px;"><h2><span class="currentYear"></span> top managers</h2></div>
                 <div style="background-color: #282828; width: 100%; height: 22px;"><h3>Lorem Ipsum</h3></div>
-                <div id="currentYearBarChart"></div>
+                <div style="color: #ffffff; font-size: 16px; padding: 20px">
+                  <table>
+                    <thead>
+                      <tr>
+                        <td style="font-size:12px; font-weight: 700;">Name</td>
+                        <td style="font-size:12px; font-weight: 700;">Sales</td>
+                        <td style="font-size:12px; font-weight: 700;">Call:Link Ratio</td>
+                        <td style="font-size:12px; font-weight: 700;">Close %</td>
+                        <td style="font-size:12px; font-weight: 700;">Avg. Calls</td>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr ng-repeat="x in yearTopMgr | orderBy:-'TotalSales' | limitTo:8">
+                        <td>{{ x.Name }}</td>
+                        <td>${{ x.TotalSales }}</td>
+                        <td>{{ x.CallsToLinks | number:1 }}</td>
+                        <td>{{ x.CloseRate*100 | number:0 }}%</td>
+                        <td>{{ x.AvgRepSalesPerCycle | number:0 }}</td>
+                      </tr>
+                    </tbody>
+                  </table>  
+                </div>
               </div> 
               
               <div class="graybox">

@@ -1,15 +1,6 @@
 // Load Charts and the corechart package.
       google.charts.load('current', {'packages':['corechart']});
 
-      // Draw the pie charts when Charts is loaded.
-//      google.charts.setOnLoadCallback(currentCyclePieChart);
-//      google.charts.setOnLoadCallback(currentCycleBarChart);
-//
-//      google.charts.setOnLoadCallback(currentMonthPieChart);
-//      google.charts.setOnLoadCallback(currentMonthBarChart);
-//
-//      google.charts.setOnLoadCallback(currentYearBarChart);
-
 
 
       // Callback that draws the pie chart.
@@ -106,129 +97,7 @@
         var chart = new google.visualization.PieChart(document.getElementById('Beth_chart_div'));
         chart.draw(data, options);
       }
-
-//      function currentCycleBarChart() {
-//
-//        var test = [
-//          ['Location', 'Revenue', { role: 'style' }]
-//        ];
-//          
-//        for (i = 0; i < 5; i++) {
-//          test.push([obj[0].Managers[i].Name, {v: obj[0].Managers[i].TotalSales, f: '$' + parseFloat(obj[0].Managers[i].TotalSales).toFixed(2)}, '#1dbfe3']);
-//        }
-//        
-//        //Create the data table
-//        var data = new google.visualization.arrayToDataTable(test);
-//        
-//        var options = {
-//          title: 'Management Total Sales',
-//          titleTextStyle: { color: '#FFF'},
-//          backgroundColor: { fill:'transparent', strokeWidth: 0 },
-//          height:250,
-//          chartArea: {'width': '60%'},
-//          legendTextStyle: { color: '#FFF' },
-//          'legend':'none',
-//          hAxis: {
-//            title: 'Total Sales',
-//            minValue: 0,
-//            textStyle: {
-//              color: '#FFF'
-//            }
-//          },
-//          vAxis: {
-//            title: 'Manager',
-//            textStyle: {
-//              color: '#FFF'
-//            }
-//          },
-//        };
-//        
-//        // Instantiate and draw the chart.
-//        var chart = new google.visualization.BarChart(document.getElementById('currentCycleBarChart'));
-//        chart.draw(data, options);
-//      }
       
-      function currentMonthBarChart() {
-
-        var test = [
-          ['Location', 'Revenue', { role: 'style' }]
-        ];
-          
-        for (i = 0; i < 5; i++) {
-          test.push([obj[1].Managers[i].Name, {v: obj[1].Managers[i].TotalSales, f: '$' + parseFloat(obj[1].Managers[i].TotalSales).toFixed(2)}, '#1dbfe3']);
-        }
-        
-        //Create the data table
-        var data = new google.visualization.arrayToDataTable(test);
-        
-        var options = {
-          title: 'Management Total Sales',
-          titleTextStyle: { color: '#FFF'},
-          backgroundColor: { fill:'transparent', strokeWidth: 0 },
-          height:250,
-          chartArea: {'width': '60%'},
-          legendTextStyle: { color: '#FFF' },
-          'legend':'none',
-          hAxis: {
-            title: 'Total Sales',
-            minValue: 0,
-            textStyle: {
-              color: '#FFF'
-            }
-          },
-          vAxis: {
-            title: 'Manager',
-            textStyle: {
-              color: '#FFF'
-            }
-          },
-        };
-        
-        // Instantiate and draw the chart for Sarah's pizza.
-        var chart = new google.visualization.BarChart(document.getElementById('currentMonthBarChart'));
-        chart.draw(data, options);
-      }
-
-      function currentYearBarChart() {
-
-        var test = [
-          ['Location', 'Revenue', { role: 'style' }]
-        ];
-          
-        for (i = 0; i < 5; i++) {
-          test.push([obj[2].Managers[i].Name, {v: obj[2].Managers[i].TotalSales, f: '$' + parseFloat(obj[2].Managers[i].TotalSales).toFixed(2)}, '#1dbfe3']);
-        }
-        
-        //Create the data table
-        var data = new google.visualization.arrayToDataTable(test);
-        
-        var options = {
-          title: 'Management Total Sales',
-          titleTextStyle: { color: '#FFF'},
-          backgroundColor: { fill:'transparent', strokeWidth: 0 },
-          height:250,
-          chartArea: {'width': '50%'},
-          legendTextStyle: { color: '#FFF' },
-          'legend':'none',
-          hAxis: {
-            title: 'Total Sales',
-            minValue: 0,
-            textStyle: {
-              color: '#FFF'
-            }
-          },
-          vAxis: {
-            title: 'Manager',
-            textStyle: {
-              color: '#FFF'
-            }
-          },
-        };
-        
-        // Instantiate and draw the chart for Sarah's pizza.
-        var chart = new google.visualization.BarChart(document.getElementById('currentYearBarChart'));
-        chart.draw(data, options);
-      }
       
       //Random Number Function
       function getRandomInt(min, max) {

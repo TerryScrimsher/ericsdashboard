@@ -1,1 +1,406 @@
-[{"SectionId":"CurrentPayCycle","TopSalesReps":[{"Name":"John Morris","TotalSales":3458.00,"CallsToLinks":34,"CloseRate":2,"AvgRepSalesPerCycle":0},{"Name":"Jessica Heflin","TotalSales":2647.00,"CallsToLinks":36,"CloseRate":2,"AvgRepSalesPerCycle":0},{"Name":"Michael Wegener","TotalSales":1899.00,"CallsToLinks":63,"CloseRate":1,"AvgRepSalesPerCycle":0},{"Name":"Kurtis Ligocki","TotalSales":1699.00,"CallsToLinks":64,"CloseRate":1,"AvgRepSalesPerCycle":0},{"Name":"Nikita Sarychev","TotalSales":1699.00,"CallsToLinks":29,"CloseRate":1,"AvgRepSalesPerCycle":0}],"Managers":[{"Name":"Jason Davis","TotalSales":4723.00,"CallsToLinks":40.888888888888886,"CloseRate":0.33333333333333331,"AvgRepSalesPerCycle":6747.1428571428522291770186335},{"Name":"Kevin Brunner","TotalSales":4246.00,"CallsToLinks":70.666666666666671,"CloseRate":0.5,"AvgRepSalesPerCycle":5307.4999999999974964622641508},{"Name":"Kyle Benson","TotalSales":3458.00,"CallsToLinks":47.571428571428569,"CloseRate":0.2857142857142857,"AvgRepSalesPerCycle":6916.0000000000027622462462464},{"Name":"Conner Henry","TotalSales":2196.00,"CallsToLinks":46.875,"CloseRate":0.25,"AvgRepSalesPerCycle":3659.9999999999999999999999999},{"Name":"Terrance Nichols","TotalSales":1599.00,"CallsToLinks":58.5,"CloseRate":0.125,"AvgRepSalesPerCycle":2284.2857142857157500000000000},{"Name":"Tyler Mooney","TotalSales":1448.00,"CallsToLinks":135.25,"CloseRate":0.25,"AvgRepSalesPerCycle":1448.0000},{"Name":"Tyler Schmatz","TotalSales":1344.00,"CallsToLinks":65.428571428571431,"CloseRate":0.2857142857142857,"AvgRepSalesPerCycle":1680.0000000000024136244541485},{"Name":"Kathryn Hayworth","TotalSales":1148.00,"CallsToLinks":48.375,"CloseRate":0.125,"AvgRepSalesPerCycle":1640.0000000000004237726098191},{"Name":"Chris Vale","TotalSales":1124.25,"CallsToLinks":0,"CloseRate":1,"AvgRepSalesPerCycle":0.00},{"Name":"Peter Spangle","TotalSales":848.00,"CallsToLinks":59.222222222222221,"CloseRate":0.11111111111111111,"AvgRepSalesPerCycle":847.9999999999994701988742964},{"Name":"Austin Trunnell","TotalSales":0,"CallsToLinks":0,"CloseRate":0,"AvgRepSalesPerCycle":0}],"Office":[{"Name":"Portland","TotalSales":23022.00,"CallsToLinks":0.018665158371040724,"CloseRate":0.54545454545454541,"AvgRepSalesPerCycle":1767262.4025974041145540584415},{"Name":"Chicago","TotalSales":8865.25,"CallsToLinks":0.015105740181268883,"CloseRate":0.46666666666666667,"AvgRepSalesPerCycle":841016.7166666672673928928571},{"Name":"Henderson","TotalSales":5057.00,"CallsToLinks":0.018726591760299626,"CloseRate":0.2,"AvgRepSalesPerCycle":449928.51428571476733333333334},{"Name":"Austin","TotalSales":1448.00,"CallsToLinks":0.0073937153419593345,"CloseRate":0.25,"AvgRepSalesPerCycle":195842.000000}]},{"SectionId":"CurrentMonth","TopSalesReps":[{"Name":"John Morris","TotalSales":3458.00,"CallsToLinks":34,"CloseRate":2,"AvgRepSalesPerCycle":0},{"Name":"Michael Wegener","TotalSales":1899.00,"CallsToLinks":63,"CloseRate":1,"AvgRepSalesPerCycle":0},{"Name":"Kurtis Ligocki","TotalSales":1699.00,"CallsToLinks":64,"CloseRate":1,"AvgRepSalesPerCycle":0},{"Name":"Nikita Sarychev","TotalSales":1699.00,"CallsToLinks":29,"CloseRate":1,"AvgRepSalesPerCycle":0},{"Name":"Joe Connors","TotalSales":1599.00,"CallsToLinks":16,"CloseRate":0.33333333333333331,"AvgRepSalesPerCycle":0}],"Managers":[{"Name":"Jason Davis","TotalSales":4723.00,"CallsToLinks":40.888888888888886,"CloseRate":0.33333333333333331,"AvgRepSalesPerCycle":6747.1428571428522291770186335},{"Name":"Kyle Benson","TotalSales":3458.00,"CallsToLinks":47.571428571428569,"CloseRate":0.2857142857142857,"AvgRepSalesPerCycle":6916.0000000000027622462462464},{"Name":"Conner Henry","TotalSales":2196.00,"CallsToLinks":46.875,"CloseRate":0.25,"AvgRepSalesPerCycle":3659.9999999999999999999999999},{"Name":"Kevin Brunner","TotalSales":1699.00,"CallsToLinks":70.666666666666671,"CloseRate":0.16666666666666666,"AvgRepSalesPerCycle":2123.7500000000032457311320755},{"Name":"Terrance Nichols","TotalSales":1599.00,"CallsToLinks":58.5,"CloseRate":0.125,"AvgRepSalesPerCycle":2284.2857142857157500000000000},{"Name":"Kathryn Hayworth","TotalSales":1148.00,"CallsToLinks":48.375,"CloseRate":0.125,"AvgRepSalesPerCycle":1640.0000000000004237726098191},{"Name":"Tyler Schmatz","TotalSales":846.00,"CallsToLinks":65.428571428571431,"CloseRate":0.14285714285714285,"AvgRepSalesPerCycle":1057.5000000000015192903930131},{"Name":"Tyler Mooney","TotalSales":0,"CallsToLinks":0,"CloseRate":0,"AvgRepSalesPerCycle":0},{"Name":"Peter Spangle","TotalSales":0,"CallsToLinks":0,"CloseRate":0,"AvgRepSalesPerCycle":0},{"Name":"Austin Trunnell","TotalSales":0,"CallsToLinks":0,"CloseRate":0,"AvgRepSalesPerCycle":0},{"Name":"Chris Vale","TotalSales":0,"CallsToLinks":0,"CloseRate":0,"AvgRepSalesPerCycle":0}],"Office":[{"Name":"Portland","TotalSales":16109.25,"CallsToLinks":0.018665158371040724,"CloseRate":0.33333333333333331,"AvgRepSalesPerCycle":1236611.5827922086477065990260},{"Name":"Henderson","TotalSales":5057.00,"CallsToLinks":0.018726591760299626,"CloseRate":0.2,"AvgRepSalesPerCycle":449928.51428571476733333333334},{"Name":"Chicago","TotalSales":2947.00,"CallsToLinks":0.013043478260869565,"CloseRate":0.33333333333333331,"AvgRepSalesPerCycle":437138.333333332896195000},{"Name":"Austin","TotalSales":0,"CallsToLinks":0,"CloseRate":0,"AvgRepSalesPerCycle":0.0}]},{"SectionId":"CurrentYear","TopSalesReps":[{"Name":"John Morris","TotalSales":3458.00,"CallsToLinks":34,"CloseRate":2,"AvgRepSalesPerCycle":0},{"Name":"Michael Wegener","TotalSales":1899.00,"CallsToLinks":63,"CloseRate":1,"AvgRepSalesPerCycle":0},{"Name":"Kurtis Ligocki","TotalSales":1699.00,"CallsToLinks":64,"CloseRate":1,"AvgRepSalesPerCycle":0},{"Name":"Nikita Sarychev","TotalSales":1699.00,"CallsToLinks":29,"CloseRate":1,"AvgRepSalesPerCycle":0},{"Name":"Joe Connors","TotalSales":1599.00,"CallsToLinks":16,"CloseRate":0.33333333333333331,"AvgRepSalesPerCycle":0},{"Name":"Jessica Heflin","TotalSales":1248.00,"CallsToLinks":36,"CloseRate":1,"AvgRepSalesPerCycle":0},{"Name":"Graham Saunders","TotalSales":1148.00,"CallsToLinks":28,"CloseRate":0.5,"AvgRepSalesPerCycle":0},{"Name":"Jacob Waterman","TotalSales":1148.00,"CallsToLinks":0,"CloseRate":0.5,"AvgRepSalesPerCycle":0},{"Name":"Aidee Solis","TotalSales":1125.00,"CallsToLinks":66,"CloseRate":1,"AvgRepSalesPerCycle":0},{"Name":"Kevin Marshall","TotalSales":1048.00,"CallsToLinks":22.666666666666668,"CloseRate":0.33333333333333331,"AvgRepSalesPerCycle":0}],"Managers":[{"Name":"Jason Davis","TotalSales":47339.85,"CallsToLinks":130.76,"CloseRate":0.44,"AvgRepSalesPerCycle":2752.3168604651154932548179871},{"Name":"Peter Spangle","TotalSales":46488.80,"CallsToLinks":123.91588785046729,"CloseRate":0.31775700934579437,"AvgRepSalesPerCycle":2132.5137614678925172023134751},{"Name":"Kevin Brunner","TotalSales":31978.50,"CallsToLinks":118.07692307692308,"CloseRate":0.23076923076923078,"AvgRepSalesPerCycle":1674.2670157068093885696318024},{"Name":"Kathryn Hayworth","TotalSales":29069.50,"CallsToLinks":138.02777777777777,"CloseRate":0.34722222222222221,"AvgRepSalesPerCycle":1740.6886227544858228159966643},{"Name":"Tyler Schmatz","TotalSales":24213.30,"CallsToLinks":104.77631578947369,"CloseRate":0.25,"AvgRepSalesPerCycle":1876.9999999999932585457742056},{"Name":"Conner Henry","TotalSales":24196.10,"CallsToLinks":125.0677966101695,"CloseRate":0.288135593220339,"AvgRepSalesPerCycle":2068.0427350427277935316635451},{"Name":"Terrance Nichols","TotalSales":23956.00,"CallsToLinks":115,"CloseRate":0.2073170731707317,"AvgRepSalesPerCycle":1663.6111111111131774715655084},{"Name":"Tyler Mooney","TotalSales":17791.50,"CallsToLinks":192.59701492537315,"CloseRate":0.208955223880597,"AvgRepSalesPerCycle":812.3972602739738793999676067},{"Name":"Kyle Benson","TotalSales":15361.25,"CallsToLinks":108.88541666666667,"CloseRate":0.14583333333333334,"AvgRepSalesPerCycle":1052.1404109588984233633337409},{"Name":"Austin Trunnell","TotalSales":14987.00,"CallsToLinks":224.03508771929825,"CloseRate":0.17543859649122806,"AvgRepSalesPerCycle":717.08133971291890691364704203},{"Name":"Chris Vale","TotalSales":0,"CallsToLinks":0,"CloseRate":0,"AvgRepSalesPerCycle":0}],"Office":[{"Name":"Portland","TotalSales":189419.24,"CallsToLinks":0.0079198021365047624,"CloseRate":0.46843853820598008,"AvgRepSalesPerCycle":1679782.0620462737518552999807},{"Name":"Chicago","TotalSales":89461.10,"CallsToLinks":0.00875990249847654,"CloseRate":0.28260869565217389,"AvgRepSalesPerCycle":660949.47684761608684298284275},{"Name":"Henderson","TotalSales":46008.25,"CallsToLinks":0.0090554404893791237,"CloseRate":0.19148936170212766,"AvgRepSalesPerCycle":469766.26145094642436874376148},{"Name":"Austin","TotalSales":32778.50,"CallsToLinks":0.0048297888914855492,"CloseRate":0.19354838709677419,"AvgRepSalesPerCycle":317271.70030009038881700937732}]}]
+[{
+  "SectionId": "CurrentPayCycle",
+  "TopSalesReps": [{
+    "Name": "John Morris",
+    "TotalSales": 3458.00,
+    "CallsToLinks": 34,
+    "CloseRate": 2,
+    "AvgRepSalesPerCycle": 0
+  }, {
+    "Name": "Jessica Heflin",
+    "TotalSales": 2647.00,
+    "CallsToLinks": 36,
+    "CloseRate": 2,
+    "AvgRepSalesPerCycle": 0
+  }, {
+    "Name": "Michael Wegener",
+    "TotalSales": 1899.00,
+    "CallsToLinks": 63,
+    "CloseRate": 1,
+    "AvgRepSalesPerCycle": 0
+  }, {
+    "Name": "Kurtis Ligocki",
+    "TotalSales": 1699.00,
+    "CallsToLinks": 64,
+    "CloseRate": 1,
+    "AvgRepSalesPerCycle": 0
+  }, {
+    "Name": "Nikita Sarychev",
+    "TotalSales": 1699.00,
+    "CallsToLinks": 29,
+    "CloseRate": 1,
+    "AvgRepSalesPerCycle": 0
+  }],
+  "Managers": [{
+    "Name": "Jason Davis",
+    "TotalSales": 4723.00,
+    "CallsToLinks": 40.888888888888886,
+    "CloseRate": 0.33333333333333331,
+    "AvgRepSalesPerCycle": 6747.1428571428522291770186335
+  }, {
+    "Name": "Kevin Brunner",
+    "TotalSales": 4246.00,
+    "CallsToLinks": 70.666666666666671,
+    "CloseRate": 0.5,
+    "AvgRepSalesPerCycle": 5307.4999999999974964622641508
+  }, {
+    "Name": "Kyle Benson",
+    "TotalSales": 3458.00,
+    "CallsToLinks": 47.571428571428569,
+    "CloseRate": 0.2857142857142857,
+    "AvgRepSalesPerCycle": 6916.0000000000027622462462464
+  }, {
+    "Name": "Conner Henry",
+    "TotalSales": 2196.00,
+    "CallsToLinks": 46.875,
+    "CloseRate": 0.25,
+    "AvgRepSalesPerCycle": 3659.9999999999999999999999999
+  }, {
+    "Name": "Terrance Nichols",
+    "TotalSales": 1599.00,
+    "CallsToLinks": 58.5,
+    "CloseRate": 0.125,
+    "AvgRepSalesPerCycle": 2284.2857142857157500000000000
+  }, {
+    "Name": "Tyler Mooney",
+    "TotalSales": 1448.00,
+    "CallsToLinks": 135.25,
+    "CloseRate": 0.25,
+    "AvgRepSalesPerCycle": 1448.0000
+  }, {
+    "Name": "Tyler Schmatz",
+    "TotalSales": 1344.00,
+    "CallsToLinks": 65.428571428571431,
+    "CloseRate": 0.2857142857142857,
+    "AvgRepSalesPerCycle": 1680.0000000000024136244541485
+  }, {
+    "Name": "Kathryn Hayworth",
+    "TotalSales": 1148.00,
+    "CallsToLinks": 48.375,
+    "CloseRate": 0.125,
+    "AvgRepSalesPerCycle": 1640.0000000000004237726098191
+  }, {
+    "Name": "Chris Vale",
+    "TotalSales": 1124.25,
+    "CallsToLinks": 0,
+    "CloseRate": 1,
+    "AvgRepSalesPerCycle": 0.00
+  }, {
+    "Name": "Peter Spangle",
+    "TotalSales": 848.00,
+    "CallsToLinks": 59.222222222222221,
+    "CloseRate": 0.11111111111111111,
+    "AvgRepSalesPerCycle": 847.9999999999994701988742964
+  }, {
+    "Name": "Austin Trunnell",
+    "TotalSales": 0,
+    "CallsToLinks": 0,
+    "CloseRate": 0,
+    "AvgRepSalesPerCycle": 0
+  }],
+  "Office": [{
+    "Name": "Portland",
+    "TotalSales": 23022.00,
+    "CallsToLinks": 0.018665158371040724,
+    "CloseRate": 0.54545454545454541,
+    "AvgRepSalesPerCycle": 1767262.4025974041145540584415
+  }, {
+    "Name": "Chicago",
+    "TotalSales": 8865.25,
+    "CallsToLinks": 0.015105740181268883,
+    "CloseRate": 0.46666666666666667,
+    "AvgRepSalesPerCycle": 841016.7166666672673928928571
+  }, {
+    "Name": "Henderson",
+    "TotalSales": 5057.00,
+    "CallsToLinks": 0.018726591760299626,
+    "CloseRate": 0.2,
+    "AvgRepSalesPerCycle": 449928.51428571476733333333334
+  }, {
+    "Name": "Austin",
+    "TotalSales": 1448.00,
+    "CallsToLinks": 0.0073937153419593345,
+    "CloseRate": 0.25,
+    "AvgRepSalesPerCycle": 195842.000000
+  }]
+}, {
+  "SectionId": "CurrentMonth",
+  "TopSalesReps": [{
+    "Name": "John Morris",
+    "TotalSales": 3458.00,
+    "CallsToLinks": 34,
+    "CloseRate": 2,
+    "AvgRepSalesPerCycle": 0
+  }, {
+    "Name": "Michael Wegener",
+    "TotalSales": 1899.00,
+    "CallsToLinks": 63,
+    "CloseRate": 1,
+    "AvgRepSalesPerCycle": 0
+  }, {
+    "Name": "Kurtis Ligocki",
+    "TotalSales": 1699.00,
+    "CallsToLinks": 64,
+    "CloseRate": 1,
+    "AvgRepSalesPerCycle": 0
+  }, {
+    "Name": "Nikita Sarychev",
+    "TotalSales": 1699.00,
+    "CallsToLinks": 29,
+    "CloseRate": 1,
+    "AvgRepSalesPerCycle": 0
+  }, {
+    "Name": "Joe Connors",
+    "TotalSales": 1599.00,
+    "CallsToLinks": 16,
+    "CloseRate": 0.33333333333333331,
+    "AvgRepSalesPerCycle": 0
+  }],
+  "Managers": [{
+    "Name": "Jason Davis",
+    "TotalSales": 4723.00,
+    "CallsToLinks": 40.888888888888886,
+    "CloseRate": 0.33333333333333331,
+    "AvgRepSalesPerCycle": 6747.1428571428522291770186335
+  }, {
+    "Name": "Kyle Benson",
+    "TotalSales": 3458.00,
+    "CallsToLinks": 47.571428571428569,
+    "CloseRate": 0.2857142857142857,
+    "AvgRepSalesPerCycle": 6916.0000000000027622462462464
+  }, {
+    "Name": "Conner Henry",
+    "TotalSales": 2196.00,
+    "CallsToLinks": 46.875,
+    "CloseRate": 0.25,
+    "AvgRepSalesPerCycle": 3659.9999999999999999999999999
+  }, {
+    "Name": "Kevin Brunner",
+    "TotalSales": 1699.00,
+    "CallsToLinks": 70.666666666666671,
+    "CloseRate": 0.16666666666666666,
+    "AvgRepSalesPerCycle": 2123.7500000000032457311320755
+  }, {
+    "Name": "Terrance Nichols",
+    "TotalSales": 1599.00,
+    "CallsToLinks": 58.5,
+    "CloseRate": 0.125,
+    "AvgRepSalesPerCycle": 2284.2857142857157500000000000
+  }, {
+    "Name": "Kathryn Hayworth",
+    "TotalSales": 1148.00,
+    "CallsToLinks": 48.375,
+    "CloseRate": 0.125,
+    "AvgRepSalesPerCycle": 1640.0000000000004237726098191
+  }, {
+    "Name": "Tyler Schmatz",
+    "TotalSales": 846.00,
+    "CallsToLinks": 65.428571428571431,
+    "CloseRate": 0.14285714285714285,
+    "AvgRepSalesPerCycle": 1057.5000000000015192903930131
+  }, {
+    "Name": "Tyler Mooney",
+    "TotalSales": 0,
+    "CallsToLinks": 0,
+    "CloseRate": 0,
+    "AvgRepSalesPerCycle": 0
+  }, {
+    "Name": "Peter Spangle",
+    "TotalSales": 0,
+    "CallsToLinks": 0,
+    "CloseRate": 0,
+    "AvgRepSalesPerCycle": 0
+  }, {
+    "Name": "Austin Trunnell",
+    "TotalSales": 0,
+    "CallsToLinks": 0,
+    "CloseRate": 0,
+    "AvgRepSalesPerCycle": 0
+  }, {
+    "Name": "Chris Vale",
+    "TotalSales": 0,
+    "CallsToLinks": 0,
+    "CloseRate": 0,
+    "AvgRepSalesPerCycle": 0
+  }],
+  "Office": [{
+    "Name": "Portland",
+    "TotalSales": 16109.25,
+    "CallsToLinks": 0.018665158371040724,
+    "CloseRate": 0.33333333333333331,
+    "AvgRepSalesPerCycle": 1236611.5827922086477065990260
+  }, {
+    "Name": "Henderson",
+    "TotalSales": 5057.00,
+    "CallsToLinks": 0.018726591760299626,
+    "CloseRate": 0.2,
+    "AvgRepSalesPerCycle": 449928.51428571476733333333334
+  }, {
+    "Name": "Chicago",
+    "TotalSales": 2947.00,
+    "CallsToLinks": 0.013043478260869565,
+    "CloseRate": 0.33333333333333331,
+    "AvgRepSalesPerCycle": 437138.333333332896195000
+  }, {
+    "Name": "Austin",
+    "TotalSales": 0,
+    "CallsToLinks": 0,
+    "CloseRate": 0,
+    "AvgRepSalesPerCycle": 0.0
+  }]
+}, {
+  "SectionId": "CurrentYear",
+  "TopSalesReps": [{
+    "Name": "John Morris",
+    "TotalSales": 3458.00,
+    "CallsToLinks": 34,
+    "CloseRate": 2,
+    "AvgRepSalesPerCycle": 0
+  }, {
+    "Name": "Michael Wegener",
+    "TotalSales": 1899.00,
+    "CallsToLinks": 63,
+    "CloseRate": 1,
+    "AvgRepSalesPerCycle": 0
+  }, {
+    "Name": "Kurtis Ligocki",
+    "TotalSales": 1699.00,
+    "CallsToLinks": 64,
+    "CloseRate": 1,
+    "AvgRepSalesPerCycle": 0
+  }, {
+    "Name": "Nikita Sarychev",
+    "TotalSales": 1699.00,
+    "CallsToLinks": 29,
+    "CloseRate": 1,
+    "AvgRepSalesPerCycle": 0
+  }, {
+    "Name": "Joe Connors",
+    "TotalSales": 1599.00,
+    "CallsToLinks": 16,
+    "CloseRate": 0.33333333333333331,
+    "AvgRepSalesPerCycle": 0
+  }, {
+    "Name": "Jessica Heflin",
+    "TotalSales": 1248.00,
+    "CallsToLinks": 36,
+    "CloseRate": 1,
+    "AvgRepSalesPerCycle": 0
+  }, {
+    "Name": "Graham Saunders",
+    "TotalSales": 1148.00,
+    "CallsToLinks": 28,
+    "CloseRate": 0.5,
+    "AvgRepSalesPerCycle": 0
+  }, {
+    "Name": "Jacob Waterman",
+    "TotalSales": 1148.00,
+    "CallsToLinks": 0,
+    "CloseRate": 0.5,
+    "AvgRepSalesPerCycle": 0
+  }, {
+    "Name": "Aidee Solis",
+    "TotalSales": 1125.00,
+    "CallsToLinks": 66,
+    "CloseRate": 1,
+    "AvgRepSalesPerCycle": 0
+  }, {
+    "Name": "Kevin Marshall",
+    "TotalSales": 1048.00,
+    "CallsToLinks": 22.666666666666668,
+    "CloseRate": 0.33333333333333331,
+    "AvgRepSalesPerCycle": 0
+  }],
+  "Managers": [{
+    "Name": "Jason Davis",
+    "TotalSales": 47339.85,
+    "CallsToLinks": 130.76,
+    "CloseRate": 0.44,
+    "AvgRepSalesPerCycle": 2752.3168604651154932548179871
+  }, {
+    "Name": "Peter Spangle",
+    "TotalSales": 46488.80,
+    "CallsToLinks": 123.91588785046729,
+    "CloseRate": 0.31775700934579437,
+    "AvgRepSalesPerCycle": 2132.5137614678925172023134751
+  }, {
+    "Name": "Kevin Brunner",
+    "TotalSales": 31978.50,
+    "CallsToLinks": 118.07692307692308,
+    "CloseRate": 0.23076923076923078,
+    "AvgRepSalesPerCycle": 1674.2670157068093885696318024
+  }, {
+    "Name": "Kathryn Hayworth",
+    "TotalSales": 29069.50,
+    "CallsToLinks": 138.02777777777777,
+    "CloseRate": 0.34722222222222221,
+    "AvgRepSalesPerCycle": 1740.6886227544858228159966643
+  }, {
+    "Name": "Tyler Schmatz",
+    "TotalSales": 24213.30,
+    "CallsToLinks": 104.77631578947369,
+    "CloseRate": 0.25,
+    "AvgRepSalesPerCycle": 1876.9999999999932585457742056
+  }, {
+    "Name": "Conner Henry",
+    "TotalSales": 24196.10,
+    "CallsToLinks": 125.0677966101695,
+    "CloseRate": 0.288135593220339,
+    "AvgRepSalesPerCycle": 2068.0427350427277935316635451
+  }, {
+    "Name": "Terrance Nichols",
+    "TotalSales": 23956.00,
+    "CallsToLinks": 115,
+    "CloseRate": 0.2073170731707317,
+    "AvgRepSalesPerCycle": 1663.6111111111131774715655084
+  }, {
+    "Name": "Tyler Mooney",
+    "TotalSales": 17791.50,
+    "CallsToLinks": 192.59701492537315,
+    "CloseRate": 0.208955223880597,
+    "AvgRepSalesPerCycle": 812.3972602739738793999676067
+  }, {
+    "Name": "Kyle Benson",
+    "TotalSales": 15361.25,
+    "CallsToLinks": 108.88541666666667,
+    "CloseRate": 0.14583333333333334,
+    "AvgRepSalesPerCycle": 1052.1404109588984233633337409
+  }, {
+    "Name": "Austin Trunnell",
+    "TotalSales": 14987.00,
+    "CallsToLinks": 224.03508771929825,
+    "CloseRate": 0.17543859649122806,
+    "AvgRepSalesPerCycle": 717.08133971291890691364704203
+  }, {
+    "Name": "Chris Vale",
+    "TotalSales": 0,
+    "CallsToLinks": 0,
+    "CloseRate": 0,
+    "AvgRepSalesPerCycle": 0
+  }],
+  "Office": [{
+    "Name": "Portland",
+    "TotalSales": 189419.24,
+    "CallsToLinks": 0.0079198021365047624,
+    "CloseRate": 0.46843853820598008,
+    "AvgRepSalesPerCycle": 1679782.0620462737518552999807
+  }, {
+    "Name": "Chicago",
+    "TotalSales": 89461.10,
+    "CallsToLinks": 0.00875990249847654,
+    "CloseRate": 0.28260869565217389,
+    "AvgRepSalesPerCycle": 660949.47684761608684298284275
+  }, {
+    "Name": "Henderson",
+    "TotalSales": 46008.25,
+    "CallsToLinks": 0.0090554404893791237,
+    "CloseRate": 0.19148936170212766,
+    "AvgRepSalesPerCycle": 469766.26145094642436874376148
+  }, {
+    "Name": "Austin",
+    "TotalSales": 32778.50,
+    "CallsToLinks": 0.0048297888914855492,
+    "CloseRate": 0.19354838709677419,
+    "AvgRepSalesPerCycle": 317271.70030009038881700937732
+  }]
+}]
