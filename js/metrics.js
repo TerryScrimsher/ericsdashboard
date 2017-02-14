@@ -98,41 +98,12 @@
         chart.draw(data, options);
       }
       
-      
       //Random Number Function
       function getRandomInt(min, max) {
           return Math.floor(Math.random() * (max - min + 1)) + min;
       } 
 
-      //Get Current Month
-      function getCurrentMonth() {
-        var month = new Array();
-        month[0] = "January";
-        month[1] = "February";
-        month[2] = "March";
-        month[3] = "April";
-        month[4] = "May";
-        month[5] = "June";
-        month[6] = "July";
-        month[7] = "August";
-        month[8] = "September";
-        month[9] = "October";
-        month[10] = "November";
-        month[11] = "December";
 
-        var d = new Date();
-        var n = month[d.getMonth()];
-        $( ".currentMonth" ).text( n );
-      }
-
-      function getCurrentYear() {
-        var d = new Date();
-        var n = d.getFullYear();
-        $( ".currentYear" ).text( n );
-      }
-
-      getCurrentMonth();
-      getCurrentYear();
 
 //      var autoUpdate = setInterval(function(){
 //        redrawChart2();

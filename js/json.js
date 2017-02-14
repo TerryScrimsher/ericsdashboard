@@ -1,16 +1,18 @@
 var app = angular.module('myApp', []);
-        app.controller('customersCtrl', function($scope, $http) {
+        app.controller('customersCtrl', function($scope, $http) {     
           $http.get("js/jsonresponse.json")
-          .success(function (response) {$scope.names = response, 
-                                        $scope.names1 = response[0].TopSalesReps, 
-                                        $scope.names2 = response[1].TopSalesReps, 
-                                        $scope.names3 = response[2].TopSalesReps,
-                                        $scope.currentTopPro = response[0].TopSalesReps,
+          .success(function (response) {$scope.currentTopPro = response[0].TopSalesReps,
                                         $scope.currentTopMgr = response[0].Managers,
+                                        $scope.currentStart = dateParse(response[0].StartDateFilter),
+                                        $scope.currentEnd = dateParse(response[0].EndDateFilter),
                                         $scope.monthTopPro = response[1].TopSalesReps,
                                         $scope.monthTopMgr = response[1].Managers,
+                                        $scope.monthStart = dateParse(response[1].StartDateFilter),
+                                        $scope.monthEnd = dateParse(response[1].EndDateFilter),
                                         $scope.yearTopPro = response[2].TopSalesReps,
-                                        $scope.yearTopMgr = response[2].Managers
+                                        $scope.yearTopMgr = response[2].Managers,
+                                        $scope.yearStart = dateParse(response[2].StartDateFilter),
+                                        $scope.yearEnd = dateParse(response[2].EndDateFilter)
                                        });   
           
       $(window).resize(function(){location.reload();});
@@ -99,6 +101,60 @@ var app = angular.module('myApp', []);
         chart.draw(data, options);
       }
           
+      //Get Current Month
+      function getCurrentMonth() {
+        var month = new Array();
+        month[0] = "January";
+        month[1] = "February";
+        month[2] = "March";
+        month[3] = "April";
+        month[4] = "May";
+        month[5] = "June";
+        month[6] = "July";
+        month[7] = "August";
+        month[8] = "September";
+        month[9] = "October";
+        month[10] = "November";
+        month[11] = "December";
+
+        var d = new Date();
+        var n = month[d.getMonth()];
+        $( ".currentMonth" ).text( n );
+      }
+
+      function getCurrentYear() {
+        var d = new Date();
+        var n = d.getFullYear();
+        $( ".currentYear" ).text( n );
+      }
+
+      getCurrentMonth();
+      getCurrentYear();    
           
           
+      function dateParse (dateObj) {
+        var mystring = dateObj;
+        mystring = mystring.replace('/Date(','');
+        mystring = mystring.replace(')/','');
+        
+        mystring = parseInt(mystring);
+        
+        var formattedDate = convertTime(mystring);
+        return formattedDate;
+      }        
+
+      function convertTime (timeVar) {
+        var date = new Date(timeVar);
+        var hours = date.getHours();
+        var minutes = "0" + date.getMinutes();
+        var seconds = "0" + date.getSeconds();
+        var day = date.getDate();
+        var month = 1 + date.getMonth();
+        var year = "0" + date.getFullYear();
+
+        // Will display time in 10:30:23 format
+        var formattedTime = month + "/" +  day + "/" + year.substr(-4);    
+        return formattedTime;
+      }
+
 });
