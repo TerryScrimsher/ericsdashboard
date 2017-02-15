@@ -5,20 +5,28 @@ var app = angular.module('myApp', []);
                                         $scope.currentTopMgr = response[0].Managers,
                                         $scope.currentStart = dateParse(response[0].StartDateFilter),
                                         $scope.currentEnd = dateParse(response[0].EndDateFilter),
+                                        $scope.currentOffice = response[0].Office,
                                         $scope.monthTopPro = response[1].TopSalesReps,
                                         $scope.monthTopMgr = response[1].Managers,
+                                        $scope.monthOffice = response[1].Office,
                                         $scope.monthStart = dateParse(response[1].StartDateFilter),
                                         $scope.monthEnd = dateParse(response[1].EndDateFilter),
                                         $scope.yearTopPro = response[2].TopSalesReps,
                                         $scope.yearTopMgr = response[2].Managers,
                                         $scope.yearStart = dateParse(response[2].StartDateFilter),
-                                        $scope.yearEnd = dateParse(response[2].EndDateFilter)
+                                        $scope.yearEnd = dateParse(response[2].EndDateFilter),
+                                        $scope.yearOffice = response[2].Office
                                        });   
           
       $(window).resize(function(){location.reload();});
           
+          
+      google.charts.load('current', {'packages':['corechart']});    
+          
       google.charts.setOnLoadCallback(currentTopMgrBarChart);    
       google.charts.setOnLoadCallback(monthTopMgrBarChart); 
+      google.charts.setOnLoadCallback(monthOfficePieChart);
+      google.charts.setOnLoadCallback(yearOfficePieChart);
           
            
       function currentTopMgrBarChart() {
@@ -77,7 +85,7 @@ var app = angular.module('myApp', []);
         var options = {
           titleTextStyle: { color: '#FFF'},
           backgroundColor: { fill:'transparent', strokeWidth: 0 },
-          chartArea: {left: 100},
+          chartArea: { left: 100 },
           legendTextStyle: { color: '#FFF' },
           legend: 'none',
           hAxis: {
@@ -100,6 +108,73 @@ var app = angular.module('myApp', []);
         var chart = new google.visualization.BarChart(document.getElementById('monthTopMgrBarChart'));
         chart.draw(data, options);
       }
+          
+      function monthOfficePieChart() {
+
+        var test = [
+          ['Location', 'Revenue']
+        ];
+          
+        for (i = 0; i < $scope.monthOffice.length; i++) {
+          test.push([$scope.monthOffice[i].Name, {v: $scope.monthOffice[i].TotalSales, f: '$' + parseFloat($scope.monthOffice[i].TotalSales).toFixed(2)}]);
+        }
+        
+        // Create the data table.
+        var data = new google.visualization.arrayToDataTable(test);
+
+        // Set options for the pie chart.
+        var options = {
+//                       title: 'My Daily Activities',
+                       height:246,
+                       backgroundColor: { fill:'transparent', strokeWidth: 0 },
+                       chartArea: {'left': 16, 'width': '100%', 'height': '80%'},
+                       legend: 'none',
+                       legendTextStyle: { color: '#FFF' },
+                       colors: ['#1dbfe3', '#0097c7', '#137a40', '#0ba23f', '#00ca6b'],
+                       pieHole: 0.4,
+                       pieSliceBorderColor : "transparent" 
+                      };
+
+        // Instantiate and draw the chart.
+        var chart = new google.visualization.PieChart(document.getElementById('monthOfficePieChart'));
+        chart.draw(data, options);
+      }    
+          
+      function yearOfficePieChart() {
+
+        var test = [
+          ['Location', 'Revenue']
+        ];
+          
+        for (i = 0; i < $scope.yearOffice.length; i++) {
+          test.push([$scope.yearOffice[i].Name, {v: $scope.yearOffice[i].TotalSales, f: '$' + parseFloat($scope.yearOffice[i].TotalSales).toFixed(2)}]);
+        }
+        
+        // Create the data table.
+        var data = new google.visualization.arrayToDataTable(test);
+
+        // Set options for the pie chart.
+        var options = {
+//                       title: 'My Daily Activities',
+                       height:246,
+                       backgroundColor: { fill:'transparent', strokeWidth: 0 },
+                       chartArea: {'left': 16, 'width': '100%', 'height': '80%'},
+                       legend: 'none',
+                       legendTextStyle: { color: '#FFF' },
+                       colors: ['#1dbfe3', '#0097c7', '#137a40', '#0ba23f', '#00ca6b'],
+                       pieHole: 0.4,
+                       pieSliceBorderColor : "transparent" 
+                      };
+
+        // Instantiate and draw the chart.
+        var chart = new google.visualization.PieChart(document.getElementById('yearOfficePieChart'));
+        chart.draw(data, options);
+      }    
+          
+      //Random Number Function
+      function getRandomInt(min, max) {
+          return Math.floor(Math.random() * (max - min + 1)) + min;
+      }     
           
       //Get Current Month
       function getCurrentMonth() {
@@ -145,16 +220,17 @@ var app = angular.module('myApp', []);
 
       function convertTime (timeVar) {
         var date = new Date(timeVar);
-        var hours = date.getHours();
-        var minutes = "0" + date.getMinutes();
-        var seconds = "0" + date.getSeconds();
         var day = date.getDate();
-        var month = 1 + date.getMonth();
-        var year = "0" + date.getFullYear();
+        var month = date.getMonth() + 1;
+        var year = date.getFullYear();
 
         // Will display time in 10:30:23 format
-        var formattedTime = month + "/" +  day + "/" + year.substr(-4);    
+        var formattedTime = month + "/" +  day + "/" + year;    
         return formattedTime;
       }
+          
+//      var autoUpdate = setInterval(function(){
+//        redrawChart2();
+//      }, 3000); 
 
 });
