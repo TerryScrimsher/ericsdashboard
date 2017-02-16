@@ -1,28 +1,38 @@
 var app = angular.module('myApp', []);
         app.controller('customersCtrl', function($scope, $http) {     
           $http.get("js/jsonresponse.json")
-          .success(function (response) {$scope.currentTopPro = response[0].TopSalesReps,
-                                        $scope.currentTopMgr = response[0].Managers,
-                                        $scope.currentStart = dateParse(response[0].StartDateFilter),
-                                        $scope.currentEnd = dateParse(response[0].EndDateFilter),
-                                        $scope.currentOffice = response[0].Office,
-                                        $scope.monthTopPro = response[1].TopSalesReps,
-                                        $scope.monthTopMgr = response[1].Managers,
-                                        $scope.monthOffice = response[1].Office,
-                                        $scope.monthStart = dateParse(response[1].StartDateFilter),
-                                        $scope.monthEnd = dateParse(response[1].EndDateFilter),
-                                        $scope.yearTopPro = response[2].TopSalesReps,
-                                        $scope.yearTopMgr = response[2].Managers,
-                                        $scope.yearStart = dateParse(response[2].StartDateFilter),
-                                        $scope.yearEnd = dateParse(response[2].EndDateFilter),
-                                        $scope.yearOffice = response[2].Office
-                                       });   
+          .success(function (response) {$scope.currentTopPro = response.StatSections[0].TopSalesReps,
+                                        $scope.currentTopMgr = response.StatSections[0].Managers,
+                                        $scope.currentStart = dateParse(response.StatSections[0].StartDateFilter),
+                                        $scope.currentEnd = dateParse(response.StatSections[0].EndDateFilter),
+                                        $scope.currentOffice = sortByPreferance(response.StatSections[0].Office),
+                                        $scope.monthTopPro = response.StatSections[1].TopSalesReps,
+                                        $scope.monthTopMgr = response.StatSections[1].Managers,
+                                        $scope.monthOffice = sortByPreferance(response.StatSections[1].Office),
+                                        $scope.monthStart = dateParse(response.StatSections[1].StartDateFilter),
+                                        $scope.monthEnd = dateParse(response.StatSections[1].EndDateFilter),
+                                        $scope.yearTopPro = response.StatSections[2].TopSalesReps,
+                                        $scope.yearTopMgr = response.StatSections[2].Managers,
+                                        $scope.yearStart = dateParse(response.StatSections[2].StartDateFilter),
+                                        $scope.yearEnd = dateParse(response.StatSections[2].EndDateFilter),
+                                        $scope.yearOffice = sortByPreferance(response.StatSections[2].Office)
+                                       }).error(function (data, status){
+                                        console.log("Error status : " + status);
+                                        $('div').slice(2).hide();
+                                        $('.hidetext').show();
+                                       }); 
           
-      $(window).resize(function(){location.reload();});
+      $(window).resize(function(){
+        currentTopMgrBarChart();
+        monthTopMgrBarChart();
+        monthOfficePieChart();
+        yearOfficePieChart();
+        officeMap();
+      });
           
           
-      google.charts.load('current', {'packages':['corechart']});    
-          
+      google.charts.load('current', {'packages':['corechart']});
+      google.setOnLoadCallback(officeMap);       
       google.charts.setOnLoadCallback(currentTopMgrBarChart);    
       google.charts.setOnLoadCallback(monthTopMgrBarChart); 
       google.charts.setOnLoadCallback(monthOfficePieChart);
@@ -114,9 +124,11 @@ var app = angular.module('myApp', []);
         var test = [
           ['Location', 'Revenue']
         ];
-          
-        for (i = 0; i < $scope.monthOffice.length; i++) {
-          test.push([$scope.monthOffice[i].Name, {v: $scope.monthOffice[i].TotalSales, f: '$' + parseFloat($scope.monthOffice[i].TotalSales).toFixed(2)}]);
+        
+        var sortedData = sortByPreferance($scope.monthOffice);
+        
+        for (i = 0; i < sortedData.length; i++) {
+          test.push([sortedData[i].Name, {v: sortedData[i].TotalSales, f: '$' + parseFloat(sortedData[i].TotalSales).toFixed(2)}]);
         }
         
         // Create the data table.
@@ -145,9 +157,11 @@ var app = angular.module('myApp', []);
         var test = [
           ['Location', 'Revenue']
         ];
-          
-        for (i = 0; i < $scope.yearOffice.length; i++) {
-          test.push([$scope.yearOffice[i].Name, {v: $scope.yearOffice[i].TotalSales, f: '$' + parseFloat($scope.yearOffice[i].TotalSales).toFixed(2)}]);
+        
+        var sortedData = sortByPreferance($scope.yearOffice);
+        
+        for (i = 0; i < sortedData.length; i++) {
+          test.push([sortedData[i].Name, {v: sortedData[i].TotalSales, f: '$' + parseFloat(sortedData[i].TotalSales).toFixed(2)}]);
         }
         
         // Create the data table.
@@ -170,7 +184,7 @@ var app = angular.module('myApp', []);
         var chart = new google.visualization.PieChart(document.getElementById('yearOfficePieChart'));
         chart.draw(data, options);
       }    
-          
+                  
       //Random Number Function
       function getRandomInt(min, max) {
           return Math.floor(Math.random() * (max - min + 1)) + min;
@@ -229,8 +243,81 @@ var app = angular.module('myApp', []);
         return formattedTime;
       }
           
+      function numberWithCommas(x) {
+          return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+      }
+          
 //      var autoUpdate = setInterval(function(){
-//        redrawChart2();
+//        monthOfficePieChart2();
 //      }, 3000); 
 
+      function sortByPreferance(arr){
+        
+        var sortedData = ["","","",""]
+        
+        for (i = 0; i < arr.length; i++) {
+         
+          if (arr[i].Name == "Portland") {
+            sortedData.splice(0, 1, arr[i]);
+          } else if (arr[i].Name == "Chicago") {
+            sortedData.splice(1, 1, arr[i]);
+          } else if (arr[i].Name == "Henderson") {
+            sortedData.splice(2, 1, arr[i]);
+          } else if (arr[i].Name == "Austin") {
+            sortedData.splice(3, 1, arr[i]);
+          }
+         
+        }  
+        
+        return sortedData;
+      }
+          
+          
+          
+      function officeMap() {var data = new google.visualization.DataTable();
+
+       data.addColumn('string', 'Country');
+       data.addColumn('number', 'Value'); 
+       data.addColumn({type:'string', role:'tooltip'});var ivalue = new Array();
+
+       for (i = 0; i < $scope.yearOffice.length; i++) {
+         
+          if ($scope.yearOffice[i].Name == "Portland") {
+            data.addRows([[{v:'US-OR',f:'Portland, Oregon'},0,"$"+numberWithCommas($scope.yearOffice[i].TotalSales)]]);
+          } else if ($scope.yearOffice[i].Name == "Chicago") {
+            data.addRows([[{v:'US-IL',f:'Chicago, Illinois'},1,"$"+numberWithCommas($scope.yearOffice[i].TotalSales)]]);
+          } else if ($scope.yearOffice[i].Name == "Henderson") {
+            data.addRows([[{v:'US-NV',f:'Henderson, Nevada'},2,"$"+numberWithCommas($scope.yearOffice[i].TotalSales)]]);
+          } else if ($scope.yearOffice[i].Name == "Austin") {
+            data.addRows([[{v:'US-TX',f:'Austin, Texas'},3,"$"+numberWithCommas($scope.yearOffice[i].TotalSales)]]);
+          }
+         
+      }                              
+
+       var options = {
+       backgroundColor: {fill:'#FFFFFF',stroke:'#FFFFFF' ,strokeWidth:0 },
+       colorAxis:  {minValue: 0, maxValue: 3,  colors: ['#1dbfe3','#0097c7','#0ba23f','#00ca6b',]},
+       legend: 'none',	
+       backgroundColor: { fill:'transparent', strokeWidth: 0 },
+       datalessRegionColor: '#323232',
+       displayMode: 'regions', 
+       enableRegionInteractivity: 'true', 
+       resolution: 'provinces',
+       sizeAxis: {minValue: 1, maxValue:1,minSize:10,  maxSize: 10},
+       region:'US',
+       keepAspectRatio: true,
+       chartArea: {'width': '100%', 'height': '80%'},
+       tooltip: {textStyle: {color: '#444444'}, trigger:'hover'}	
+       };
+        var chart = new google.visualization.GeoChart(document.getElementById('officeMap')); 
+        google.visualization.events.addListener(chart, 'select', function() {
+          var selection = chart.getSelection();
+          if (selection.length == 1) {
+            var selectedRow = selection[0].row;
+            var selectedRegion = data.getValue(selectedRow, 0);
+          }
+        });
+       chart.draw(data, options);
+       }    
+        
 });
