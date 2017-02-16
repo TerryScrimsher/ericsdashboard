@@ -38,7 +38,7 @@
         <div class="container">
             <!-- Brand and toggle get grouped for better mobile display -->
 
-                <div style="padding-top: 7px; width: 156px"><img src="img/logo-white.png"></div>
+                <div style="padding-top: 7px; width: 240px; margin: 0 auto;"><img width=240 src="img/lp_white.png"></div>
 
         </div>
         <!-- /.container -->
@@ -68,8 +68,8 @@
                       </thead>
                       <tbody>
                         <tr ng-repeat="x in currentTopPro | orderBy:-'TotalSales' | limitTo:10">
-                          <td>{{ x.Name }}</td>
-                          <td>{{ "$"+x.TotalSales }}</td>
+                          <td class="{{ x.Office }}">{{ x.Name }}</td>
+                          <td class="{{ x.Office }}">{{ "$"+x.TotalSales }}</td>
                         </tr>
                       </tbody>
                     </table>  
@@ -88,8 +88,8 @@
                       </thead>
                       <tbody>
                         <tr ng-repeat="x in monthTopPro | orderBy:-'TotalSales' | limitTo:5">
-                          <td>{{ x.Name }}</td>
-                          <td>{{ "$"+x.TotalSales }}</td>
+                          <td class="{{ x.Office }}">{{ x.Name }}</td>
+                          <td class="{{ x.Office }}">{{ "$"+x.TotalSales }}</td>
                         </tr>
                       </tbody>
                     </table>  
@@ -139,7 +139,26 @@
                 <div style="width: 100%; height: 12px;"><h2>US Map</h2></div>
                 <div style="background-color: #282828; width: 100%; height: 22px;"><h3>{{currentStart}} - {{currentEnd}}</h3></div>
                 
-                 <div style="height:100%; width: 50%;" id='officeMap'></div>
+                 <div style="width: 50%; float: left; margin-left: 2%;" id='officeMap'></div>
+                 <div style="width:48%; color: #ffffff; font-size: 16px; padding: 20px 20px 20px 0px; float: left;">
+                  <table>
+                    <thead>
+                      <tr>
+                        <td style="font-size:12px; font-weight: 700;">Avg. Calls</td>
+                        <td style="font-size:12px; font-weight: 700;">Call:Link</td>
+                        <td style="font-size:12px; font-weight: 700;">Close %</td>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr ng-repeat="x in yearOffice | orderBy:-'TotalSales' | limitTo:4">
+                        <td class="office{{ $index+1 }}">{{ x.AverageCalls | number:0 }}</td>
+                        <td class="office{{ $index+1 }}">{{ x.CallsToLinks | number:4 }}</td>
+                        <td class="office{{ $index+1 }}">{{ x.CloseRate*100 | number:1 }}%</td>
+                      </tr>
+                    </tbody>
+                  </table>  
+                </div>
+                <div style="clear: both;"></div>
                 
               </div>
 
@@ -195,10 +214,10 @@
                     </thead>
                     <tbody>
                       <tr ng-repeat="x in yearTopPro | orderBy:-'TotalSales' | limitTo:10">
-                        <td>{{ x.Name }}</td>
-                        <td>${{ x.TotalSales }}</td>
-                        <td>{{ x.CallsToLinks | number:1 }}</td>
-                        <td>{{ x.CloseRate*100 | number:0 }}%</td>
+                        <td class="{{ x.Office }}">{{ x.Name }}</td>
+                        <td class="{{ x.Office }}">${{ x.TotalSales }}</td>
+                        <td class="{{ x.Office }}">{{ x.CallsToLinks | number:1 }}</td>
+                        <td class="{{ x.Office }}">{{ x.CloseRate*100 | number:0 }}%</td>
                       </tr>
                     </tbody>
                   </table>  
@@ -221,11 +240,11 @@
                     </thead>
                     <tbody>
                       <tr ng-repeat="x in yearTopMgr | orderBy:-'TotalSales' | limitTo:8">
-                        <td>{{ x.Name }}</td>
-                        <td>${{ x.TotalSales }}</td>
-                        <td>{{ x.CallsToLinks | number:1 }}</td>
-                        <td>{{ x.CloseRate*100 | number:0 }}%</td>
-                        <td>{{ x.AvgRepSalesPerCycle | number:0 }}</td>
+                        <td class="{{ x.Office }}">{{ x.Name }}</td>
+                        <td class="{{ x.Office }}">${{ x.TotalSales }}</td>
+                        <td class="{{ x.Office }}">{{ x.CallsToLinks | number:1 }}</td>
+                        <td class="{{ x.Office }}">{{ x.CloseRate*100 | number:0 }}%</td>
+                        <td class="{{ x.Office }}">{{ x.AvgRepSalesPerCycle | number:0 }}</td>
                       </tr>
                     </tbody>
                   </table>  

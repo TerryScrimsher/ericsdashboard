@@ -5,7 +5,7 @@
  */
 
 body {
-    padding-top: 48px; /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
+    padding-top: 84px; /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
     background-color : #000000;
 }
 
@@ -34,7 +34,7 @@ footer {
 
 @media (min-width: 1200px) {
   .container {
-      width: 90% !important;
+      width: 94% !important;
   }
 }
 
@@ -57,6 +57,10 @@ td, th {
   border: 1px solid #2b2b2b;
 }
 
+.Portland {background-color: #1dbfe3; text-shadow: 0px 0px 5px #000, 2px 2px 10px rgb(0, 0, 0);}
+.Chicago {background-color: #0097c7; text-shadow: 0px 0px 5px #000, 2px 2px 10px rgb(0, 0, 0);}
+.Henderson {background-color: #137a40; text-shadow: 0px 0px 5px #000, 2px 2px 10px rgb(0, 0, 0);}
+.Austin {background-color: #0ba23f; text-shadow: 0px 0px 5px #000, 2px 2px 10px rgb(0, 0, 0);}
 .office1 {background-color: #1dbfe3; text-shadow: 0px 0px 5px #000, 2px 2px 10px rgb(0, 0, 0);}
 .office2 {background-color: #0097c7; text-shadow: 0px 0px 5px #000, 2px 2px 10px rgb(0, 0, 0);}
 .office3 {background-color: #137a40; text-shadow: 0px 0px 5px #000, 2px 2px 10px rgb(0, 0, 0);}
