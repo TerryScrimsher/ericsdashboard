@@ -23,6 +23,12 @@ app.controller('customersCtrl', function($scope, $http) {
       $('.hidetext').show();
     });
 
+  var portlandColor = '#1BB159';
+  var chicagoColor = '#4984EF';
+  var hendersonColor = '#CC4344';
+  var austinColor = '#ea9411';
+  
+  
   //Reload Charts on Window Resize
   $(window).resize(function() {
     currentTopMgrBarChart();
@@ -99,11 +105,6 @@ app.controller('customersCtrl', function($scope, $http) {
     }
 
     var options = {
-      backgroundColor: {
-        fill: '#FFFFFF',
-        stroke: '#FFFFFF',
-        strokeWidth: 0
-      },
       chartArea: {
         'width': '100%',
         'height': '80%'
@@ -112,7 +113,10 @@ app.controller('customersCtrl', function($scope, $http) {
       colorAxis: {
         minValue: 0,
         maxValue: 3,
-        colors: ['#1dbfe3', '#0097c7', '#0ba23f', '#00ca6b', ]
+        colors: [portlandColor, chicagoColor, hendersonColor, austinColor],
+        stroke: '#ffffff',
+        strokeOpacity: 1.0,
+        strokeWidth: 1
       },
       legend: 'none',
       backgroundColor: {
@@ -164,13 +168,13 @@ app.controller('customersCtrl', function($scope, $http) {
 
         var barColor = "#dddddd";
         if ($scope.monthTopMgr[i].Office == "Portland") {
-          barColor = "#1dbfe3";
+          barColor = portlandColor;
         } else if ($scope.monthTopMgr[i].Office == "Chicago") {
-          barColor = "#0097c7";
+          barColor = chicagoColor;
         } else if ($scope.monthTopMgr[i].Office == "Henderson") {
-          barColor = "#0ba23f";
+          barColor = hendersonColor;
         } else if ($scope.monthTopMgr[i].Office == "Austin") {
-          barColor = "#00ca6b";
+          barColor = austinColor;
         }
       
       test.push([$scope.currentTopMgr[i].Name, {
@@ -232,13 +236,13 @@ app.controller('customersCtrl', function($scope, $http) {
 
         var barColor = "#dddddd";
         if ($scope.monthTopMgr[i].Office == "Portland") {
-          barColor = "#1dbfe3";
+          barColor = portlandColor;
         } else if ($scope.monthTopMgr[i].Office == "Chicago") {
-          barColor = "#0097c7";
+          barColor = chicagoColor;
         } else if ($scope.monthTopMgr[i].Office == "Henderson") {
-          barColor = "#0ba23f";
+          barColor = hendersonColor;
         } else if ($scope.monthTopMgr[i].Office == "Austin") {
-          barColor = "#00ca6b";
+          barColor = austinColor;
         }
       
       test.push([$scope.monthTopMgr[i].Name, {
@@ -323,7 +327,7 @@ app.controller('customersCtrl', function($scope, $http) {
       legendTextStyle: {
         color: '#FFF'
       },
-      colors: ['#1dbfe3', '#0097c7', '#137a40', '#0ba23f', '#00ca6b'],
+      colors: [portlandColor, chicagoColor, hendersonColor, austinColor],
       pieHole: 0.4,
       pieSliceBorderColor: "transparent"
     };
@@ -369,7 +373,7 @@ app.controller('customersCtrl', function($scope, $http) {
       legendTextStyle: {
         color: '#FFF'
       },
-      colors: ['#1dbfe3', '#0097c7', '#137a40', '#0ba23f', '#00ca6b'],
+      colors: [portlandColor, chicagoColor, hendersonColor, austinColor],
       pieHole: 0.4,
       pieSliceBorderColor: "transparent"
     };
