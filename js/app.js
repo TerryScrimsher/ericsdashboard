@@ -26,7 +26,13 @@ app.controller('customersCtrl', function($scope, $http) {
   var portlandColor = '#1BB159';
   var chicagoColor = '#4984EF';
   var hendersonColor = '#CC4344';
-  var austinColor = '#ea9411';
+//  var hendersonColor = '#694eff';
+  var austinColor = '#fdb737';
+  
+//  var portlandColor = '#1BB159';
+//  var chicagoColor = '#4984EF';
+//  var hendersonColor = '#269253';
+//  var austinColor = '#375fa9';
   
   
   //Reload Charts on Window Resize
