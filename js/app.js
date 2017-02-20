@@ -1,40 +1,14 @@
 var app = angular.module('myApp', []);
 app.controller('customersCtrl', function($scope, $http) {
-  $http.get("js/jsonresponse.json")
-    .success(function(response) {
-        $scope.currentTopPro = response.StatSections[0].TopSalesReps,
-        $scope.currentTopMgr = response.StatSections[0].Managers,
-        $scope.currentStart = dateParse(response.StatSections[0].StartDateFilter),
-        $scope.currentEnd = dateParse(response.StatSections[0].EndDateFilter),
-        $scope.currentOffice = sortByPreference(response.StatSections[0].Office),
-        $scope.monthTopPro = response.StatSections[1].TopSalesReps,
-        $scope.monthTopMgr = response.StatSections[1].Managers,
-        $scope.monthOffice = sortByPreference(response.StatSections[1].Office),
-        $scope.monthStart = dateParse(response.StatSections[1].StartDateFilter),
-        $scope.monthEnd = dateParse(response.StatSections[1].EndDateFilter),
-        $scope.yearTopPro = response.StatSections[2].TopSalesReps,
-        $scope.yearTopMgr = response.StatSections[2].Managers,
-        $scope.yearStart = dateParse(response.StatSections[2].StartDateFilter),
-        $scope.yearEnd = dateParse(response.StatSections[2].EndDateFilter),
-        $scope.yearOffice = sortByPreference(response.StatSections[2].Office)
-    }).error(function(data, status) {
-      console.log("Error status : " + status);
-      $('div').slice(2).hide();
-      $('.hidetext').show();
-    });
+  getJsonRes();
 
-  var portlandColor = '#1BB159';
-  var chicagoColor = '#4984EF';
-  var hendersonColor = '#CC4344';
-//  var hendersonColor = '#694eff';
-  var austinColor = '#fdb737';
-  
-//  var portlandColor = '#1BB159';
-//  var chicagoColor = '#4984EF';
-//  var hendersonColor = '#269253';
-//  var austinColor = '#375fa9';
-  
-  
+  var portlandColor = '#0DA33F';
+  var chicagoColor = '#1ebdea';
+  var hendersonColor = '#D537C9';
+  var austinColor = '#7b47b8';
+
+  init();
+
   //Reload Charts on Window Resize
   $(window).resize(function() {
     currentTopMgrBarChart();
@@ -43,26 +17,63 @@ app.controller('customersCtrl', function($scope, $http) {
     yearOfficePieChart();
     officeMap();
   });
-  
-//  var autoUpdate = setInterval(function(){
-//    currentTopMgrBarChart();
-//    monthTopMgrBarChart();
-//    monthOfficePieChart();
-//    yearOfficePieChart();
-//    officeMap();
-//  }, 100); 
-  
-  getCurrentMonth();
-  getCurrentYear();
 
-  google.charts.load('current', {
-    'packages': ['corechart']
-  });
-  google.setOnLoadCallback(officeMap);
-  google.charts.setOnLoadCallback(currentTopMgrBarChart);
-  google.charts.setOnLoadCallback(monthTopMgrBarChart);
-  google.charts.setOnLoadCallback(monthOfficePieChart);
-  google.charts.setOnLoadCallback(yearOfficePieChart);
+  //Automatic Update Function
+  var autoUpdate = setInterval(function() {
+    getJsonRes();
+
+    currentTopMgrBarChart();
+    monthTopMgrBarChart();
+    monthOfficePieChart();
+    yearOfficePieChart();
+    officeMap();
+    currentDate();
+  }, 60000);
+
+  /* INITIALIZE FUNCTIONS */
+
+  //Get JSON Object Function
+  function getJsonRes() {
+    $http.get("js/jsonresponse.json")
+      .success(function(response) {
+        $scope.currentTopPro = response.StatSections[0].TopSalesReps,
+          $scope.currentTopMgr = response.StatSections[0].Managers,
+          $scope.currentStart = dateParse(response.StatSections[0].StartDateFilter),
+          $scope.currentEnd = dateParse(response.StatSections[0].EndDateFilter),
+          $scope.currentOffice = sortByPreference(response.StatSections[0].Office),
+          $scope.monthTopPro = response.StatSections[1].TopSalesReps,
+          $scope.monthTopMgr = response.StatSections[1].Managers,
+          $scope.monthOffice = sortByPreference(response.StatSections[1].Office),
+          $scope.monthStart = dateParse(response.StatSections[1].StartDateFilter),
+          $scope.monthEnd = dateParse(response.StatSections[1].EndDateFilter),
+          $scope.yearTopPro = response.StatSections[2].TopSalesReps,
+          $scope.yearTopMgr = response.StatSections[2].Managers,
+          $scope.yearStart = dateParse(response.StatSections[2].StartDateFilter),
+          $scope.yearEnd = dateParse(response.StatSections[2].EndDateFilter),
+          $scope.yearOffice = sortByPreference(response.StatSections[2].Office)
+      }).error(function(data, status) {
+        console.log("Error status : " + status);
+        $('div').slice(2).hide();
+        $('.hidetext').show();
+      });
+  }
+
+  //Initialization Function
+  function init() {
+    getCurrentMonth();
+    getCurrentYear();
+    currentDate();
+
+    google.charts.load('current', {
+      'packages': ['corechart']
+    });
+
+    google.setOnLoadCallback(officeMap);
+    google.charts.setOnLoadCallback(currentTopMgrBarChart);
+    google.charts.setOnLoadCallback(monthTopMgrBarChart);
+    google.charts.setOnLoadCallback(monthOfficePieChart);
+    google.charts.setOnLoadCallback(yearOfficePieChart);
+  }
 
   /* CHART CREATION FUNCTIONS */
 
@@ -172,17 +183,17 @@ app.controller('customersCtrl', function($scope, $http) {
 
     for (i = 0; i < 8; i++) {
 
-        var barColor = "#dddddd";
-        if ($scope.monthTopMgr[i].Office == "Portland") {
-          barColor = portlandColor;
-        } else if ($scope.monthTopMgr[i].Office == "Chicago") {
-          barColor = chicagoColor;
-        } else if ($scope.monthTopMgr[i].Office == "Henderson") {
-          barColor = hendersonColor;
-        } else if ($scope.monthTopMgr[i].Office == "Austin") {
-          barColor = austinColor;
-        }
-      
+      var barColor = "#dddddd";
+      if ($scope.monthTopMgr[i].Office == "Portland") {
+        barColor = portlandColor;
+      } else if ($scope.monthTopMgr[i].Office == "Chicago") {
+        barColor = chicagoColor;
+      } else if ($scope.monthTopMgr[i].Office == "Henderson") {
+        barColor = hendersonColor;
+      } else if ($scope.monthTopMgr[i].Office == "Austin") {
+        barColor = austinColor;
+      }
+
       test.push([$scope.currentTopMgr[i].Name, {
         v: $scope.currentTopMgr[i].TotalSales,
         f: '$' + parseFloat($scope.currentTopMgr[i].TotalSales).toFixed(2)
@@ -201,20 +212,21 @@ app.controller('customersCtrl', function($scope, $http) {
         fill: 'transparent',
         strokeWidth: 0
       },
-      chartArea: {
-        left: 100
-      },
       legendTextStyle: {
         color: '#FFF'
       },
       legend: 'none',
+      chartArea: {
+        width:"50%"
+      },
       hAxis: {
         title: 'Total Sales',
         minValue: 0,
         textStyle: {
           color: '#FFF'
         },
-        format: '$#,###'
+        format: '$#,###',
+        ticks: [2000, 4000, 6000, 8000, 10000]
       },
       vAxis: {
         title: 'Manager',
@@ -240,17 +252,17 @@ app.controller('customersCtrl', function($scope, $http) {
 
     for (i = 0; i < 5; i++) {
 
-        var barColor = "#dddddd";
-        if ($scope.monthTopMgr[i].Office == "Portland") {
-          barColor = portlandColor;
-        } else if ($scope.monthTopMgr[i].Office == "Chicago") {
-          barColor = chicagoColor;
-        } else if ($scope.monthTopMgr[i].Office == "Henderson") {
-          barColor = hendersonColor;
-        } else if ($scope.monthTopMgr[i].Office == "Austin") {
-          barColor = austinColor;
-        }
-      
+      var barColor = "#dddddd";
+      if ($scope.monthTopMgr[i].Office == "Portland") {
+        barColor = portlandColor;
+      } else if ($scope.monthTopMgr[i].Office == "Chicago") {
+        barColor = chicagoColor;
+      } else if ($scope.monthTopMgr[i].Office == "Henderson") {
+        barColor = hendersonColor;
+      } else if ($scope.monthTopMgr[i].Office == "Austin") {
+        barColor = austinColor;
+      }
+
       test.push([$scope.monthTopMgr[i].Name, {
         v: $scope.monthTopMgr[i].TotalSales,
         f: '$' + parseFloat($scope.monthTopMgr[i].TotalSales).toFixed(2)
@@ -269,26 +281,27 @@ app.controller('customersCtrl', function($scope, $http) {
         fill: 'transparent',
         strokeWidth: 0
       },
-      chartArea: {
-        left: 100
-      },
       legendTextStyle: {
         color: '#FFF'
       },
       legend: 'none',
+      chartArea: {
+        width:"50%"
+      },
       hAxis: {
         title: 'Total Sales',
         minValue: 0,
         textStyle: {
           color: '#FFF'
         },
-        format: '$#,###'
+        format: '$#,###',
+        ticks: [10000, 20000, 30000, 40000, 50000]
       },
       vAxis: {
         title: 'Manager',
         textStyle: {
           color: '#FFF'
-        }
+        } 
       },
     };
 
@@ -325,7 +338,6 @@ app.controller('customersCtrl', function($scope, $http) {
         strokeWidth: 0
       },
       chartArea: {
-        'left': 16,
         'width': '100%',
         'height': '64%'
       },
@@ -371,7 +383,6 @@ app.controller('customersCtrl', function($scope, $http) {
         strokeWidth: 0
       },
       chartArea: {
-        'left': 16,
         'width': '100%',
         'height': '64%'
       },
@@ -473,6 +484,12 @@ app.controller('customersCtrl', function($scope, $http) {
     }
 
     return sortedData;
+  }
+
+  function currentDate() {
+    var today = new Date();
+    var date = 1 + today.getMonth() + "/" + today.getDate() + "/" + today.getFullYear();
+    document.getElementById('currentdate').innerHTML = date;
   }
 
 });

@@ -4,90 +4,224 @@
  * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap/blob/gh-pages/LICENSE)
  */
 
-/*
 path {
-  stroke: #FFFFFF !important;
+  stroke: #1ebdea !important;
+  animation-name: example;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
 }
-*/
+
+@keyframes example {
+  0% {
+    stroke: #1ebdea;
+  }
+  25% {
+    stroke: #D537C9;
+  }
+  50% {
+    stroke: #7b47b8;
+  }
+  75% {
+    stroke: #0DA33F;
+  }
+  0% {
+    stroke: #1ebdea;
+  }
+}
 
 body {
-    padding-top: 84px; /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
-    background-color : #000000;
+  padding-top: 84px;
+  /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
+  background-color: #000000;
 }
 
-h1 {color: #dedede;}
-h2 {font-size: 22px; padding: 4px 4px 4px 8px; color: #ffffff; margin-top: 0px;}
-h3 { font-size: 16px; padding: 2px 8px 2px 4px; text-align: right; color: #ffffff;}
+h1 {
+  color: #dedede;
+}
+
+h2 {
+  font-size: 22px;
+  padding: 4px 4px 4px 8px;
+  color: #ffffff;
+  margin: 0px;
+}
+
+h3 {
+  font-size: 16px;
+  padding: 2px 8px 2px 4px;
+  text-align: right;
+  color: #ffffff;
+  margin: 0px;
+}
 
 .portfolio-item {
-    margin-bottom: 25px;
+  margin-bottom: 25px;
 }
 
 footer {
-    margin: 50px 0;
+  margin: 50px 0;
+}
+
+.logo {
+  padding-top: 7px;
+  width: 240px;
+  margin: 0 auto;
+}
+
+.totaldate {
+  float: right;
+  margin-top: -62px;
+  font-size: 30px;
+  color: #ffffff;
 }
 
 .graybox {
-    background-color: #212121; 
-    min-height: 230px;
-    margin-bottom: 6px;
-    margin-top: 20px
+  background-color: #212121;
+  min-height: 230px;
+  margin-bottom: 6px;
+  margin-top: 20px
+}
+
+.nobox {
+  min-height: 230px;
+  margin-bottom: 6px;
+  margin-top: 20px
+}
+
+.boxhalfcontainer-left {
+  width: 48%;
+  float: left;
+  margin-right: 2%;
+  background-color: #212121;
+}
+
+.boxhalfcontainer-right {
+  width: 48%;
+  float: left;
+  margin-left: 2%;
+  background-color: #212121;
+}
+
+.tablecontainer {
+  color: #ffffff;
+  font-size: 16px;
+  padding: 20px;
+}
+
+.piechart-left {
+  width: 35%;
+  float: left;
+}
+
+.piechart-right {
+  width: 65%;
+  color: #ffffff;
+  font-size: 16px;
+  padding: 20px;
+  float: left;
+}
+
+.barchart {
+  height: 100%;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.map-left {
+  width: 50%;
+  float: left;
+  margin-left: 2%;
+}
+
+.map-right {
+  width: 48%;
+  color: #ffffff;
+  font-size: 16px;
+  padding: 20px 20px 20px 0px;
+  float: left;
+}
+
+.clearboth {
+  clear: both;
+}
+
+.zerobottommargin {
+  margin-bottom: 0px !important;
 }
 
 .hidetext {
   display: none;
 }
 
+.boxheader {
+  width: 100%;
+}
+
+.boxsubheader {
+  background-color: #282828;
+  width: 100%;
+  height: 22px;
+}
+
+.tableheader {
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.Portland,
+.office1 {
+  background-color: #0DA33F;
+  text-shadow: 0px 0px 5px #000, 2px 2px 10px rgb(0, 0, 0);
+}
+
+.Chicago,
+.office2 {
+  background-color: #1ebdea;
+  text-shadow: 0px 0px 5px #000, 2px 2px 10px rgb(0, 0, 0);
+}
+
+.Henderson,
+.office3 {
+  background-color: #D537C9;
+  text-shadow: 0px 0px 5px #000, 2px 2px 10px rgb(0, 0, 0);
+}
+
+.Austin,
+.office4 {
+  background-color: #7b47b8;
+  text-shadow: 0px 0px 5px #000, 2px 2px 10px rgb(0, 0, 0);
+}
+
 @media (min-width: 1200px) {
   .container {
-      width: 94% !important;
+    width: 94% !important;
   }
 }
 
-table { 
-  width: 100%; 
-  border-collapse: collapse; 
+table {
+  width: 100%;
+  border-collapse: collapse;
 }
+
+
 /* Zebra striping */
-tr:nth-of-type(odd) { 
-  background: #272727; 
+
+tr:nth-of-type(odd) {
+  background: #272727;
 }
-th { 
-  background: #272727; 
-  color: white; 
-  font-weight: bold; 
+
+th {
+  background: #272727;
+  color: white;
+  font-weight: bold;
 }
-td, th { 
-  padding: 6px; 
-  text-align: left; 
+
+td,
+th {
+  padding: 6px;
+  text-align: left;
   border: 1px solid #2b2b2b;
 }
-
-
-.Portland {background-color: #1BB159; text-shadow: 0px 0px 5px #000, 2px 2px 10px rgb(0, 0, 0);}
-.Chicago {background-color: #4984EF; text-shadow: 0px 0px 5px #000, 2px 2px 10px rgb(0, 0, 0);}
-.Henderson {background-color: #CC4344; text-shadow: 0px 0px 5px #000, 2px 2px 10px rgb(0, 0, 0);}
-/*.Henderson {background-color: #694eff; text-shadow: 0px 0px 5px #000, 2px 2px 10px rgb(0, 0, 0);}*/
-.Austin {background-color: #fdb737; text-shadow: 0px 0px 5px #000, 2px 2px 10px rgb(0, 0, 0);}
-.office1 {background-color: #1BB159; text-shadow: 0px 0px 5px #000, 2px 2px 10px rgb(0, 0, 0);}
-.office2 {background-color: #4984EF; text-shadow: 0px 0px 5px #000, 2px 2px 10px rgb(0, 0, 0);}
-.office3 {background-color: #CC4344; text-shadow: 0px 0px 5px #000, 2px 2px 10px rgb(0, 0, 0);}
-/*.office3 {background-color: #694eff; text-shadow: 0px 0px 5px #000, 2px 2px 10px rgb(0, 0, 0);}*/
-.office4 {background-color: #fdb737; text-shadow: 0px 0px 5px #000, 2px 2px 10px rgb(0, 0, 0);}
-.office5 {background-color: #0ba23f; text-shadow: 0px 0px 5px #000, 2px 2px 10px rgb(0, 0, 0);}
-
-/*
-.Portland {background-color: #1BB159; text-shadow: 0px 0px 5px #000, 2px 2px 10px rgb(0, 0, 0);}
-.Chicago {background-color: #4984EF; text-shadow: 0px 0px 5px #000, 2px 2px 10px rgb(0, 0, 0);}
-.Henderson {background-color: #269253; text-shadow: 0px 0px 5px #000, 2px 2px 10px rgb(0, 0, 0);}
-.Austin {background-color: #375fa9; text-shadow: 0px 0px 5px #000, 2px 2px 10px rgb(0, 0, 0);}
-.office1 {background-color: #1BB159; text-shadow: 0px 0px 5px #000, 2px 2px 10px rgb(0, 0, 0);}
-.office2 {background-color: #4984EF; text-shadow: 0px 0px 5px #000, 2px 2px 10px rgb(0, 0, 0);}
-.office3 {background-color: #269253; text-shadow: 0px 0px 5px #000, 2px 2px 10px rgb(0, 0, 0);}
-.office4 {background-color: #375fa9; text-shadow: 0px 0px 5px #000, 2px 2px 10px rgb(0, 0, 0);}
-.office5 {background-color: #0ba23f; text-shadow: 0px 0px 5px #000, 2px 2px 10px rgb(0, 0, 0);}
-*/
-
 
 
 /* 
@@ -95,41 +229,47 @@ Max width before this PARTICULAR table gets nasty
 This query will take effect for any screen smaller than 760px
 and also iPads specifically.
 */
-@media 
-only screen and (max-width: 760px),
-(min-device-width: 768px) and (max-device-width: 1024px)  {
 
-	/* Force table to not be like tables anymore */
-	table, thead, tbody, th, td, tr { 
-		display: block; 
-	}
-	
-	/* Hide table headers (but not display: none;, for accessibility) */
-	thead tr { 
-		position: absolute;
-		top: -9999px;
-		left: -9999px;
-	}
-	
-	tr { border: 1px solid #ccc; }
-	
-	td { 
-		/* Behave  like a "row" */
-		border: none;
-		border-bottom: 1px solid #eee; 
-		position: relative;
-		padding-left: 25%; 
-	}
-	
-	td:before { 
-		/* Now like a table header */
-		position: absolute;
-		/* Top/left values mimic padding */
-		top: 6px;
-		left: 6px;
-		width: 45%; 
-		padding-right: 10px; 
-		white-space: nowrap;
-	}
+@media only screen and (max-width: 760px),
+(min-device-width: 768px) and (max-device-width: 1024px) {
+  /* Force table to not be like tables anymore */
+  table,
+  thead,
+  tbody,
+  th,
+  td,
+  tr {
+    display: block;
+  }
+  /* Hide table headers (but not display: none;, for accessibility) */
+  thead tr {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+  }
+  tr {
+    border: 1px solid #ccc;
+  }
+  td {
+    /* Behave  like a "row" */
+    border: none;
+    border-bottom: 1px solid #eee;
+    position: relative;
+    padding-left: 25%;
+  }
+  td:before {
+    /* Now like a table header */
+    position: absolute;
+    /* Top/left values mimic padding */
+    top: 6px;
+    left: 6px;
+    width: 45%;
+    padding-right: 10px;
+    white-space: nowrap;
+  }
+}
 
+@media only screen and (max-width: 1500px) {
+  .tablecontainer, .piechart-right {padding: 0px;}
+  .piechart-right, .piechart-left, .map-right, .map-left {width: 100%;}
 }

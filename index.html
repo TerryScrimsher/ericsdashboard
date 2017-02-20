@@ -3,28 +3,28 @@
 
 <head>
 
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="">
 
-    <title>Logical Position Sales Dashboard</title>
+  <title>Logical Position Sales Dashboard</title>
 
-    <!-- Bootstrap Core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Core CSS -->
+  <link href="css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- Custom CSS -->
-    <link href="css/style.css" rel="stylesheet">
-  
-    <!-- Javascript -->
-    <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.14/angular.min.js"></script>
-    <script type="text/javascript" src="http://www.google.com/jsapi"></script>
-    <script src="https://www.gstatic.com/charts/loader.js"></script>
+  <!-- Custom CSS -->
+  <link href="css/style.css" rel="stylesheet">
 
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
+  <!-- Javascript -->
+  <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.14/angular.min.js"></script>
+  <script type="text/javascript" src="http://www.google.com/jsapi"></script>
+  <script src="https://www.gstatic.com/charts/loader.js"></script>
+
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
@@ -33,241 +33,257 @@
 
 <body ng-app="myApp" ng-controller="customersCtrl">
 
-    <!-- Navigation -->
-    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-        <div class="container">
-            <!-- Brand and toggle get grouped for better mobile display -->
-
-                <div style="padding-top: 7px; width: 240px; margin: 0 auto;"><img width=240 src="img/lp_white.png"></div>
-
-        </div>
-        <!-- /.container -->
-    </nav>
-  
-    <!-- Page Content -->
+  <!-- Navigation -->
+  <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
     <div class="container">
-      
-        <!-- Projects Row -->
-        <div class="row">
-          
-            <!--CURRENT CYCLE-->
-          
-            <div class="col-md-4 portfolio-item" style="margin-bottom: 0px;">
-          
-              <div class="graybox">
-                <div style="width: 50%; float: left;">
-                  <div style="width: 100%; height: 12px;"><h2>Current top producers</h2></div>
-                  <div style="background-color: #282828; width: 100%; height: 22px;"><h3>{{currentStart}} - {{currentEnd}}</h3></div>
-                  <div style="color: #ffffff; font-size: 16px; padding: 20px">
-                    <table>
-                      <thead>
-                        <tr>
-                          <td style="font-size:12px; font-weight: 700;">Name</td>
-                          <td style="font-size:12px; font-weight: 700;">Sales</td>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr ng-repeat="x in currentTopPro | orderBy:-'TotalSales' | limitTo:10">
-                          <td class="{{ x.Office }}">{{ x.Name }}</td>
-                          <td class="{{ x.Office }}">{{ "$"+x.TotalSales }}</td>
-                        </tr>
-                      </tbody>
-                    </table>  
-                  </div>
-                </div>  
-                <div style="width: 50%; float: left;">
-                  <div style="width: 100%; height: 12px;"><h2><span class="currentMonth"></span> top producers</h2></div>
-                  <div style="background-color: #282828; width: 100%; height: 22px;"><h3>{{monthStart}} - {{monthEnd}}</h3></div>
-                  <div style="color: #ffffff; font-size: 16px; padding: 20px">
-                    <table>
-                      <thead>
-                        <tr>
-                          <td style="font-size:12px; font-weight: 700;">Name</td>
-                          <td style="font-size:12px; font-weight: 700;">Sales</td>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr ng-repeat="x in monthTopPro | orderBy:-'TotalSales' | limitTo:5">
-                          <td class="{{ x.Office }}">{{ x.Name }}</td>
-                          <td class="{{ x.Office }}">{{ "$"+x.TotalSales }}</td>
-                        </tr>
-                      </tbody>
-                    </table>  
-                  </div>
-                </div>  
-                <div style="clear: both;"></div>
-              </div>
-
-              <div class="graybox">
-                 <div style="width: 100%; height: 12px;"><h2>Current cycle top managers</h2></div>
-                 <div style="background-color: #282828; width: 100%; height: 22px;"><h3>{{currentStart}} - {{currentEnd}}</h3></div>  
-                 <div style="height:100%; width: 100%;" id="currentTopMgrBarChart"></div> 
-              </div>  
-              
-              <div class="graybox">
-                <div style="width: 100%; height: 12px;"><h2><span class="currentMonth"></span> office breakdown</h2></div>
-                <div style="background-color: #282828; width: 100%; height: 22px;"><h3>{{monthStart}} - {{monthEnd}}</h3></div>
-                <div style="width:35%; float: left;" id="monthOfficePieChart"></div>
-                <div style="width:65%; color: #ffffff; font-size: 16px; padding: 20px; float: left;">
-                  <table>
-                    <thead>
-                      <tr>
-                        <td style="font-size:12px; font-weight: 700;">Office</td>
-                        <td style="font-size:12px; font-weight: 700;">Sales</td>
-                        <td style="font-size:12px; font-weight: 700;">Avg. Rep Sales</td>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr ng-repeat="x in monthOffice | orderBy:-'TotalSales' | limitTo:4">
-                        <td class="office{{ $index+1 }}">{{ x.Name }}</td>
-                        <td class="office{{ $index+1 }}">{{ "$"+x.TotalSales }}</td>
-                        <td class="office{{ $index+1 }}">{{ x.AvgRepSalesPerCycle | number:0 }}</td>
-                      </tr>
-                    </tbody>
-                  </table>  
-                </div>
-                <div style="clear: both;"></div>
-              </div>   
-              
-            </div>
-          
-            <!--CURRENT MONTH-->
-          
-            <div class="col-md-4 portfolio-item" style="margin-bottom: 0px;">
-
-              <div class="graybox">
-                <div style="width: 100%; height: 12px;"><h2>US Map</h2></div>
-                <div style="background-color: #282828; width: 100%; height: 22px;"><h3>{{currentStart}} - {{currentEnd}}</h3></div>
-                
-                 <div style="width: 50%; float: left; margin-left: 2%;" id='officeMap'></div>
-                 <div style="width:48%; color: #ffffff; font-size: 16px; padding: 20px 20px 20px 0px; float: left;">
-                  <table>
-                    <thead>
-                      <tr>
-                        <td style="font-size:12px; font-weight: 700;">Avg. Calls</td>
-                        <td style="font-size:12px; font-weight: 700;">Call:Link</td>
-                        <td style="font-size:12px; font-weight: 700;">Close %</td>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr ng-repeat="x in yearOffice | orderBy:-'TotalSales' | limitTo:4">
-                        <td class="office{{ $index+1 }}">{{ x.AverageCalls | number:0 }}</td>
-                        <td class="office{{ $index+1 }}">{{ x.CallsToLinks | number:4 }}</td>
-                        <td class="office{{ $index+1 }}">{{ x.CloseRate*100 | number:1 }}%</td>
-                      </tr>
-                    </tbody>
-                  </table>  
-                </div>
-                <div style="clear: both;"></div>
-                
-              </div>
-
-              <div class="graybox">
-                <div style="width: 100%; height: 12px;"><h2><span class="currentMonth"></span> top managers</h2></div>
-                <div style="background-color: #282828; width: 100%; height: 22px;"><h3>{{monthStart}} - {{monthEnd}}</h3></div>
-                <div style="height:100%; width: 100%;" id="monthTopMgrBarChart"></div> 
-              </div> 
-
-              <div class="graybox">
-                <div style="width: 100%; height: 12px;"><h2><span class="currentYear"></span> office breakdown</h2></div>
-                <div style="background-color: #282828; width: 100%; height: 22px;"><h3>{{yearStart}} - {{yearEnd}}</h3></div>
-                <div style="width:35%; float: left;" id="yearOfficePieChart"></div>
-                <div style="width:65%; color: #ffffff; font-size: 16px; padding: 20px; float: left;">
-                  <table>
-                    <thead>
-                      <tr>
-                        <td style="font-size:12px; font-weight: 700;">Office</td>
-                        <td style="font-size:12px; font-weight: 700;">Sales</td>
-                        <td style="font-size:12px; font-weight: 700;">Avg. Rep Sales</td>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr ng-repeat="x in yearOffice | orderBy:-'TotalSales' | limitTo:4">
-                        <td class="office{{ $index+1 }}">{{ x.Name }}</td>
-                        <td class="office{{ $index+1 }}">{{ "$"+x.TotalSales }}</td>
-                        <td class="office{{ $index+1 }}">{{ x.AvgRepSalesPerCycle | number:0 }}</td>
-                      </tr>
-                    </tbody>
-                  </table>  
-                </div>
-                <div style="clear: both;"></div>
-              </div> 
-      
-            </div>
-          
-            <!--CURRENT YEAR-->
-          
-            <div class="col-md-4 portfolio-item" style="margin-bottom: 0px;">
-        
-              <div class="graybox">
-                <div style="width: 100%; height: 12px;"><h2><span class="currentYear"></span> top producers</h2></div>
-                <div style="background-color: #282828; width: 100%; height: 22px;"><h3>{{yearStart}} - {{yearEnd}}</h3></div>
-                <div style="color: #ffffff; font-size: 16px; padding: 20px">
-                  <table>
-                    <thead>
-                      <tr>
-                        <td style="font-size:12px; font-weight: 700;">Name</td>
-                        <td style="font-size:12px; font-weight: 700;">Sales</td>
-                        <td style="font-size:12px; font-weight: 700;">Call:Link Ratio</td>
-                        <td style="font-size:12px; font-weight: 700;">Close %</td>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr ng-repeat="x in yearTopPro | orderBy:-'TotalSales' | limitTo:10">
-                        <td class="{{ x.Office }}">{{ x.Name }}</td>
-                        <td class="{{ x.Office }}">${{ x.TotalSales }}</td>
-                        <td class="{{ x.Office }}">{{ x.CallsToLinks | number:1 }}</td>
-                        <td class="{{ x.Office }}">{{ x.CloseRate*100 | number:0 }}%</td>
-                      </tr>
-                    </tbody>
-                  </table>  
-                </div>
-              </div> 
-
-              <div class="graybox">
-                <div style="width: 100%; height: 12px;"><h2><span class="currentYear"></span> top managers</h2></div>
-                <div style="background-color: #282828; width: 100%; height: 22px;"><h3>{{yearStart}} - {{yearEnd}}</h3></div>
-                <div style="color: #ffffff; font-size: 16px; padding: 20px">
-                  <table>
-                    <thead>
-                      <tr>
-                        <td style="font-size:12px; font-weight: 700;">Name</td>
-                        <td style="font-size:12px; font-weight: 700;">Sales</td>
-                        <td style="font-size:12px; font-weight: 700;">Call:Link Ratio</td>
-                        <td style="font-size:12px; font-weight: 700;">Close %</td>
-                        <td style="font-size:12px; font-weight: 700;">Avg. Calls</td>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr ng-repeat="x in yearTopMgr | orderBy:-'TotalSales' | limitTo:8">
-                        <td class="{{ x.Office }}">{{ x.Name }}</td>
-                        <td class="{{ x.Office }}">${{ x.TotalSales }}</td>
-                        <td class="{{ x.Office }}">{{ x.CallsToLinks | number:1 }}</td>
-                        <td class="{{ x.Office }}">{{ x.CloseRate*100 | number:0 }}%</td>
-                        <td class="{{ x.Office }}">{{ x.AvgRepSalesPerCycle | number:0 }}</td>
-                      </tr>
-                    </tbody>
-                  </table>  
-                </div>
-              </div> 
-              
-            </div>
-          
-        </div>
-        <!-- /.row -->
-      
+      <div class="logo"><img width=240 src="img/lp_white.png"></div>
+      <div class="totaldate">Daily Sales: <span id="dailyTotal">$10000</span> | Date: <span id="currentdate"></span></div>
     </div>
     <!-- /.container -->
-  
-    <span class="hidetext"><h1>Bryce &#60;3 Bieber</h1></span>
+  </nav>
 
-    <!-- jQuery -->
-    <script src="js/jquery.js"></script>
+  <!-- Page Content -->
+  <div class="container">
 
-    <!-- Bootstrap Core JavaScript -->
-    <script src="js/bootstrap.min.js"></script>
+    <!-- Projects Row -->
+    <div class="row">
 
-    <script type="text/javascript" src="js/app.js"></script>
+      <!--FIRST COLUMN-->
+
+      <div class="zerobottommargin col-md-4 portfolio-item">
+
+        <div class="nobox">
+          <div class="boxhalfcontainer-left">
+            <div class="boxheader">
+              <h2>Current top producers</h2></div>
+            <div class="boxsubheader">
+              <h3>{{currentStart}} - {{currentEnd}}</h3></div>
+            <div class="tablecontainer">
+              <table>
+                <thead>
+                  <tr>
+                    <td class="tableheader">Name</td>
+                    <td class="tableheader">Sales</td>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr ng-repeat="x in currentTopPro | orderBy:-'TotalSales' | limitTo:10">
+                    <td class="{{ x.Office }}">{{ x.Name }}</td>
+                    <td class="{{ x.Office }}">{{ "$"+x.TotalSales }}</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="boxhalfcontainer-right">
+            <div class="boxheader">
+              <h2><span class="currentMonth"></span> top producers</h2></div>
+            <div class="boxsubheader">
+              <h3>{{monthStart}} - {{monthEnd}}</h3></div>
+            <div class="tablecontainer">
+              <table>
+                <thead>
+                  <tr>
+                    <td class="tableheader">Name</td>
+                    <td class="tableheader">Sales</td>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr ng-repeat="x in monthTopPro | orderBy:-'TotalSales' | limitTo:5">
+                    <td class="{{ x.Office }}">{{ x.Name }}</td>
+                    <td class="{{ x.Office }}">{{ "$"+x.TotalSales }}</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="clearboth"></div>
+        </div>
+
+        <div class="graybox">
+          <div class="boxheader">
+            <h2>Current cycle top managers</h2></div>
+          <div class="boxsubheader">
+            <h3>{{currentStart}} - {{currentEnd}}</h3></div>
+          <div class="barchart" id="currentTopMgrBarChart"></div>
+        </div>
+
+        <div class="graybox">
+          <div class="boxheader">
+            <h2><span class="currentMonth"></span> office breakdown</h2></div>
+          <div class="boxsubheader">
+            <h3>{{monthStart}} - {{monthEnd}}</h3></div>
+          <div class="piechart-left" id="monthOfficePieChart"></div>
+          <div class="piechart-right">
+            <table>
+              <thead>
+                <tr>
+                  <td class="tableheader">Office</td>
+                  <td class="tableheader">Sales</td>
+                  <td class="tableheader">Avg. Rep Sales</td>
+                </tr>
+              </thead>
+              <tbody>
+                <tr ng-repeat="x in monthOffice | orderBy:-'TotalSales' | limitTo:4">
+                  <td class="office{{ $index+1 }}">{{ x.Name }}</td>
+                  <td class="office{{ $index+1 }}">{{ "$"+x.TotalSales }}</td>
+                  <td class="office{{ $index+1 }}">{{ x.AvgRepSalesPerCycle | number:0 }}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="clearboth"></div>
+        </div>
+
+      </div>
+
+      <!--SECOND COLUMN-->
+
+      <div class="zerobottommargin col-md-4 portfolio-item">
+
+        <div class="graybox">
+          <div class="boxheader">
+            <h2>2017 Office Map</h2></div>
+          <div class="boxsubheader">
+            <h3>{{yearStart}} - {{yearEnd}}</h3></div>
+
+          <div class="map-left" id='officeMap'></div>
+          <div class="map-right">
+            <table>
+              <thead>
+                <tr>
+                  <td class="tableheader">Avg. Calls</td>
+                  <td class="tableheader">Call:Link</td>
+                  <td class="tableheader">Close %</td>
+                </tr>
+              </thead>
+              <tbody>
+                <tr ng-repeat="x in yearOffice | orderBy:-'TotalSales' | limitTo:4">
+                  <td class="office{{ $index+1 }}">{{ x.AverageCalls | number:0 }}</td>
+                  <td class="office{{ $index+1 }}">{{ x.CallsToLinks | number:4 }}</td>
+                  <td class="office{{ $index+1 }}">{{ x.CloseRate*100 | number:1 }}%</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="clearboth"></div>
+
+        </div>
+
+        <div class="graybox">
+          <div class="boxheader">
+            <h2><span class="currentMonth"></span> top managers</h2></div>
+          <div class="boxsubheader">
+            <h3>{{monthStart}} - {{monthEnd}}</h3></div>
+          <div class="barchart" id="monthTopMgrBarChart"></div>
+        </div>
+
+        <div class="graybox">
+          <div class="boxheader">
+            <h2><span class="currentYear"></span> office breakdown</h2></div>
+          <div class="boxsubheader">
+            <h3>{{yearStart}} - {{yearEnd}}</h3></div>
+          <div class="piechart-left" id="yearOfficePieChart"></div>
+          <div class="piechart-right">
+            <table>
+              <thead>
+                <tr>
+                  <td class="tableheader">Office</td>
+                  <td class="tableheader">Sales</td>
+                  <td class="tableheader">Avg. Rep Sales</td>
+                </tr>
+              </thead>
+              <tbody>
+                <tr ng-repeat="x in yearOffice | orderBy:-'TotalSales' | limitTo:4">
+                  <td class="office{{ $index+1 }}">{{ x.Name }}</td>
+                  <td class="office{{ $index+1 }}">{{ "$"+x.TotalSales }}</td>
+                  <td class="office{{ $index+1 }}">{{ x.AvgRepSalesPerCycle | number:0 }}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="clearboth"></div>
+        </div>
+
+      </div>
+
+      <!--THIRD COLUMN-->
+
+      <div class="zerobottommargin col-md-4 portfolio-item">
+
+        <div class="graybox">
+          <div class="boxheader">
+            <h2><span class="currentYear"></span> top producers</h2></div>
+          <div class="boxsubheader">
+            <h3>{{yearStart}} - {{yearEnd}}</h3></div>
+          <div class="tablecontainer">
+            <table>
+              <thead>
+                <tr>
+                  <td class="tableheader">Name</td>
+                  <td class="tableheader">Sales</td>
+                  <td class="tableheader">Call:Link Ratio</td>
+                  <td class="tableheader">Close %</td>
+                </tr>
+              </thead>
+              <tbody>
+                <tr ng-repeat="x in yearTopPro | orderBy:-'TotalSales' | limitTo:10">
+                  <td class="{{ x.Office }}">{{ x.Name }}</td>
+                  <td class="{{ x.Office }}">${{ x.TotalSales }}</td>
+                  <td class="{{ x.Office }}">{{ x.CallsToLinks | number:1 }}</td>
+                  <td class="{{ x.Office }}">{{ x.CloseRate*100 | number:0 }}%</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="graybox">
+          <div class="boxheader">
+            <h2><span class="currentYear"></span> top managers</h2></div>
+          <div class="boxsubheader">
+            <h3>{{yearStart}} - {{yearEnd}}</h3></div>
+          <div class="tablecontainer">
+            <table>
+              <thead>
+                <tr>
+                  <td class="tableheader">Name</td>
+                  <td class="tableheader">Sales</td>
+                  <td class="tableheader">Call:Link Ratio</td>
+                  <td class="tableheader">Close %</td>
+                  <td class="tableheader">Avg. Calls</td>
+                </tr>
+              </thead>
+              <tbody>
+                <tr ng-repeat="x in yearTopMgr | orderBy:-'TotalSales' | limitTo:8">
+                  <td class="{{ x.Office }}">{{ x.Name }}</td>
+                  <td class="{{ x.Office }}">${{ x.TotalSales }}</td>
+                  <td class="{{ x.Office }}">{{ x.CallsToLinks | number:1 }}</td>
+                  <td class="{{ x.Office }}">{{ x.CloseRate*100 | number:0 }}%</td>
+                  <td class="{{ x.Office }}">{{ x.AvgRepSalesPerCycle | number:0 }}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+    <!-- /.row -->
+
+  </div>
+  <!-- /.container -->
+
+  <span class="hidetext"><h1>Bryce &#60;3 Bieber</h1></span>
+
+  <!-- jQuery -->
+  <script src="js/jquery.js"></script>
+
+  <!-- Bootstrap Core JavaScript -->
+  <script src="js/bootstrap.min.js"></script>
+
+  <script type="text/javascript" src="js/app.js"></script>
 
 </body>
 
