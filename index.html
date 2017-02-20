@@ -37,7 +37,7 @@
   <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
     <div class="container">
       <div class="logo"><img width=240 src="img/lp_white.png"></div>
-      <div class="totaldate">Daily Sales: <span id="dailyTotal">$10000</span> | Date: <span id="currentdate"></span></div>
+      <div class="totaldate"><span id="dailyTotal">Daily Sales: $10000</span><span id="currentdate"></span></div>
     </div>
     <!-- /.container -->
   </nav>
@@ -251,7 +251,7 @@
                   <td class="tableheader">Sales</td>
                   <td class="tableheader">Call:Link Ratio</td>
                   <td class="tableheader">Close %</td>
-                  <td class="tableheader">Avg. Calls</td>
+                  <td class="tableheader lastcolumnhide">Avg. Calls</td>
                 </tr>
               </thead>
               <tbody>
@@ -260,7 +260,7 @@
                   <td class="{{ x.Office }}">${{ x.TotalSales }}</td>
                   <td class="{{ x.Office }}">{{ x.CallsToLinks | number:1 }}</td>
                   <td class="{{ x.Office }}">{{ x.CloseRate*100 | number:0 }}%</td>
-                  <td class="{{ x.Office }}">{{ x.AvgRepSalesPerCycle | number:0 }}</td>
+                  <td class="{{ x.Office }} lastcolumnhide">{{ x.AvgRepSalesPerCycle | number:0 }}</td>
                 </tr>
               </tbody>
             </table>

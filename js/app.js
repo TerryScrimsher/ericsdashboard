@@ -488,7 +488,7 @@ app.controller('customersCtrl', function($scope, $http) {
 
   function currentDate() {
     var today = new Date();
-    var date = 1 + today.getMonth() + "/" + today.getDate() + "/" + today.getFullYear();
+    var date = "Date: " + (1 + today.getMonth()) + "/" + today.getDate() + "/" + today.getFullYear();
     document.getElementById('currentdate').innerHTML = date;
   }
 
