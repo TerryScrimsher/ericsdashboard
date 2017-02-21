@@ -6,6 +6,8 @@ app.controller('customersCtrl', function($scope, $http) {
   var chicagoColor = '#1ebdea';
   var hendersonColor = '#D537C9';
   var austinColor = '#7b47b8';
+  
+  var JSONError = false;
 
   init();
 
@@ -21,14 +23,14 @@ app.controller('customersCtrl', function($scope, $http) {
   //Automatic Update Function
   var autoUpdate = setInterval(function() {
     getJsonRes();
-
+    salesToday();
     currentTopMgrBarChart();
     monthTopMgrBarChart();
     monthOfficePieChart();
     yearOfficePieChart();
     officeMap();
     currentDate();
-  }, 60000);
+  }, 30000);
 
   /* INITIALIZE FUNCTIONS */
 
@@ -50,11 +52,26 @@ app.controller('customersCtrl', function($scope, $http) {
           $scope.yearTopMgr = response.StatSections[2].Managers,
           $scope.yearStart = dateParse(response.StatSections[2].StartDateFilter),
           $scope.yearEnd = dateParse(response.StatSections[2].EndDateFilter),
-          $scope.yearOffice = sortByPreference(response.StatSections[2].Office)
+          $scope.yearOffice = sortByPreference(response.StatSections[2].Office),
+          $scope.salesToday = response.SalesToday;
+        
+          if (JSONError == true) {
+            $('.showtext').show();
+            $('.hidetext').hide();
+            
+            currentTopMgrBarChart();
+            monthTopMgrBarChart();
+            monthOfficePieChart();
+            yearOfficePieChart();
+            officeMap();
+            JSONError = false;
+          }
+
       }).error(function(data, status) {
         console.log("Error status : " + status);
-        $('div').slice(2).hide();
+        $('.showtext').hide();
         $('.hidetext').show();
+        JSONError = true;
       });
   }
 
@@ -73,6 +90,7 @@ app.controller('customersCtrl', function($scope, $http) {
     google.charts.setOnLoadCallback(monthTopMgrBarChart);
     google.charts.setOnLoadCallback(monthOfficePieChart);
     google.charts.setOnLoadCallback(yearOfficePieChart);
+    google.charts.setOnLoadCallback(salesToday);
   }
 
   /* CHART CREATION FUNCTIONS */
@@ -184,18 +202,18 @@ app.controller('customersCtrl', function($scope, $http) {
     for (i = 0; i < 8; i++) {
 
       var barColor = "#dddddd";
-      if ($scope.monthTopMgr[i].Office == "Portland") {
+      if ($scope.currentTopMgr[i].Office == "Portland") {
         barColor = portlandColor;
-      } else if ($scope.monthTopMgr[i].Office == "Chicago") {
+      } else if ($scope.currentTopMgr[i].Office == "Chicago") {
         barColor = chicagoColor;
-      } else if ($scope.monthTopMgr[i].Office == "Henderson") {
+      } else if ($scope.currentTopMgr[i].Office == "Henderson") {
         barColor = hendersonColor;
-      } else if ($scope.monthTopMgr[i].Office == "Austin") {
+      } else if ($scope.currentTopMgr[i].Office == "Austin") {
         barColor = austinColor;
       }
 
       test.push([$scope.currentTopMgr[i].Name, {
-        v: $scope.currentTopMgr[i].TotalSales,
+        v: $scope.currentTopMgr[i].TotalSales / 1000,
         f: '$' + parseFloat($scope.currentTopMgr[i].TotalSales).toFixed(2)
       }, barColor]);
     }
@@ -217,7 +235,7 @@ app.controller('customersCtrl', function($scope, $http) {
       },
       legend: 'none',
       chartArea: {
-        width:"50%"
+        width: "50%"
       },
       hAxis: {
         title: 'Total Sales',
@@ -225,8 +243,8 @@ app.controller('customersCtrl', function($scope, $http) {
         textStyle: {
           color: '#FFF'
         },
-        format: '$#,###',
-        ticks: [2000, 4000, 6000, 8000, 10000]
+        format: '$#,###k',
+        ticks: [5, 10, 15, 20, 25, 30]
       },
       vAxis: {
         title: 'Manager',
@@ -264,7 +282,7 @@ app.controller('customersCtrl', function($scope, $http) {
       }
 
       test.push([$scope.monthTopMgr[i].Name, {
-        v: $scope.monthTopMgr[i].TotalSales,
+        v: $scope.monthTopMgr[i].TotalSales / 1000,
         f: '$' + parseFloat($scope.monthTopMgr[i].TotalSales).toFixed(2)
       }, barColor]);
     }
@@ -286,7 +304,7 @@ app.controller('customersCtrl', function($scope, $http) {
       },
       legend: 'none',
       chartArea: {
-        width:"50%"
+        width: "50%"
       },
       hAxis: {
         title: 'Total Sales',
@@ -294,14 +312,14 @@ app.controller('customersCtrl', function($scope, $http) {
         textStyle: {
           color: '#FFF'
         },
-        format: '$#,###',
-        ticks: [10000, 20000, 30000, 40000, 50000]
+        format: '$#,###k',
+        ticks: [10, 20, 30, 40, 50]
       },
       vAxis: {
         title: 'Manager',
         textStyle: {
           color: '#FFF'
-        } 
+        }
       },
     };
 
@@ -490,6 +508,12 @@ app.controller('customersCtrl', function($scope, $http) {
     var today = new Date();
     var date = "Date: " + (1 + today.getMonth()) + "/" + today.getDate() + "/" + today.getFullYear();
     document.getElementById('currentdate').innerHTML = date;
+  }
+
+  function salesToday() {
+    var value = $scope.salesToday;
+    var num = '$' + value.toFixed(2).replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,");
+    document.getElementById('dailyTotal').innerHTML = "Daily Sales: " + num;
   }
 
 });

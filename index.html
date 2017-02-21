@@ -36,14 +36,14 @@
   <!-- Navigation -->
   <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
     <div class="container">
-      <div class="logo"><img width=240 src="img/lp_white.png"></div>
-      <div class="totaldate"><span id="dailyTotal">Daily Sales: $10000</span><span id="currentdate"></span></div>
+      <div class="logo"><img src="img/lp_white.png"></div>
+      <div class="totaldate"><span id="dailyTotal"></span><span id="currentdate"></span></div>
     </div>
     <!-- /.container -->
   </nav>
 
   <!-- Page Content -->
-  <div class="container">
+  <div class="container showtext ">
 
     <!-- Projects Row -->
     <div class="row">
@@ -66,10 +66,10 @@
                     <td class="tableheader">Sales</td>
                   </tr>
                 </thead>
-                <tbody>
-                  <tr ng-repeat="x in currentTopPro | orderBy:-'TotalSales' | limitTo:10">
-                    <td class="{{ x.Office }}">{{ x.Name }}</td>
-                    <td class="{{ x.Office }}">{{ "$"+x.TotalSales }}</td>
+                <tbody ng-repeat="x in currentTopPro | limitTo:10">
+                  <tr class="{{ x.Office }}">
+                    <td>{{ x.Name }}</td>
+                    <td>${{ x.TotalSales | number:0 }}</td>
                   </tr>
                 </tbody>
               </table>
@@ -89,9 +89,9 @@
                   </tr>
                 </thead>
                 <tbody>
-                  <tr ng-repeat="x in monthTopPro | orderBy:-'TotalSales' | limitTo:5">
+                  <tr ng-repeat="x in monthTopPro | limitTo:5">
                     <td class="{{ x.Office }}">{{ x.Name }}</td>
-                    <td class="{{ x.Office }}">{{ "$"+x.TotalSales }}</td>
+                    <td class="{{ x.Office }}">${{ x.TotalSales | number:0 }}</td>
                   </tr>
                 </tbody>
               </table>
@@ -126,7 +126,7 @@
               <tbody>
                 <tr ng-repeat="x in monthOffice | orderBy:-'TotalSales' | limitTo:4">
                   <td class="office{{ $index+1 }}">{{ x.Name }}</td>
-                  <td class="office{{ $index+1 }}">{{ "$"+x.TotalSales }}</td>
+                  <td class="office{{ $index+1 }}">${{ x.TotalSales | number:0 }}</td>
                   <td class="office{{ $index+1 }}">{{ x.AvgRepSalesPerCycle | number:0 }}</td>
                 </tr>
               </tbody>
@@ -160,7 +160,7 @@
               <tbody>
                 <tr ng-repeat="x in yearOffice | orderBy:-'TotalSales' | limitTo:4">
                   <td class="office{{ $index+1 }}">{{ x.AverageCalls | number:0 }}</td>
-                  <td class="office{{ $index+1 }}">{{ x.CallsToLinks | number:4 }}</td>
+                  <td class="office{{ $index+1 }}">{{ x.CallsToLinks | number:1 }}</td>
                   <td class="office{{ $index+1 }}">{{ x.CloseRate*100 | number:1 }}%</td>
                 </tr>
               </tbody>
@@ -196,7 +196,7 @@
               <tbody>
                 <tr ng-repeat="x in yearOffice | orderBy:-'TotalSales' | limitTo:4">
                   <td class="office{{ $index+1 }}">{{ x.Name }}</td>
-                  <td class="office{{ $index+1 }}">{{ "$"+x.TotalSales }}</td>
+                  <td class="office{{ $index+1 }}">${{ x.TotalSales | number:0 }}</td>
                   <td class="office{{ $index+1 }}">{{ x.AvgRepSalesPerCycle | number:0 }}</td>
                 </tr>
               </tbody>
@@ -227,9 +227,9 @@
                 </tr>
               </thead>
               <tbody>
-                <tr ng-repeat="x in yearTopPro | orderBy:-'TotalSales' | limitTo:10">
+                <tr ng-repeat="x in yearTopPro | limitTo:10">
                   <td class="{{ x.Office }}">{{ x.Name }}</td>
-                  <td class="{{ x.Office }}">${{ x.TotalSales }}</td>
+                  <td class="{{ x.Office }}">${{ x.TotalSales | number:0 }}</td>
                   <td class="{{ x.Office }}">{{ x.CallsToLinks | number:1 }}</td>
                   <td class="{{ x.Office }}">{{ x.CloseRate*100 | number:0 }}%</td>
                 </tr>
@@ -255,9 +255,9 @@
                 </tr>
               </thead>
               <tbody>
-                <tr ng-repeat="x in yearTopMgr | orderBy:-'TotalSales' | limitTo:8">
+                <tr ng-repeat="x in yearTopMgr | limitTo:8">
                   <td class="{{ x.Office }}">{{ x.Name }}</td>
-                  <td class="{{ x.Office }}">${{ x.TotalSales }}</td>
+                  <td class="{{ x.Office }}">${{ x.TotalSales | number:0 }}</td>
                   <td class="{{ x.Office }}">{{ x.CallsToLinks | number:1 }}</td>
                   <td class="{{ x.Office }}">{{ x.CloseRate*100 | number:0 }}%</td>
                   <td class="{{ x.Office }} lastcolumnhide">{{ x.AvgRepSalesPerCycle | number:0 }}</td>
@@ -274,8 +274,8 @@
 
   </div>
   <!-- /.container -->
-
-  <span class="hidetext"><h1>Bryce &#60;3 Bieber</h1></span>
+  
+  <div id="loadermargin" class="hidetext loader"></div>
 
   <!-- jQuery -->
   <script src="js/jquery.js"></script>
