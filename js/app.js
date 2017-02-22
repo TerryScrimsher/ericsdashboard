@@ -3,8 +3,8 @@ app.controller('customersCtrl', function($scope, $http) {
   getJsonRes();
 
   var portlandColor = '#0DA33F';
-  var chicagoColor = '#1ebdea';
-  var hendersonColor = '#D537C9';
+  var chicagoColor = '#D537C9';
+  var hendersonColor = '#1ebdea';
   var austinColor = '#7b47b8';
   
   var JSONError = false;
@@ -21,16 +21,16 @@ app.controller('customersCtrl', function($scope, $http) {
   });
 
   //Automatic Update Function
-  var autoUpdate = setInterval(function() {
-    getJsonRes();
-    salesToday();
-    currentTopMgrBarChart();
-    monthTopMgrBarChart();
-    monthOfficePieChart();
-    yearOfficePieChart();
-    officeMap();
-    currentDate();
-  }, 30000);
+//  var autoUpdate = setInterval(function() {
+//    getJsonRes();
+//    salesToday();
+//    currentTopMgrBarChart();
+//    monthTopMgrBarChart();
+//    monthOfficePieChart();
+//    yearOfficePieChart();
+//    officeMap();
+//    currentDate();
+//  }, 30000);
 
   /* INITIALIZE FUNCTIONS */
 
@@ -38,7 +38,7 @@ app.controller('customersCtrl', function($scope, $http) {
   function getJsonRes() {
     $http.get("js/jsonresponse.json")
       .success(function(response) {
-        $scope.currentTopPro = response.StatSections[0].TopSalesReps,
+          $scope.currentTopPro = response.StatSections[0].TopSalesReps,
           $scope.currentTopMgr = response.StatSections[0].Managers,
           $scope.currentStart = dateParse(response.StatSections[0].StartDateFilter),
           $scope.currentEnd = dateParse(response.StatSections[0].EndDateFilter),
@@ -54,7 +54,7 @@ app.controller('customersCtrl', function($scope, $http) {
           $scope.yearEnd = dateParse(response.StatSections[2].EndDateFilter),
           $scope.yearOffice = sortByPreference(response.StatSections[2].Office),
           $scope.salesToday = response.SalesToday;
-        
+      
           if (JSONError == true) {
             $('.showtext').show();
             $('.hidetext').hide();
@@ -74,6 +74,21 @@ app.controller('customersCtrl', function($scope, $http) {
         JSONError = true;
       });
   }
+  
+//  var payCycleIndex = -1;
+//  var monthIndex = -1;
+//  var yearIndex = -1;
+// 
+//  for (var i = 0; i < array.length; i++)
+//  {
+//      if (array[i].SectionId == "CurrentPayCycle")
+//          payCycleIndex = i;
+//      if (array[i].SectionId == "CurrentMonth")
+//          monthIndex = i;
+//      if (array[i].SectionId == "CurrentYear")
+//          yearIndex = i;
+//  }
+  
 
   //Initialization Function
   function init() {
@@ -93,6 +108,27 @@ app.controller('customersCtrl', function($scope, $http) {
     google.charts.setOnLoadCallback(salesToday);
   }
 
+  
+//  function search($array, $key, $value)
+//  {
+//      $results = array();
+//
+//      if (is_array($array)) {
+//          if (isset($array[$key]) && $array[$key] == $value) {
+//              $results[] = $array;
+//          }
+//
+//          foreach ($array as $subarray) {
+//              $results = array_merge($results, search($subarray, $key, $value));
+//          }
+//      }
+//
+//      return $results;
+//  }
+  
+  
+  
+  
   /* CHART CREATION FUNCTIONS */
 
   //Year Total Office Geomap: USA   

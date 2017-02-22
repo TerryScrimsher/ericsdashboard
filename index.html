@@ -88,10 +88,10 @@
                     <td class="tableheader">Sales</td>
                   </tr>
                 </thead>
-                <tbody>
-                  <tr ng-repeat="x in monthTopPro | limitTo:5">
-                    <td class="{{ x.Office }}">{{ x.Name }}</td>
-                    <td class="{{ x.Office }}">${{ x.TotalSales | number:0 }}</td>
+                <tbody ng-repeat="x in monthTopPro | limitTo:5">
+                  <tr class="{{ x.Office }}">
+                    <td>{{ x.Name }}</td>
+                    <td>${{ x.TotalSales | number:0 }}</td>
                   </tr>
                 </tbody>
               </table>
@@ -123,11 +123,11 @@
                   <td class="tableheader">Avg. Rep Sales</td>
                 </tr>
               </thead>
-              <tbody>
-                <tr ng-repeat="x in monthOffice | orderBy:-'TotalSales' | limitTo:4">
-                  <td class="office{{ $index+1 }}">{{ x.Name }}</td>
-                  <td class="office{{ $index+1 }}">${{ x.TotalSales | number:0 }}</td>
-                  <td class="office{{ $index+1 }}">{{ x.AvgRepSalesPerCycle | number:0 }}</td>
+              <tbody ng-repeat="x in monthOffice | orderBy:-'TotalSales' | limitTo:4">
+                <tr class="office{{ $index+1 }}">
+                  <td>{{ x.Name }}</td>
+                  <td>${{ x.TotalSales | number:0 }}</td>
+                  <td>{{ x.AvgRepSalesPerCycle | number:0 }}</td>
                 </tr>
               </tbody>
             </table>
@@ -157,11 +157,11 @@
                   <td class="tableheader">Close %</td>
                 </tr>
               </thead>
-              <tbody>
-                <tr ng-repeat="x in yearOffice | orderBy:-'TotalSales' | limitTo:4">
-                  <td class="office{{ $index+1 }}">{{ x.AverageCalls | number:0 }}</td>
-                  <td class="office{{ $index+1 }}">{{ x.CallsToLinks | number:1 }}</td>
-                  <td class="office{{ $index+1 }}">{{ x.CloseRate*100 | number:1 }}%</td>
+              <tbody ng-repeat="x in yearOffice | orderBy:-'TotalSales' | limitTo:4">
+                <tr class="office{{ $index+1 }}">
+                  <td>{{ x.AverageCalls | number:0 }}</td>
+                  <td>{{ x.CallsToLinks | number:1 }}</td>
+                  <td>{{ x.CloseRate*100 | number:1 }}%</td>
                 </tr>
               </tbody>
             </table>
@@ -193,11 +193,11 @@
                   <td class="tableheader">Avg. Rep Sales</td>
                 </tr>
               </thead>
-              <tbody>
-                <tr ng-repeat="x in yearOffice | orderBy:-'TotalSales' | limitTo:4">
-                  <td class="office{{ $index+1 }}">{{ x.Name }}</td>
-                  <td class="office{{ $index+1 }}">${{ x.TotalSales | number:0 }}</td>
-                  <td class="office{{ $index+1 }}">{{ x.AvgRepSalesPerCycle | number:0 }}</td>
+              <tbody ng-repeat="x in yearOffice | orderBy:-'TotalSales' | limitTo:4">
+                <tr class="office{{ $index+1 }}">
+                  <td>{{ x.Name }}</td>
+                  <td>${{ x.TotalSales | number:0 }}</td>
+                  <td>{{ x.AvgRepSalesPerCycle | number:0 }}</td>
                 </tr>
               </tbody>
             </table>
@@ -226,12 +226,12 @@
                   <td class="tableheader">Close %</td>
                 </tr>
               </thead>
-              <tbody>
-                <tr ng-repeat="x in yearTopPro | limitTo:10">
-                  <td class="{{ x.Office }}">{{ x.Name }}</td>
-                  <td class="{{ x.Office }}">${{ x.TotalSales | number:0 }}</td>
-                  <td class="{{ x.Office }}">{{ x.CallsToLinks | number:1 }}</td>
-                  <td class="{{ x.Office }}">{{ x.CloseRate*100 | number:0 }}%</td>
+              <tbody ng-repeat="x in yearTopPro | limitTo:10">
+                <tr class="{{ x.Office }}">
+                  <td>{{ x.Name }}</td>
+                  <td>${{ x.TotalSales | number:0 }}</td>
+                  <td>{{ x.CallsToLinks | number:1 }}</td>
+                  <td>{{ x.CloseRate*100 | number:0 }}%</td>
                 </tr>
               </tbody>
             </table>
@@ -254,13 +254,13 @@
                   <td class="tableheader lastcolumnhide">Avg. Calls</td>
                 </tr>
               </thead>
-              <tbody>
-                <tr ng-repeat="x in yearTopMgr | limitTo:8">
-                  <td class="{{ x.Office }}">{{ x.Name }}</td>
-                  <td class="{{ x.Office }}">${{ x.TotalSales | number:0 }}</td>
-                  <td class="{{ x.Office }}">{{ x.CallsToLinks | number:1 }}</td>
-                  <td class="{{ x.Office }}">{{ x.CloseRate*100 | number:0 }}%</td>
-                  <td class="{{ x.Office }} lastcolumnhide">{{ x.AvgRepSalesPerCycle | number:0 }}</td>
+              <tbody ng-repeat="x in yearTopMgr | limitTo:8">
+                <tr class="{{ x.Office }}">
+                  <td>{{ x.Name }}</td>
+                  <td>${{ x.TotalSales | number:0 }}</td>
+                  <td>{{ x.CallsToLinks | number:1 }}</td>
+                  <td>{{ x.CloseRate*100 | number:0 }}%</td>
+                  <td class="lastcolumnhide">{{ x.AverageCalls | number:0 }}</td>
                 </tr>
               </tbody>
             </table>

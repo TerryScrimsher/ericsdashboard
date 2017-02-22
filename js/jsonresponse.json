@@ -1,616 +1,539 @@
 {
-  "TimeGenerated": "\/Date(1487692723489)\/",
+  "TimeGenerated": "\/Date(1487718179748)\/",
   "GenerationInterval": 3000000000,
-  "SalesToday": 4927.66,
-  "StatSections": [
-    {
-      "SectionId": "CurrentPayCycle",
-      "StartDateFilter": "\/Date(1487232000000)\/",
-      "EndDateFilter": "\/Date(1488268800000)\/",
-      "TopSalesReps": [
-        {
-          "Name": "Alec Olsen",
-          "Office": "Portland",
-          "TotalSales": 3959.50,
-          "CallsToLinks": 286,
-          "CloseRate": 3,
-          "AverageCalls": 0,
-          "AvgRepSalesPerCycle": 0
-        },
-        {
-          "Name": "Mike Bazzoni",
-          "Office": "Chicago",
-          "TotalSales": 3761.50,
-          "CallsToLinks": 212,
-          "CloseRate": 3,
-          "AverageCalls": 0,
-          "AvgRepSalesPerCycle": 0
-        },
-        {
-          "Name": "Nicole Settembre",
-          "Office": "Henderson",
-          "TotalSales": 2947.00,
-          "CallsToLinks": 62.666666666666664,
-          "CloseRate": 0.66666666666666663,
-          "AverageCalls": 0,
-          "AvgRepSalesPerCycle": 0
-        },
-        {
-          "Name": "Joel Vandekieft",
-          "Office": "Portland",
-          "TotalSales": 2897.00,
-          "CallsToLinks": 177,
-          "CloseRate": 2,
-          "AverageCalls": 0,
-          "AvgRepSalesPerCycle": 0
-        },
-        {
-          "Name": "Farhan Qureshi",
-          "Office": "Chicago",
-          "TotalSales": 2299.00,
-          "CallsToLinks": 52.5,
-          "CloseRate": 0.5,
-          "AverageCalls": 0,
-          "AvgRepSalesPerCycle": 0
-        }
-      ],
-      "Managers": [
-        {
-          "Name": "Kevin Brunner",
-          "Office": "Chicago",
-          "TotalSales": 6060.50,
-          "CallsToLinks": 198.6,
-          "CloseRate": 0.4,
-          "AverageCalls": 0,
-          "AvgRepSalesPerCycle": 1759.5
-        },
-        {
-          "Name": "Conner Henry",
-          "Office": "Portland",
-          "TotalSales": 5558.50,
-          "CallsToLinks": 761,
-          "CloseRate": 2,
-          "AverageCalls": 0,
-          "AvgRepSalesPerCycle": 2382.2142857142857142857142857
-        },
-        {
-          "Name": "Tyler Schmatz",
-          "Office": "Portland",
-          "TotalSales": 5293.00,
-          "CallsToLinks": 212,
-          "CloseRate": 0.5714285714285714,
-          "AverageCalls": 0,
-          "AvgRepSalesPerCycle": 2071.1739130434782608695652174
-        },
-        {
-          "Name": "Kyle Benson",
-          "Office": "Henderson",
-          "TotalSales": 4027.00,
-          "CallsToLinks": 149.23076923076923,
-          "CloseRate": 0.23076923076923078,
-          "AverageCalls": 0,
-          "AvgRepSalesPerCycle": 1169.1290322580645161290322581
-        },
-        {
-          "Name": "Austin Trunnell",
-          "Office": "Austin",
-          "TotalSales": 3495.00,
-          "CallsToLinks": 277.8,
-          "CloseRate": 0.6,
-          "AverageCalls": 0,
-          "AvgRepSalesPerCycle": 1367.6086956521739130434782608
-        },
-        {
-          "Name": "Jason Davis",
-          "Office": "Portland",
-          "TotalSales": 2944.00,
-          "CallsToLinks": 130.46153846153845,
-          "CloseRate": 0.23076923076923078,
-          "AverageCalls": 0,
-          "AvgRepSalesPerCycle": 913.6551724137931034482758621
-        },
-        {
-          "Name": "Terrance Nichols",
-          "Office": "Henderson",
-          "TotalSales": 2747.00,
-          "CallsToLinks": 132.66666666666666,
-          "CloseRate": 0.16666666666666666,
-          "AverageCalls": 0,
-          "AvgRepSalesPerCycle": 988.92
-        },
-        {
-          "Name": "Tyler Mooney",
-          "Office": "Austin",
-          "TotalSales": 2091.75,
-          "CallsToLinks": 310.2,
-          "CloseRate": 0.2,
-          "AverageCalls": 0,
-          "AvgRepSalesPerCycle": 697.25
-        },
-        {
-          "Name": "Kathryn Hayworth",
-          "Office": "Portland",
-          "TotalSales": 1599.00,
-          "CallsToLinks": 838.5,
-          "CloseRate": 0.5,
-          "AverageCalls": 0,
-          "AvgRepSalesPerCycle": 553.5
-        },
-        {
-          "Name": "Peter Spangle",
-          "Office": "Chicago",
-          "TotalSales": 1248.00,
-          "CallsToLinks": 312.85714285714283,
-          "CloseRate": 0.14285714285714285,
-          "AverageCalls": 0,
-          "AvgRepSalesPerCycle": 340.36363636363636363636363636
-        }
-      ],
-      "Office": [
-        {
-          "Name": "Portland",
-          "Office": "Portland",
-          "TotalSales": 15394.50,
-          "CallsToLinks": 261.5,
-          "CloseRate": 0.46153846153846156,
-          "AverageCalls": 60.168141592920357,
-          "AvgRepSalesPerCycle": 1480.1358427928892696508888413
-        },
-        {
-          "Name": "Henderson",
-          "Office": "Henderson",
-          "TotalSales": 6774.00,
-          "CallsToLinks": 145.56,
-          "CloseRate": 0.2,
-          "AverageCalls": 62.741379310344826,
-          "AvgRepSalesPerCycle": 1079.024516129032258064516129
-        },
-        {
-          "Name": "Chicago",
-          "Office": "Chicago",
-          "TotalSales": 7308.50,
-          "CallsToLinks": 257.1764705882353,
-          "CloseRate": 0.29411764705882354,
-          "AverageCalls": 65.253731343283576,
-          "AvgRepSalesPerCycle": 1049.9318181818181818181818182
-        },
-        {
-          "Name": "Austin",
-          "Office": "Austin",
-          "TotalSales": 5586.75,
-          "CallsToLinks": 294,
-          "CloseRate": 0.4,
-          "AverageCalls": 58.8,
-          "AvgRepSalesPerCycle": 1032.4293478260869565217391304
-        }
-      ]
-    },
-    {
-      "SectionId": "CurrentMonth",
-      "StartDateFilter": "\/Date(1485936000000)\/",
-      "EndDateFilter": "\/Date(1487664000000)\/",
-      "TopSalesReps": [
-        {
-          "Name": "Jacob Waterman",
-          "Office": "Portland",
-          "TotalSales": 9189.00,
-          "CallsToLinks": 121.375,
-          "CloseRate": 0.875,
-          "AverageCalls": 0,
-          "AvgRepSalesPerCycle": 0
-        },
-        {
-          "Name": "Andrew Perrine",
-          "Office": "Austin",
-          "TotalSales": 6710.75,
-          "CallsToLinks": 139,
-          "CloseRate": 1.25,
-          "AverageCalls": 0,
-          "AvgRepSalesPerCycle": 0
-        },
-        {
-          "Name": "Scott Pile",
-          "Office": "Portland",
-          "TotalSales": 6405.50,
-          "CallsToLinks": 34.333333333333336,
-          "CloseRate": 2,
-          "AverageCalls": 0,
-          "AvgRepSalesPerCycle": 0
-        },
-        {
-          "Name": "Bobby DeRose",
-          "Office": "Henderson",
-          "TotalSales": 5495.00,
-          "CallsToLinks": 48.2,
-          "CloseRate": 0.2,
-          "AverageCalls": 0,
-          "AvgRepSalesPerCycle": 0
-        },
-        {
-          "Name": "John Morris",
-          "Office": "Henderson",
-          "TotalSales": 5100.50,
-          "CallsToLinks": 367.5,
-          "CloseRate": 2,
-          "AverageCalls": 0,
-          "AvgRepSalesPerCycle": 0
-        }
-      ],
-      "Managers": [
-        {
-          "Name": "Kevin Brunner",
-          "Office": "Chicago",
-          "TotalSales": 23468.50,
-          "CallsToLinks": 124.31818181818181,
-          "CloseRate": 0.24242424242424243,
-          "AverageCalls": 0,
-          "AvgRepSalesPerCycle": 1843.953571428576345780952381
-        },
-        {
-          "Name": "Jason Davis",
-          "Office": "Portland",
-          "TotalSales": 23096.00,
-          "CallsToLinks": 134.86274509803923,
-          "CloseRate": 0.35294117647058826,
-          "AverageCalls": 0,
-          "AvgRepSalesPerCycle": 2082.4262295082022744480874318
-        },
-        {
-          "Name": "Conner Henry",
-          "Office": "Portland",
-          "TotalSales": 21189.50,
-          "CallsToLinks": 219.17241379310346,
-          "CloseRate": 0.55172413793103448,
-          "AverageCalls": 0,
-          "AvgRepSalesPerCycle": 2453.5210526315854900912280702
-        },
-        {
-          "Name": "Kyle Benson",
-          "Office": "Henderson",
-          "TotalSales": 20584.50,
-          "CallsToLinks": 154.74576271186442,
-          "CloseRate": 0.23728813559322035,
-          "AverageCalls": 0,
-          "AvgRepSalesPerCycle": 1583.4230769230811455384615385
-        },
-        {
-          "Name": "Tyler Schmatz",
-          "Office": "Portland",
-          "TotalSales": 15175.00,
-          "CallsToLinks": 149.93181818181819,
-          "CloseRate": 0.29545454545454547,
-          "AverageCalls": 0,
-          "AvgRepSalesPerCycle": 1560.0467289719667769470404985
-        },
-        {
-          "Name": "Tyler Mooney",
-          "Office": "Austin",
-          "TotalSales": 15051.75,
-          "CallsToLinks": 191.64102564102564,
-          "CloseRate": 0.28205128205128205,
-          "AverageCalls": 0,
-          "AvgRepSalesPerCycle": 1244.8815789473717407368421052
-        },
-        {
-          "Name": "Peter Spangle",
-          "Office": "Chicago",
-          "TotalSales": 14836.25,
-          "CallsToLinks": 188.0408163265306,
-          "CloseRate": 0.24489795918367346,
-          "AverageCalls": 0,
-          "AvgRepSalesPerCycle": 1073.6759868421081262938596492
-        },
-        {
-          "Name": "Terrance Nichols",
-          "Office": "Henderson",
-          "TotalSales": 13951.50,
-          "CallsToLinks": 133.61666666666667,
-          "CloseRate": 0.16666666666666666,
-          "AverageCalls": 0,
-          "AvgRepSalesPerCycle": 1171.500000000003124
-        },
-        {
-          "Name": "Austin Trunnell",
-          "Office": "Austin",
-          "TotalSales": 9336.00,
-          "CallsToLinks": 268.60714285714283,
-          "CloseRate": 0.2857142857142857,
-          "AverageCalls": 0,
-          "AvgRepSalesPerCycle": 834.9268292682949093983739837
-        },
-        {
-          "Name": "Kathryn Hayworth",
-          "Office": "Portland",
-          "TotalSales": 8986.00,
-          "CallsToLinks": 164.23684210526315,
-          "CloseRate": 0.21052631578947367,
-          "AverageCalls": 0,
-          "AvgRepSalesPerCycle": 950.4423076923102268205128205
-        },
-        {
-          "Name": "Eric Scriven",
-          "Office": "Portland",
-          "TotalSales": 1417.50,
-          "CallsToLinks": 0,
-          "CloseRate": 1,
-          "AverageCalls": 0,
-          "AvgRepSalesPerCycle": 1039.500000000002772
-        }
-      ],
-      "Office": [
-        {
-          "Name": "Portland",
-          "Office": "Portland",
-          "TotalSales": 78521.00,
-          "CallsToLinks": 162.52023121387282,
-          "CloseRate": 0.37572254335260113,
-          "AverageCalls": 57.262729124236252,
-          "AvgRepSalesPerCycle": 1617.1872637608135080613737642
-        },
-        {
-          "Name": "Chicago",
-          "Office": "Chicago",
-          "TotalSales": 42550.75,
-          "CallsToLinks": 155.32456140350877,
-          "CloseRate": 0.27192982456140352,
-          "AverageCalls": 59.023333333333333,
-          "AvgRepSalesPerCycle": 1458.8147791353422360374060151
-        },
-        {
-          "Name": "Henderson",
-          "Office": "Henderson",
-          "TotalSales": 37282.00,
-          "CallsToLinks": 143.4758064516129,
-          "CloseRate": 0.21774193548387097,
-          "AverageCalls": 61.98954703832753,
-          "AvgRepSalesPerCycle": 1377.4615384615421347692307692
-        },
-        {
-          "Name": "Austin",
-          "Office": "Austin",
-          "TotalSales": 24387.75,
-          "CallsToLinks": 209.24242424242425,
-          "CloseRate": 0.2878787878787879,
-          "AverageCalls": 58.025210084033617,
-          "AvgRepSalesPerCycle": 1039.9042041078333250676080444
-        }
-      ]
-    },
-    {
-      "SectionId": "CurrentDay",
-      "StartDateFilter": "\/Date(1483257600000)\/",
-      "EndDateFilter": "\/Date(1487664000000)\/",
-      "TopSalesReps": [
-        {
-          "Name": "Jacob Waterman",
-          "Office": "Portland",
-          "TotalSales": 9189.00,
-          "CallsToLinks": 121.375,
-          "CloseRate": 0.875,
-          "AverageCalls": 0,
-          "AvgRepSalesPerCycle": 0
-        },
-        {
-          "Name": "Andrew Perrine",
-          "Office": "Austin",
-          "TotalSales": 6710.75,
-          "CallsToLinks": 139,
-          "CloseRate": 1.25,
-          "AverageCalls": 0,
-          "AvgRepSalesPerCycle": 0
-        },
-        {
-          "Name": "Scott Pile",
-          "Office": "Portland",
-          "TotalSales": 6405.50,
-          "CallsToLinks": 34.333333333333336,
-          "CloseRate": 2,
-          "AverageCalls": 0,
-          "AvgRepSalesPerCycle": 0
-        },
-        {
-          "Name": "Bobby DeRose",
-          "Office": "Henderson",
-          "TotalSales": 5495.00,
-          "CallsToLinks": 48.2,
-          "CloseRate": 0.2,
-          "AverageCalls": 0,
-          "AvgRepSalesPerCycle": 0
-        },
-        {
-          "Name": "John Morris",
-          "Office": "Henderson",
-          "TotalSales": 5100.50,
-          "CallsToLinks": 367.5,
-          "CloseRate": 2,
-          "AverageCalls": 0,
-          "AvgRepSalesPerCycle": 0
-        },
-        {
-          "Name": "Tyler Smith",
-          "Office": "Portland",
-          "TotalSales": 4939.00,
-          "CallsToLinks": 100,
-          "CloseRate": 0.55555555555555558,
-          "AverageCalls": 0,
-          "AvgRepSalesPerCycle": 0
-        },
-        {
-          "Name": "Michael Beverford",
-          "Office": "Henderson",
-          "TotalSales": 4346.00,
-          "CallsToLinks": 68,
-          "CloseRate": 0.27272727272727271,
-          "AverageCalls": 0,
-          "AvgRepSalesPerCycle": 0
-        },
-        {
-          "Name": "Kurtis Ligocki",
-          "Office": "Chicago",
-          "TotalSales": 4272.00,
-          "CallsToLinks": 77,
-          "CloseRate": 0.23076923076923078,
-          "AverageCalls": 0,
-          "AvgRepSalesPerCycle": 0
-        },
-        {
-          "Name": "Jessica Heflin",
-          "Office": "Chicago",
-          "TotalSales": 4246.00,
-          "CallsToLinks": 456,
-          "CloseRate": 3,
-          "AverageCalls": 0,
-          "AvgRepSalesPerCycle": 0
-        },
-        {
-          "Name": "Mallory Knee",
-          "Office": "Chicago",
-          "TotalSales": 4195.00,
-          "CallsToLinks": 234.66666666666666,
-          "CloseRate": 1,
-          "AverageCalls": 0,
-          "AvgRepSalesPerCycle": 0
-        }
-      ],
-      "Managers": [
-        {
-          "Name": "Jason Davis",
-          "Office": "Portland",
-          "TotalSales": 65712.85,
-          "CallsToLinks": 139.46153846153845,
-          "CloseRate": 0.41025641025641024,
-          "AverageCalls": 0,
-          "AvgRepSalesPerCycle": 2518.6109756097588203836519446
-        },
-        {
-          "Name": "Peter Spangle",
-          "Office": "Chicago",
-          "TotalSales": 61225.05,
-          "CallsToLinks": 150.0408163265306,
-          "CloseRate": 0.31292517006802723,
-          "AverageCalls": 0,
-          "AvgRepSalesPerCycle": 1850.2075549450569452793287793
-        },
-        {
-          "Name": "Kevin Brunner",
-          "Office": "Chicago",
-          "TotalSales": 53748.00,
-          "CallsToLinks": 123.59756097560975,
-          "CloseRate": 0.23780487804878048,
-          "AverageCalls": 0,
-          "AvgRepSalesPerCycle": 1786.1873111782496651522821916
-        },
-        {
-          "Name": "Conner Henry",
-          "Office": "Portland",
-          "TotalSales": 43189.60,
-          "CallsToLinks": 167,
-          "CloseRate": 0.3875,
-          "AverageCalls": 0,
-          "AvgRepSalesPerCycle": 2306.2407766990316194468643401
-        },
-        {
-          "Name": "Kathryn Hayworth",
-          "Office": "Portland",
-          "TotalSales": 36907.50,
-          "CallsToLinks": 154.8235294117647,
-          "CloseRate": 0.31372549019607843,
-          "AverageCalls": 0,
-          "AvgRepSalesPerCycle": 1537.8125000000016625
-        },
-        {
-          "Name": "Terrance Nichols",
-          "Office": "Henderson",
-          "TotalSales": 36308.50,
-          "CallsToLinks": 130.69402985074626,
-          "CloseRate": 0.19402985074626866,
-          "AverageCalls": 0,
-          "AvgRepSalesPerCycle": 1396.4807692307707404781704782
-        },
-        {
-          "Name": "Tyler Schmatz",
-          "Office": "Portland",
-          "TotalSales": 35343.30,
-          "CallsToLinks": 125.05309734513274,
-          "CloseRate": 0.26548672566371684,
-          "AverageCalls": 0,
-          "AvgRepSalesPerCycle": 1697.7131004366830580729375664
-        },
-        {
-          "Name": "Tyler Mooney",
-          "Office": "Austin",
-          "TotalSales": 34291.25,
-          "CallsToLinks": 195.26470588235293,
-          "CloseRate": 0.25490196078431371,
-          "AverageCalls": 0,
-          "AvgRepSalesPerCycle": 1096.5225290697686272902262728
-        },
-        {
-          "Name": "Kyle Benson",
-          "Office": "Henderson",
-          "TotalSales": 31639.75,
-          "CallsToLinks": 134.93918918918919,
-          "CloseRate": 0.16891891891891891,
-          "AverageCalls": 0,
-          "AvgRepSalesPerCycle": 1129.9910714285726501833976835
-        },
-        {
-          "Name": "Austin Trunnell",
-          "Office": "Austin",
-          "TotalSales": 24323.00,
-          "CallsToLinks": 241.07317073170731,
-          "CloseRate": 0.21951219512195122,
-          "AverageCalls": 0,
-          "AvgRepSalesPerCycle": 828.3374613003104930231779767
-        },
-        {
-          "Name": "Eric Scriven",
-          "Office": "Portland",
-          "TotalSales": 1417.50,
-          "CallsToLinks": 0,
-          "CloseRate": 1,
-          "AverageCalls": 0,
-          "AvgRepSalesPerCycle": 421.4189189189193745069393718
-        }
-      ],
-      "Office": [
-        {
-          "Name": "Chicago",
-          "Office": "Chicago",
-          "TotalSales": 42550.75,
-          "CallsToLinks": 155.32456140350877,
-          "CloseRate": 0.27192982456140352,
-          "AverageCalls": 59.023333333333333,
-          "AvgRepSalesPerCycle": 1818.1974330616533052158054854
-        },
-        {
-          "Name": "Portland",
-          "Office": "Portland",
-          "TotalSales": 78521.00,
-          "CallsToLinks": 162.52023121387282,
-          "CloseRate": 0.37572254335260113,
-          "AverageCalls": 57.262729124236252,
-          "AvgRepSalesPerCycle": 1696.3592543328789069820786446
-        },
-        {
-          "Name": "Henderson",
-          "Office": "Henderson",
-          "TotalSales": 37282.00,
-          "CallsToLinks": 143.4758064516129,
-          "CloseRate": 0.21774193548387097,
-          "AverageCalls": 61.98954703832753,
-          "AvgRepSalesPerCycle": 1263.2359203296716953307840808
-        },
-        {
-          "Name": "Austin",
-          "Office": "Austin",
-          "TotalSales": 24387.75,
-          "CallsToLinks": 209.24242424242425,
-          "CloseRate": 0.2878787878787879,
-          "AverageCalls": 58.025210084033617,
-          "AvgRepSalesPerCycle": 962.4299951850395601567021248
-        }
-      ]
-    }
-  ]
+  "SalesToday": 8390.00,
+  "StatSections": [{
+    "SectionId": "CurrentPayCycle",
+    "StartDateFilter": "\/Date(1487232000000)\/",
+    "EndDateFilter": "\/Date(1488355199000)\/",
+    "TopSalesReps": [{
+      "Name": "Alec Olsen",
+      "Office": "Portland",
+      "TotalSales": 3959.50,
+      "CallsToLinks": 286,
+      "CloseRate": 3,
+      "AverageCalls": 0,
+      "AvgRepSalesPerCycle": 0
+    }, {
+      "Name": "Mike Bazzoni",
+      "Office": "Chicago",
+      "TotalSales": 3761.50,
+      "CallsToLinks": 212,
+      "CloseRate": 3,
+      "AverageCalls": 0,
+      "AvgRepSalesPerCycle": 0
+    }, {
+      "Name": "Nicole Settembre",
+      "Office": "Henderson",
+      "TotalSales": 2947.00,
+      "CallsToLinks": 62.666666666666664,
+      "CloseRate": 0.66666666666666663,
+      "AverageCalls": 0,
+      "AvgRepSalesPerCycle": 0
+    }, {
+      "Name": "Josh Shapiro",
+      "Office": "Chicago",
+      "TotalSales": 2947.00,
+      "CallsToLinks": 194,
+      "CloseRate": 2,
+      "AverageCalls": 0,
+      "AvgRepSalesPerCycle": 0
+    }, {
+      "Name": "Joel Vandekieft",
+      "Office": "Portland",
+      "TotalSales": 2897.00,
+      "CallsToLinks": 177,
+      "CloseRate": 2,
+      "AverageCalls": 0,
+      "AvgRepSalesPerCycle": 0
+    }],
+    "Managers": [{
+      "Name": "Kevin Brunner",
+      "Office": "Chicago",
+      "TotalSales": 7108.50,
+      "CallsToLinks": 165.5,
+      "CloseRate": 0.41666666666666669,
+      "AverageCalls": 64,
+      "AvgRepSalesPerCycle": 2063.7580645161290322580645162
+    }, {
+      "Name": "Tyler Schmatz",
+      "Office": "Portland",
+      "TotalSales": 6641.00,
+      "CallsToLinks": 164.88888888888889,
+      "CloseRate": 0.55555555555555558,
+      "AverageCalls": 64,
+      "AvgRepSalesPerCycle": 2598.6521739130434782608695652
+    }, {
+      "Name": "Conner Henry",
+      "Office": "Portland",
+      "TotalSales": 5558.50,
+      "CallsToLinks": 304.4,
+      "CloseRate": 0.8,
+      "AverageCalls": 72,
+      "AvgRepSalesPerCycle": 2382.2142857142857142857142857
+    }, {
+      "Name": "Kyle Benson",
+      "Office": "Henderson",
+      "TotalSales": 5426.00,
+      "CallsToLinks": 107.77777777777777,
+      "CloseRate": 0.22222222222222221,
+      "AverageCalls": 62,
+      "AvgRepSalesPerCycle": 1575.2903225806451612903225807
+    }, {
+      "Name": "Jason Davis",
+      "Office": "Portland",
+      "TotalSales": 4292.00,
+      "CallsToLinks": 113.06666666666666,
+      "CloseRate": 0.26666666666666666,
+      "AverageCalls": 58,
+      "AvgRepSalesPerCycle": 1332
+    }, {
+      "Name": "Tyler Mooney",
+      "Office": "Austin",
+      "TotalSales": 3639.75,
+      "CallsToLinks": 221.57142857142858,
+      "CloseRate": 0.2857142857142857,
+      "AverageCalls": 57,
+      "AvgRepSalesPerCycle": 1213.25
+    }, {
+      "Name": "Austin Trunnell",
+      "Office": "Austin",
+      "TotalSales": 3495.00,
+      "CallsToLinks": 231.5,
+      "CloseRate": 0.5,
+      "AverageCalls": 60,
+      "AvgRepSalesPerCycle": 1367.6086956521739130434782608
+    }, {
+      "Name": "Peter Spangle",
+      "Office": "Chicago",
+      "TotalSales": 2947.00,
+      "CallsToLinks": 182.5,
+      "CloseRate": 0.16666666666666666,
+      "AverageCalls": 66,
+      "AvgRepSalesPerCycle": 803.7272727272727272727272727
+    }, {
+      "Name": "Terrance Nichols",
+      "Office": "Henderson",
+      "TotalSales": 2747.00,
+      "CallsToLinks": 88.444444444444443,
+      "CloseRate": 0.11111111111111111,
+      "AverageCalls": 63,
+      "AvgRepSalesPerCycle": 988.92
+    }, {
+      "Name": "Kathryn Hayworth",
+      "Office": "Portland",
+      "TotalSales": 1599.00,
+      "CallsToLinks": 419.25,
+      "CloseRate": 0.25,
+      "AverageCalls": 64,
+      "AvgRepSalesPerCycle": 553.5
+    }],
+    "Office": [{
+      "Name": "Portland",
+      "Office": "Portland",
+      "TotalSales": 18090.50,
+      "CallsToLinks": 188.86111111111111,
+      "CloseRate": 0.3888888888888889,
+      "AverageCalls": 60.168141592920357,
+      "AvgRepSalesPerCycle": 1716.5916149068322981366459627
+    }, {
+      "Name": "Chicago",
+      "Office": "Chicago",
+      "TotalSales": 10055.50,
+      "CallsToLinks": 182.16666666666666,
+      "CloseRate": 0.29166666666666669,
+      "AverageCalls": 65.253731343283576,
+      "AvgRepSalesPerCycle": 1433.7426686217008797653958944
+    }, {
+      "Name": "Austin",
+      "Office": "Austin",
+      "TotalSales": 7134.75,
+      "CallsToLinks": 226.15384615384616,
+      "CloseRate": 0.38461538461538464,
+      "AverageCalls": 58.8,
+      "AvgRepSalesPerCycle": 1290.4293478260869565217391304
+    }, {
+      "Name": "Henderson",
+      "Office": "Henderson",
+      "TotalSales": 8173.00,
+      "CallsToLinks": 101.08333333333333,
+      "CloseRate": 0.16666666666666666,
+      "AverageCalls": 62.741379310344826,
+      "AvgRepSalesPerCycle": 1282.1051612903225806451612904
+    }]
+  }, {
+    "SectionId": "CurrentMonth",
+    "StartDateFilter": "\/Date(1485936000000)\/",
+    "EndDateFilter": "\/Date(1487750399000)\/",
+    "TopSalesReps": [{
+      "Name": "Jacob Waterman",
+      "Office": "Portland",
+      "TotalSales": 9189.00,
+      "CallsToLinks": 107.88888888888889,
+      "CloseRate": 0.77777777777777779,
+      "AverageCalls": 0,
+      "AvgRepSalesPerCycle": 0
+    }, {
+      "Name": "Andrew Perrine",
+      "Office": "Austin",
+      "TotalSales": 6710.75,
+      "CallsToLinks": 139,
+      "CloseRate": 1.25,
+      "AverageCalls": 0,
+      "AvgRepSalesPerCycle": 0
+    }, {
+      "Name": "Scott Pile",
+      "Office": "Portland",
+      "TotalSales": 6405.50,
+      "CallsToLinks": 34.333333333333336,
+      "CloseRate": 2,
+      "AverageCalls": 0,
+      "AvgRepSalesPerCycle": 0
+    }, {
+      "Name": "Bobby DeRose",
+      "Office": "Henderson",
+      "TotalSales": 5495.00,
+      "CallsToLinks": 48.2,
+      "CloseRate": 0.2,
+      "AverageCalls": 0,
+      "AvgRepSalesPerCycle": 0
+    }, {
+      "Name": "John Morris",
+      "Office": "Henderson",
+      "TotalSales": 5100.50,
+      "CallsToLinks": 367.5,
+      "CloseRate": 2,
+      "AverageCalls": 0,
+      "AvgRepSalesPerCycle": 0
+    }],
+    "Managers": [{
+      "Name": "Kevin Brunner",
+      "Office": "Chicago",
+      "TotalSales": 24516.50,
+      "CallsToLinks": 118.91304347826088,
+      "CloseRate": 0.24637681159420291,
+      "AverageCalls": 58,
+      "AvgRepSalesPerCycle": 1926.2964285714337082190476192
+    }, {
+      "Name": "Jason Davis",
+      "Office": "Portland",
+      "TotalSales": 24444.00,
+      "CallsToLinks": 129.77358490566039,
+      "CloseRate": 0.35849056603773582,
+      "AverageCalls": 56,
+      "AvgRepSalesPerCycle": 2203.9672131147599756065573771
+    }, {
+      "Name": "Kyle Benson",
+      "Office": "Henderson",
+      "TotalSales": 21983.50,
+      "CallsToLinks": 142.65625,
+      "CloseRate": 0.234375,
+      "AverageCalls": 63,
+      "AvgRepSalesPerCycle": 1691.0384615384660478974358975
+    }, {
+      "Name": "Conner Henry",
+      "Office": "Portland",
+      "TotalSales": 21189.50,
+      "CallsToLinks": 198.625,
+      "CloseRate": 0.5,
+      "AverageCalls": 66,
+      "AvgRepSalesPerCycle": 2453.5210526315854900912280702
+    }, {
+      "Name": "Tyler Mooney",
+      "Office": "Austin",
+      "TotalSales": 16599.75,
+      "CallsToLinks": 182.29268292682926,
+      "CloseRate": 0.29268292682926828,
+      "AverageCalls": 56,
+      "AvgRepSalesPerCycle": 1372.9116541353420069624060149
+    }, {
+      "Name": "Peter Spangle",
+      "Office": "Chicago",
+      "TotalSales": 16535.25,
+      "CallsToLinks": 170.62962962962962,
+      "CloseRate": 0.24074074074074073,
+      "AverageCalls": 60,
+      "AvgRepSalesPerCycle": 1196.629934210529506802631579
+    }, {
+      "Name": "Tyler Schmatz",
+      "Office": "Portland",
+      "TotalSales": 16523.00,
+      "CallsToLinks": 143.41304347826088,
+      "CloseRate": 0.30434782608695654,
+      "AverageCalls": 61,
+      "AvgRepSalesPerCycle": 1698.6261682243035950903426791
+    }, {
+      "Name": "Terrance Nichols",
+      "Office": "Henderson",
+      "TotalSales": 13951.50,
+      "CallsToLinks": 121.46969696969697,
+      "CloseRate": 0.15151515151515152,
+      "AverageCalls": 61,
+      "AvgRepSalesPerCycle": 1171.500000000003124
+    }, {
+      "Name": "Austin Trunnell",
+      "Office": "Austin",
+      "TotalSales": 9336.00,
+      "CallsToLinks": 259.34482758620692,
+      "CloseRate": 0.27586206896551724,
+      "AverageCalls": 61,
+      "AvgRepSalesPerCycle": 834.9268292682949093983739837
+    }, {
+      "Name": "Kathryn Hayworth",
+      "Office": "Portland",
+      "TotalSales": 8986.00,
+      "CallsToLinks": 156.025,
+      "CloseRate": 0.2,
+      "AverageCalls": 60,
+      "AvgRepSalesPerCycle": 950.4423076923102268205128205
+    }, {
+      "Name": "Eric Scriven",
+      "Office": "Portland",
+      "TotalSales": 1417.50,
+      "CallsToLinks": 0,
+      "CloseRate": 1,
+      "AverageCalls": 0,
+      "AvgRepSalesPerCycle": 1039.500000000002772
+    }],
+    "Office": [{
+      "Name": "Portland",
+      "Office": "Portland",
+      "TotalSales": 81217.00,
+      "CallsToLinks": 153.63934426229508,
+      "CloseRate": 0.366120218579235,
+      "AverageCalls": 57.262729124236252,
+      "AvgRepSalesPerCycle": 1669.2113483325924119217281894
+    }, {
+      "Name": "Chicago",
+      "Office": "Chicago",
+      "TotalSales": 45297.75,
+      "CallsToLinks": 145.13934426229508,
+      "CloseRate": 0.27049180327868855,
+      "AverageCalls": 59.023333333333333,
+      "AvgRepSalesPerCycle": 1561.4631813909816075108395991
+    }, {
+      "Name": "Henderson",
+      "Office": "Henderson",
+      "TotalSales": 38681.00,
+      "CallsToLinks": 131.78518518518519,
+      "CloseRate": 0.2074074074074074,
+      "AverageCalls": 61.98954703832753,
+      "AvgRepSalesPerCycle": 1431.2692307692345859487179488
+    }, {
+      "Name": "Austin",
+      "Office": "Austin",
+      "TotalSales": 25935.75,
+      "CallsToLinks": 200.14492753623188,
+      "CloseRate": 0.28985507246376813,
+      "AverageCalls": 58.025210084033617,
+      "AvgRepSalesPerCycle": 1103.9192417018184581803899993
+    }]
+  }, {
+    "SectionId": "CurrentYear",
+    "StartDateFilter": "\/Date(1483257600000)\/",
+    "EndDateFilter": "\/Date(1487750399000)\/",
+    "TopSalesReps": [{
+      "Name": "Jacob Waterman",
+      "Office": "Portland",
+      "TotalSales": 9189.00,
+      "CallsToLinks": 107.88888888888889,
+      "CloseRate": 0.77777777777777779,
+      "AverageCalls": 0,
+      "AvgRepSalesPerCycle": 0
+    }, {
+      "Name": "Andrew Perrine",
+      "Office": "Austin",
+      "TotalSales": 6710.75,
+      "CallsToLinks": 139,
+      "CloseRate": 1.25,
+      "AverageCalls": 0,
+      "AvgRepSalesPerCycle": 0
+    }, {
+      "Name": "Scott Pile",
+      "Office": "Portland",
+      "TotalSales": 6405.50,
+      "CallsToLinks": 34.333333333333336,
+      "CloseRate": 2,
+      "AverageCalls": 0,
+      "AvgRepSalesPerCycle": 0
+    }, {
+      "Name": "Bobby DeRose",
+      "Office": "Henderson",
+      "TotalSales": 5495.00,
+      "CallsToLinks": 48.2,
+      "CloseRate": 0.2,
+      "AverageCalls": 0,
+      "AvgRepSalesPerCycle": 0
+    }, {
+      "Name": "John Morris",
+      "Office": "Henderson",
+      "TotalSales": 5100.50,
+      "CallsToLinks": 367.5,
+      "CloseRate": 2,
+      "AverageCalls": 0,
+      "AvgRepSalesPerCycle": 0
+    }, {
+      "Name": "Tyler Smith",
+      "Office": "Portland",
+      "TotalSales": 4939.00,
+      "CallsToLinks": 100,
+      "CloseRate": 0.55555555555555558,
+      "AverageCalls": 0,
+      "AvgRepSalesPerCycle": 0
+    }, {
+      "Name": "Michael Beverford",
+      "Office": "Henderson",
+      "TotalSales": 4346.00,
+      "CallsToLinks": 57.53846153846154,
+      "CloseRate": 0.23076923076923078,
+      "AverageCalls": 0,
+      "AvgRepSalesPerCycle": 0
+    }, {
+      "Name": "Kurtis Ligocki",
+      "Office": "Chicago",
+      "TotalSales": 4272.00,
+      "CallsToLinks": 77,
+      "CloseRate": 0.23076923076923078,
+      "AverageCalls": 0,
+      "AvgRepSalesPerCycle": 0
+    }, {
+      "Name": "Jessica Heflin",
+      "Office": "Chicago",
+      "TotalSales": 4246.00,
+      "CallsToLinks": 456,
+      "CloseRate": 3,
+      "AverageCalls": 0,
+      "AvgRepSalesPerCycle": 0
+    }, {
+      "Name": "Mallory Knee",
+      "Office": "Chicago",
+      "TotalSales": 4195.00,
+      "CallsToLinks": 234.66666666666666,
+      "CloseRate": 1,
+      "AverageCalls": 0,
+      "AvgRepSalesPerCycle": 0
+    }],
+    "Managers": [{
+      "Name": "Jason Davis",
+      "Office": "Portland",
+      "TotalSales": 67060.85,
+      "CallsToLinks": 137.11764705882354,
+      "CloseRate": 0.41176470588235292,
+      "AverageCalls": 56,
+      "AvgRepSalesPerCycle": 2570.2764808362397124751859874
+    }, {
+      "Name": "Peter Spangle",
+      "Office": "Chicago",
+      "TotalSales": 62924.05,
+      "CallsToLinks": 145.10526315789474,
+      "CloseRate": 0.30921052631578949,
+      "AverageCalls": 60,
+      "AvgRepSalesPerCycle": 1901.5509615384635941923076923
+    }, {
+      "Name": "Kevin Brunner",
+      "Office": "Chicago",
+      "TotalSales": 54796.00,
+      "CallsToLinks": 121.37724550898204,
+      "CloseRate": 0.23952095808383234,
+      "AverageCalls": 61,
+      "AvgRepSalesPerCycle": 1821.0151057401832375471544051
+    }, {
+      "Name": "Conner Henry",
+      "Office": "Portland",
+      "TotalSales": 43189.60,
+      "CallsToLinks": 160.96385542168676,
+      "CloseRate": 0.37349397590361444,
+      "AverageCalls": 64,
+      "AvgRepSalesPerCycle": 2306.2407766990316194468643401
+    }, {
+      "Name": "Kathryn Hayworth",
+      "Office": "Portland",
+      "TotalSales": 36907.50,
+      "CallsToLinks": 151.84615384615384,
+      "CloseRate": 0.30769230769230771,
+      "AverageCalls": 59,
+      "AvgRepSalesPerCycle": 1537.8125000000016625
+    }, {
+      "Name": "Tyler Schmatz",
+      "Office": "Portland",
+      "TotalSales": 36691.30,
+      "CallsToLinks": 122.87826086956522,
+      "CloseRate": 0.26956521739130435,
+      "AverageCalls": 61,
+      "AvgRepSalesPerCycle": 1762.464192139739896633069751
+    }, {
+      "Name": "Terrance Nichols",
+      "Office": "Henderson",
+      "TotalSales": 36308.50,
+      "CallsToLinks": 125.09285714285714,
+      "CloseRate": 0.18571428571428572,
+      "AverageCalls": 61,
+      "AvgRepSalesPerCycle": 1396.4807692307707404781704782
+    }, {
+      "Name": "Tyler Mooney",
+      "Office": "Austin",
+      "TotalSales": 35839.25,
+      "CallsToLinks": 191.50961538461539,
+      "CloseRate": 0.25961538461538464,
+      "AverageCalls": 57,
+      "AvgRepSalesPerCycle": 1146.0225290697686808037397863
+    }, {
+      "Name": "Kyle Benson",
+      "Office": "Henderson",
+      "TotalSales": 33038.75,
+      "CallsToLinks": 130.52941176470588,
+      "CloseRate": 0.16993464052287582,
+      "AverageCalls": 64,
+      "AvgRepSalesPerCycle": 1179.9553571428584184845559847
+    }, {
+      "Name": "Austin Trunnell",
+      "Office": "Austin",
+      "TotalSales": 24323.00,
+      "CallsToLinks": 238.16867469879517,
+      "CloseRate": 0.21686746987951808,
+      "AverageCalls": 61,
+      "AvgRepSalesPerCycle": 828.3374613003104930231779767
+    }, {
+      "Name": "Eric Scriven",
+      "Office": "Portland",
+      "TotalSales": 1417.50,
+      "CallsToLinks": 0,
+      "CloseRate": 1,
+      "AverageCalls": 0,
+      "AvgRepSalesPerCycle": 421.4189189189193745069393718
+    }],
+    "Office": [{
+      "Name": "Chicago",
+      "Office": "Chicago",
+      "TotalSales": 45297.75,
+      "CallsToLinks": 145.13934426229508,
+      "CloseRate": 0.27049180327868855,
+      "AverageCalls": 59.023333333333333,
+      "AvgRepSalesPerCycle": 1861.2830336393234158697310487
+    }, {
+      "Name": "Portland",
+      "Office": "Portland",
+      "TotalSales": 81217.00,
+      "CallsToLinks": 153.63934426229508,
+      "CloseRate": 0.366120218579235,
+      "AverageCalls": 57.262729124236252,
+      "AvgRepSalesPerCycle": 1719.642573718786453112411890
+    }, {
+      "Name": "Henderson",
+      "Office": "Henderson",
+      "TotalSales": 38681.00,
+      "CallsToLinks": 131.78518518518519,
+      "CloseRate": 0.2074074074074074,
+      "AverageCalls": 61.98954703832753,
+      "AvgRepSalesPerCycle": 1288.2180631868145794813632314
+    }, {
+      "Name": "Austin",
+      "Office": "Austin",
+      "TotalSales": 25935.75,
+      "CallsToLinks": 200.14492753623188,
+      "CloseRate": 0.28985507246376813,
+      "AverageCalls": 58.025210084033617,
+      "AvgRepSalesPerCycle": 987.1799951850395869134588815
+    }]
+  }]
 }
