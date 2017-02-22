@@ -8,6 +8,10 @@ app.controller('customersCtrl', function($scope, $http) {
   var austinColor = '#7b47b8';
   
   var JSONError = false;
+  
+  var payCycleIndex = -1;
+  var monthIndex = -1;
+  var yearIndex = -1;
 
   init();
 
@@ -38,6 +42,7 @@ app.controller('customersCtrl', function($scope, $http) {
   function getJsonRes() {
     $http.get("js/jsonresponse.json")
       .success(function(response) {
+          $scope.response = response,
           $scope.currentTopPro = response.StatSections[0].TopSalesReps,
           $scope.currentTopMgr = response.StatSections[0].Managers,
           $scope.currentStart = dateParse(response.StatSections[0].StartDateFilter),
@@ -54,6 +59,10 @@ app.controller('customersCtrl', function($scope, $http) {
           $scope.yearEnd = dateParse(response.StatSections[2].EndDateFilter),
           $scope.yearOffice = sortByPreference(response.StatSections[2].Office),
           $scope.salesToday = response.SalesToday;
+      
+          console.log($scope.response);
+          sortBySectionId($scope.response);
+          console.log(payCycleIndex + " " + monthIndex + " " + yearIndex);
       
           if (JSONError == true) {
             $('.showtext').show();
@@ -75,19 +84,17 @@ app.controller('customersCtrl', function($scope, $http) {
       });
   }
   
-//  var payCycleIndex = -1;
-//  var monthIndex = -1;
-//  var yearIndex = -1;
-// 
-//  for (var i = 0; i < array.length; i++)
-//  {
-//      if (array[i].SectionId == "CurrentPayCycle")
-//          payCycleIndex = i;
-//      if (array[i].SectionId == "CurrentMonth")
-//          monthIndex = i;
-//      if (array[i].SectionId == "CurrentYear")
-//          yearIndex = i;
-//  }
+  function sortBySectionId(array) {
+    for (var i = 0; i < 3; i++)
+    {
+        if (array.StatSections[i].SectionId == "CurrentPayCycle")
+            payCycleIndex = i;
+        if (array.StatSections[i].SectionId == "CurrentMonth")
+            monthIndex = i;
+        if (array.StatSections[i].SectionId == "CurrentYear")
+            yearIndex = i;
+    }
+  }
   
 
   //Initialization Function
