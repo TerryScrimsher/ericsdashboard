@@ -66,7 +66,7 @@
                     <td class="tableheader">Sales</td>
                   </tr>
                 </thead>
-                <tbody ng-repeat="x in currentTopPro | limitTo:10">
+                <tbody ng-repeat="x in currentCycle.TopSalesReps | limitTo:10">
                   <tr class="{{ x.Office }}">
                     <td>{{ x.Name }}</td>
                     <td>${{ x.TotalSales | number:0 }}</td>
@@ -88,7 +88,7 @@
                     <td class="tableheader">Sales</td>
                   </tr>
                 </thead>
-                <tbody ng-repeat="x in monthTopPro | limitTo:5">
+                <tbody ng-repeat="x in monthCycle.TopSalesReps | limitTo:5">
                   <tr class="{{ x.Office }}">
                     <td>{{ x.Name }}</td>
                     <td>${{ x.TotalSales | number:0 }}</td>
@@ -226,7 +226,7 @@
                   <td class="tableheader">Close %</td>
                 </tr>
               </thead>
-              <tbody ng-repeat="x in yearTopPro | limitTo:10">
+              <tbody ng-repeat="x in yearCycle.TopSalesReps | limitTo:10">
                 <tr class="{{ x.Office }}">
                   <td>{{ x.Name }}</td>
                   <td>${{ x.TotalSales | number:0 }}</td>
@@ -254,7 +254,7 @@
                   <td class="tableheader lastcolumnhide">Avg. Calls</td>
                 </tr>
               </thead>
-              <tbody ng-repeat="x in yearTopMgr | limitTo:8">
+              <tbody ng-repeat="x in yearCycle.Managers | limitTo:8">
                 <tr class="{{ x.Office }}">
                   <td>{{ x.Name }}</td>
                   <td>${{ x.TotalSales | number:0 }}</td>

@@ -9,9 +9,9 @@ app.controller('customersCtrl', function($scope, $http) {
   
   var JSONError = false;
   
-  var payCycleIndex = -1;
-  var monthIndex = -1;
-  var yearIndex = -1;
+//  var payCycleIndex = -1;
+//  var monthIndex = -1;
+//  var yearIndex = -1;
 
   init();
 
@@ -25,57 +25,49 @@ app.controller('customersCtrl', function($scope, $http) {
   });
 
   //Automatic Update Function
-//  var autoUpdate = setInterval(function() {
-//    getJsonRes();
-//    salesToday();
-//    currentTopMgrBarChart();
-//    monthTopMgrBarChart();
-//    monthOfficePieChart();
-//    yearOfficePieChart();
-//    officeMap();
-//    currentDate();
-//  }, 30000);
+  var autoUpdate = setInterval(function() {
+    getJsonRes();
+    salesToday();
+    currentTopMgrBarChart();
+    monthTopMgrBarChart();
+    monthOfficePieChart();
+    yearOfficePieChart();
+    officeMap();
+    currentDate();
+  }, 30000);
 
   /* INITIALIZE FUNCTIONS */
-
+  
   //Get JSON Object Function
   function getJsonRes() {
-    $http.get("js/jsonresponse.json")
+    $http.get("js/jsonresponse2.json")
       .success(function(response) {
-          $scope.response = response,
-          $scope.currentTopPro = response.StatSections[0].TopSalesReps,
-          $scope.currentTopMgr = response.StatSections[0].Managers,
-          $scope.currentStart = dateParse(response.StatSections[0].StartDateFilter),
-          $scope.currentEnd = dateParse(response.StatSections[0].EndDateFilter),
-          $scope.currentOffice = sortByPreference(response.StatSections[0].Office),
-          $scope.monthTopPro = response.StatSections[1].TopSalesReps,
-          $scope.monthTopMgr = response.StatSections[1].Managers,
-          $scope.monthOffice = sortByPreference(response.StatSections[1].Office),
-          $scope.monthStart = dateParse(response.StatSections[1].StartDateFilter),
-          $scope.monthEnd = dateParse(response.StatSections[1].EndDateFilter),
-          $scope.yearTopPro = response.StatSections[2].TopSalesReps,
-          $scope.yearTopMgr = response.StatSections[2].Managers,
-          $scope.yearStart = dateParse(response.StatSections[2].StartDateFilter),
-          $scope.yearEnd = dateParse(response.StatSections[2].EndDateFilter),
-          $scope.yearOffice = sortByPreference(response.StatSections[2].Office),
+          $scope.currentCycle = validTest(response.CurrentPayCycleStats),
+          $scope.monthCycle = validTest(response.CurrentMonthStats),
+          $scope.yearCycle = validTest(response.CurrentYearStats),
+          $scope.currentStart = dateParse($scope.currentCycle.StartDateFilter),
+          $scope.currentEnd = dateParse($scope.currentCycle.EndDateFilter),
+          $scope.currentOffice = sortByPreference($scope.currentCycle.Office),
+          $scope.monthOffice = sortByPreference($scope.monthCycle.Office),
+          $scope.monthStart = dateParse($scope.monthCycle.StartDateFilter),
+          $scope.monthEnd = dateParse($scope.monthCycle.EndDateFilter),
+          $scope.yearStart = dateParse($scope.yearCycle.StartDateFilter),
+          $scope.yearEnd = dateParse($scope.yearCycle.EndDateFilter),
+          $scope.yearOffice = sortByPreference($scope.yearCycle.Office),
           $scope.salesToday = response.SalesToday;
       
-          console.log($scope.response);
-          sortBySectionId($scope.response);
-          console.log(payCycleIndex + " " + monthIndex + " " + yearIndex);
-      
           if (JSONError == true) {
-            $('.showtext').show();
-            $('.hidetext').hide();
-            
-            currentTopMgrBarChart();
-            monthTopMgrBarChart();
-            monthOfficePieChart();
-            yearOfficePieChart();
-            officeMap();
-            JSONError = false;
-          }
+              $('.showtext').show();
+              $('.hidetext').hide();
 
+              currentTopMgrBarChart();
+              monthTopMgrBarChart();
+              monthOfficePieChart();
+              yearOfficePieChart();
+              officeMap();
+              JSONError = false;
+          }
+      
       }).error(function(data, status) {
         console.log("Error status : " + status);
         $('.showtext').hide();
@@ -84,19 +76,6 @@ app.controller('customersCtrl', function($scope, $http) {
       });
   }
   
-  function sortBySectionId(array) {
-    for (var i = 0; i < 3; i++)
-    {
-        if (array.StatSections[i].SectionId == "CurrentPayCycle")
-            payCycleIndex = i;
-        if (array.StatSections[i].SectionId == "CurrentMonth")
-            monthIndex = i;
-        if (array.StatSections[i].SectionId == "CurrentYear")
-            yearIndex = i;
-    }
-  }
-  
-
   //Initialization Function
   function init() {
     getCurrentMonth();
@@ -114,27 +93,6 @@ app.controller('customersCtrl', function($scope, $http) {
     google.charts.setOnLoadCallback(yearOfficePieChart);
     google.charts.setOnLoadCallback(salesToday);
   }
-
-  
-//  function search($array, $key, $value)
-//  {
-//      $results = array();
-//
-//      if (is_array($array)) {
-//          if (isset($array[$key]) && $array[$key] == $value) {
-//              $results[] = $array;
-//          }
-//
-//          foreach ($array as $subarray) {
-//              $results = array_merge($results, search($subarray, $key, $value));
-//          }
-//      }
-//
-//      return $results;
-//  }
-  
-  
-  
   
   /* CHART CREATION FUNCTIONS */
 
@@ -150,7 +108,7 @@ app.controller('customersCtrl', function($scope, $http) {
     });
     var ivalue = new Array();
 
-    for (i = 0; i < $scope.yearOffice.length; i++) {
+    for (i = 0; i < $scope.yearCycle.Office.length; i++) {
       if ($scope.yearOffice[i].Name == "Portland") {
         data.addRows([
           [{
@@ -245,19 +203,19 @@ app.controller('customersCtrl', function($scope, $http) {
     for (i = 0; i < 8; i++) {
 
       var barColor = "#dddddd";
-      if ($scope.currentTopMgr[i].Office == "Portland") {
+      if ($scope.currentCycle.Managers[i].Office == "Portland") {
         barColor = portlandColor;
-      } else if ($scope.currentTopMgr[i].Office == "Chicago") {
+      } else if ($scope.currentCycle.Managers[i].Office == "Chicago") {
         barColor = chicagoColor;
-      } else if ($scope.currentTopMgr[i].Office == "Henderson") {
+      } else if ($scope.currentCycle.Managers[i].Office == "Henderson") {
         barColor = hendersonColor;
-      } else if ($scope.currentTopMgr[i].Office == "Austin") {
+      } else if ($scope.currentCycle.Managers[i].Office == "Austin") {
         barColor = austinColor;
       }
 
-      test.push([$scope.currentTopMgr[i].Name, {
-        v: $scope.currentTopMgr[i].TotalSales / 1000,
-        f: '$' + parseFloat($scope.currentTopMgr[i].TotalSales).toFixed(2)
+      test.push([$scope.currentCycle.Managers[i].Name, {
+        v: $scope.currentCycle.Managers[i].TotalSales / 1000,
+        f: '$' + parseFloat($scope.currentCycle.Managers[i].TotalSales).toFixed(2)
       }, barColor]);
     }
 
@@ -314,19 +272,19 @@ app.controller('customersCtrl', function($scope, $http) {
     for (i = 0; i < 5; i++) {
 
       var barColor = "#dddddd";
-      if ($scope.monthTopMgr[i].Office == "Portland") {
+      if ($scope.monthCycle.Managers[i].Office == "Portland") {
         barColor = portlandColor;
-      } else if ($scope.monthTopMgr[i].Office == "Chicago") {
+      } else if ($scope.monthCycle.Managers[i].Office == "Chicago") {
         barColor = chicagoColor;
-      } else if ($scope.monthTopMgr[i].Office == "Henderson") {
+      } else if ($scope.monthCycle.Managers[i].Office == "Henderson") {
         barColor = hendersonColor;
-      } else if ($scope.monthTopMgr[i].Office == "Austin") {
+      } else if ($scope.monthCycle.Managers[i].Office == "Austin") {
         barColor = austinColor;
       }
 
-      test.push([$scope.monthTopMgr[i].Name, {
-        v: $scope.monthTopMgr[i].TotalSales / 1000,
-        f: '$' + parseFloat($scope.monthTopMgr[i].TotalSales).toFixed(2)
+      test.push([$scope.monthCycle.Managers[i].Name, {
+        v: $scope.monthCycle.Managers[i].TotalSales / 1000,
+        f: '$' + parseFloat($scope.monthCycle.Managers[i].TotalSales).toFixed(2)
       }, barColor]);
     }
 
@@ -547,16 +505,43 @@ app.controller('customersCtrl', function($scope, $http) {
     return sortedData;
   }
 
+  //Sets NavBar Date
   function currentDate() {
     var today = new Date();
     var date = "Date: " + (1 + today.getMonth()) + "/" + today.getDate() + "/" + today.getFullYear();
     document.getElementById('currentdate').innerHTML = date;
   }
 
+  //Sets Daily Sales
   function salesToday() {
     var value = $scope.salesToday;
     var num = '$' + value.toFixed(2).replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,");
     document.getElementById('dailyTotal').innerHTML = "Daily Sales: " + num;
   }
+  
+  //Validate Fields
+  function validTest (x) {
+      if (x != undefined) {
+        $('.showtext').show();
+        $('.hidetext').hide();
+      } else {
+        $('.showtext').hide();
+        $('.hidetext').show();
+      }
+    return x;
+  }
+  
+  //Sort Function for previous JSON object
+//  function sortBySectionId(array) {
+//    for (var i = 0; i < 3; i++)
+//    {
+//        if (array.StatSections[i].SectionId == "CurrentPayCycle")
+//            payCycleIndex = i;
+//        if (array.StatSections[i].SectionId == "CurrentMonth")
+//            monthIndex = i;
+//        if (array.StatSections[i].SectionId == "CurrentYear")
+//            yearIndex = i;
+//    }
+//  }
 
 });
