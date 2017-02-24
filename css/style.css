@@ -246,11 +246,14 @@ table {
 }
 
 .Portland:hover, .office1:hover, .Chicago:hover, .office2:hover, .Henderson:hover, .office3:hover, .Austin:hover, .office4:hover {
-  -webkit-box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.5);
-  -moz-box-shadow:    0px 0px 30px 0px rgba(0, 0, 0, 0.5);
-  box-shadow:         0px 0px 30px 0px rgba(0, 0, 0, 0.5);
-  z-index:10 !important;
+  -webkit-box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow:    0px 0px 20px 0px rgba(0, 0, 0, 0.5);
+  box-shadow:         0px 0px 20px 0px rgba(0, 0, 0, 0.5);
+  border-bottom: 2px solid #343434 !important;
 }
+
+table { border-bottom: 2px solid #343434; }
+table:hover { border-bottom: 1px solid #343434; }
 
 th {
   background: #272727;
@@ -264,7 +267,6 @@ th {
   text-align: left;
   border: 1px solid #2b2b2b;
 }
-
 
 /* Loading Spinner */
 .loader {

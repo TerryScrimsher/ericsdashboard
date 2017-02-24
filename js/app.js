@@ -25,16 +25,16 @@ app.controller('customersCtrl', function($scope, $http) {
   });
 
   //Automatic Update Function
-  var autoUpdate = setInterval(function() {
-    getJsonRes();
-    salesToday();
-    currentTopMgrBarChart();
-    monthTopMgrBarChart();
-    monthOfficePieChart();
-    yearOfficePieChart();
-    officeMap();
-    currentDate();
-  }, 30000);
+//  var autoUpdate = setInterval(function() {
+//    getJsonRes();
+//    salesToday();
+//    currentTopMgrBarChart();
+//    monthTopMgrBarChart();
+//    monthOfficePieChart();
+//    yearOfficePieChart();
+//    officeMap();
+//    currentDate();
+//  }, 30000);
 
   /* INITIALIZE FUNCTIONS */
   

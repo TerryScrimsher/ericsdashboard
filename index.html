@@ -157,8 +157,8 @@
                   <td class="tableheader">Close %</td>
                 </tr>
               </thead>
-              <tbody ng-repeat="x in yearOffice | orderBy:-'TotalSales' | limitTo:4">
-                <tr class="office{{ $index+1 }}">
+              <tbody >
+                <tr ng-repeat="x in yearOffice | orderBy:-'TotalSales' | limitTo:4" class="office{{ $index+1 }}">
                   <td>{{ x.AverageCalls | number:0 }}</td>
                   <td>{{ x.CallsToLinks | number:1 }}</td>
                   <td>{{ x.CloseRate*100 | number:1 }}%</td>
